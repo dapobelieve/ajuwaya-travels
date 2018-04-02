@@ -1,0 +1,13 @@
+.contain {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /*background-color: */
+    padding: 5px;
+}
+
+.item-details {
+    grid-column: span 2;
+}
+.sub-tem {
+    /*padding: 5px;*/
+}
