@@ -5,7 +5,7 @@
       <div class="overlay">
         <div class="container">
           <div class="main-text">
-            <h1 class="intro-title">Welcome To <span style="color: #3498DB">Ajuwaya.com</span></h1>
+            <h1 class="intro-title">Welcome To <span style="color: #3498DB">Ajuwayatravels</span></h1>
             <p class="sub-title">Get easy transportation to states you've been posted to for service.</p>
 
             <!-- Start Search box -->

@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,500,700);
+/*@import url(http://fonts.googleapis.com/css?family=Raleway:400,500,700);*/
 
 @font-face {
 	font-weight: normal;
@@ -16,7 +16,7 @@
 .clearfix:after { clear: both; }
 
 body {
-	background: #e7ecea;
+	/*background: #e7ecea;*/
 	color: #74777b;
 	font-weight: 400;
 	font-size: 1em;

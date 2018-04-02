@@ -1,7 +1,7 @@
 @extends('layout.template')
 @section('styles')
 
-    <link rel="stylesheet" type="text/css" href="/tabstyle/css/normalize.css" />
+    {{-- <link rel="stylesheet" type="text/css" href="/tabstyle/css/normalize.css" /> --}}
     <link rel="stylesheet" type="text/css" href="/tabstyle/css/demo.css" />
     <link rel="stylesheet" type="text/css" href="/tabstyle/css/tabs.css" />
     <link rel="stylesheet" type="text/css" href="/tabstyle/css/tabstyles.css" />
@@ -10,7 +10,7 @@
 
 @stop
 @section('content')
-    <div id="app">
+    <div style="padding: 0.9rem" id="app">
         {{-- <section>
             <div class="tabs tabs-style-bar">
                 <nav>
