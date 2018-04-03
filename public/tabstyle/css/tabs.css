@@ -102,6 +102,10 @@
 .icon-upload::before {
 	content: "\e68a";
 }
+
+.icon-edit::before {
+	content: "\e659";
+}
 .icon-tools::before {
 	content: "\e60a";
 }

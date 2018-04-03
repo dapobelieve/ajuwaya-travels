@@ -46203,7 +46203,7 @@ exports = module.exports = __webpack_require__(9)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n.tabs-nav {\n    position: fixed;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    /**/\n.csd {\n        text-align: center;\n        padding-top: 2rem;\n        /*display: inherit;*/\n}\n.* {\n    box-sizing: border-box;\n}\n.calculator {\n    background-color: #f6f6f6;\n    padding-bottom: 2rem;\n    padding: 0.4rem;\n    max-width: 300px;\n    margin: 0 auto;\n    /*border: 0.1rem light #111;*/\n    border-radius: 5px;\n    box-shadow: 0 1px 5px rgba(204, 104, 204, 1.6);\n}\n.calculator input {\n    background: none;\n    border: none;\n    box-shadow: none;\n    width: 100%;\n    /*border-bottom: 0.1rem solid #111;*/\n    text-align: center;\n    font-size: 2rem;\n}\n.free {\n    cursor: none;\n    background: #af2c2c !important;\n    box-shadow: none !important;\n}\n\n/*css grid happens here*/\n.calculator-buttons {\n    padding: 1.6rem;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr 1fr;\n    grid-template-rows: repeat(5, 1fr);\n    grid-gap: 1rem;\n}\n.s1 {\n    grid-column: 3 / 4;\n}\n.calc-button {\n    background: #4caf50;\n    border: none;\n    padding: 1.5rem;\n    color: #fff;\n    border-radius: 5px;\n    font-size: 1.4rem;\n    cursor: pointer;\n    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);\n}\n\n\n", ""]);
 
 // exports
 
@@ -46320,11 +46320,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            activeNav: true
+            activeNav: true,
+            book: {
+                name: '',
+                email: '',
+                phone: '',
+                sex: '',
+                seat: ''
+            }
         };
     },
     mounted: function mounted() {
@@ -46350,58 +46374,30 @@ var render = function() {
           _vm._v(" "),
           _vm._m(2),
           _vm._v(" "),
-          _vm._m(3),
-          _vm._v(" "),
-          _vm._m(4)
+          _vm._m(3)
         ])
       ]),
       _vm._v(" "),
       _c("section", { attrs: { id: "content" } }, [
         _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-6" }, [
-              _c("div", { staticClass: "page-ads box" }, [
-                _c("h2", { staticClass: "title-2" }, [
-                  _vm._v(
-                    "\n                            Booking Details\n                          "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("form", { staticClass: "form-ad" }, [
-                  _vm._m(5),
-                  _vm._v(" "),
-                  _vm._m(6),
-                  _vm._v(" "),
-                  _vm._m(7),
-                  _vm._v(" "),
-                  _vm._m(8),
-                  _vm._v(" "),
-                  _vm._m(9),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c(
-                      "div",
-                      { staticClass: "well" },
-                      [
-                        _vm._m(10),
-                        _vm._v(" "),
-                        _c(
-                          "router-link",
-                          {
-                            staticClass: "btn btn-common",
-                            attrs: { to: { name: "confirmBook" } }
-                          },
-                          [_vm._v("deset")]
-                        )
-                      ],
-                      1
-                    )
-                  ])
-                ])
-              ])
-            ]),
+          _c("form", {}, [
+            _vm._m(4),
             _vm._v(" "),
-            _c("div", { staticClass: "col-sm-6" })
+            _c(
+              "div",
+              { staticClass: " csd col-sm-8 col-md-offset-2" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass: " btn btn-common",
+                    attrs: { to: { name: "confirmBook" } }
+                  },
+                  [_vm._v("submit")]
+                )
+              ],
+              1
+            )
           ])
         ])
       ])
@@ -46413,7 +46409,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "icon icon-home" }, [
+    return _c("a", { staticClass: "icon icon-upload" }, [
       _c("span", [_vm._v("Home")])
     ])
   },
@@ -46422,7 +46418,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", [
-      _c("a", { staticClass: "icon icon-box" }, [
+      _c("a", { staticClass: "icon icon-tools" }, [
         _c("span", [_vm._v("Archive")])
       ])
     ])
@@ -46451,123 +46447,138 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("a", { staticClass: "icon icon-tools" }, [
-        _c("span", [_vm._v("Settings")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c(
-        "label",
-        { staticClass: "control-label", attrs: { for: "textarea" } },
-        [_vm._v("Full Name")]
-      ),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "form-control",
-        attrs: { type: "text", required: "", placeholder: "Your Full Name" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c(
-        "label",
-        { staticClass: "control-label", attrs: { for: "textarea" } },
-        [_vm._v("Gender")]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "form-inline" }, [
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-sm-6" }, [
+        _c("h2", { staticClass: "title-2" }, [
+          _vm._v(
+            "\n                                Booking Details\n                            "
+          )
+        ]),
+        _vm._v(" "),
         _c("div", { staticClass: "form-group" }, [
-          _c("select", { staticClass: "form-control" }, [
-            _c("option", { attrs: { value: "0", selected: "selected" } }, [
-              _vm._v("Gender")
-            ]),
+          _c(
+            "label",
+            { staticClass: "control-label", attrs: { for: "textarea" } },
+            [_vm._v("Full Name")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            staticClass: "form-control",
+            attrs: { type: "text", required: "", placeholder: "Your Full Name" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c(
+            "label",
+            { staticClass: "control-label", attrs: { for: "seller-Location" } },
+            [_vm._v("Gender")]
+          ),
+          _vm._v(" "),
+          _c(
+            "select",
+            {
+              staticClass: "form-control",
+              attrs: { id: "Location", name: "Location" }
+            },
+            [
+              _c("option", { attrs: { value: "1" } }, [_vm._v("Option one")]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "2" } }, [_vm._v("Option two")])
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c(
+            "label",
+            { staticClass: "control-label", attrs: { for: "textarea" } },
+            [_vm._v("Email")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            staticClass: "form-control",
+            attrs: { type: "text", placeholder: "Your Email" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c(
+            "label",
+            { staticClass: "control-label", attrs: { for: "textarea" } },
+            [_vm._v("Phone Number")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            staticClass: "form-control",
+            attrs: { type: "text", placeholder: "Phone Number" }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-sm-6" }, [
+        _c(
+          "h5",
+          { staticStyle: { "text-align": "center", display: "block" } },
+          [_vm._v("Select Seat Number")]
+        ),
+        _vm._v(" "),
+        _c(
+          "small",
+          { staticStyle: { "text-align": "center", display: "block" } },
+          [_vm._v("*disabled buttons are seats that have been booked*")]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "calculator" }, [
+          _c("input", { attrs: { readonly: "", type: "text" } }),
+          _vm._v(" "),
+          _c("div", { staticClass: "calculator-buttons" }, [
+            _c("button", { staticClass: "calc-button s1" }, [_vm._v("1")]),
             _vm._v(" "),
-            _c("option", { attrs: { value: "male" } }, [_vm._v("Male")]),
+            _c("button", { staticClass: "calc-button s2" }, [_vm._v("2")]),
             _vm._v(" "),
-            _c("option", { attrs: { value: "female" } }, [_vm._v("Female")])
+            _c("button", { staticClass: "calc-button " }, [_vm._v("3")]),
+            _vm._v(" "),
+            _c("button", { staticClass: "calc-button" }, [_vm._v("4")]),
+            _vm._v(" "),
+            _c("button", { staticClass: "calc-button  " }, [_vm._v("5")]),
+            _vm._v(" "),
+            _c("button", {
+              staticClass: "calc-button free",
+              attrs: { disabled: "" }
+            }),
+            _vm._v(" "),
+            _c("button", { staticClass: "calc-button " }, [_vm._v("6")]),
+            _vm._v(" "),
+            _c("button", { staticClass: "calc-button" }, [_vm._v("7")]),
+            _vm._v(" "),
+            _c("button", { staticClass: "calc-button " }, [_vm._v("8")]),
+            _vm._v(" "),
+            _c("button", {
+              staticClass: "calc-button  free",
+              attrs: { disabled: "" }
+            }),
+            _vm._v(" "),
+            _c("button", { staticClass: "calc-button " }, [_vm._v("9")]),
+            _vm._v(" "),
+            _c("button", { staticClass: "calc-button" }, [_vm._v("10")]),
+            _vm._v(" "),
+            _c("button", { staticClass: "calc-button" }, [_vm._v("11")]),
+            _vm._v(" "),
+            _c("button", {
+              staticClass: "calc-button  free",
+              attrs: { disabled: "" }
+            }),
+            _vm._v(" "),
+            _c("button", { staticClass: "calc-button" }, [_vm._v("12")]),
+            _vm._v(" "),
+            _c("button", { staticClass: "calc-button" }, [_vm._v("13")]),
+            _vm._v(" "),
+            _c("button", { staticClass: "calc-button" }, [_vm._v("14")]),
+            _vm._v(" "),
+            _c("button", { staticClass: "calc-button" }, [_vm._v("15")])
           ])
         ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c(
-        "label",
-        { staticClass: "control-label", attrs: { for: "textarea" } },
-        [_vm._v("Email")]
-      ),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "form-control",
-        attrs: { type: "text", placeholder: "Your Email" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c(
-        "label",
-        { staticClass: "control-label", attrs: { for: "textarea" } },
-        [_vm._v("Phone Number")]
-      ),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "form-control",
-        attrs: { type: "text", placeholder: "Phone Number" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c(
-        "label",
-        { staticClass: "control-label", attrs: { for: "seller-Location" } },
-        [_vm._v("Location")]
-      ),
-      _vm._v(" "),
-      _c(
-        "select",
-        {
-          staticClass: "form-control",
-          attrs: { id: "Location", name: "Location" }
-        },
-        [
-          _c("option", { attrs: { value: "1" } }, [_vm._v("Option one")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "2" } }, [_vm._v("Option two")])
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "checkbox" }, [
-      _c("label", [
-        _c("input", { attrs: { type: "checkbox" } }),
-        _vm._v(" I agree to the "),
-        _c("a", { attrs: { href: "#" } }, [_vm._v("Terms of Use")])
       ])
     ])
   }
