@@ -1,4 +1,15 @@
 @extends('layout.template')
+
+@section('title')
+
+Welcome to AjuwayaTravels
+@stop
+
+@section('styles')
+
+<link rel="stylesheet" href="/aju/assets/css/sweetalert.css" type="text/css">
+
+@stop
 @section('content')
         <!-- Start intro section -->
     <section id="intro" class="section-intro">
@@ -84,7 +95,10 @@
                         <strong> $199</strong>
                       </td>
                       <td class="action-td">
-                        <p><a class="btn btn-success btn-xs"> <i class="fa fa-bus"></i> Book Now</a></p>
+                        <p><a class="btn btn-success btn-xs"> <i class="fa fa-bus"></i> Book Now</a>
+                        <a class="btn btn-info btn-xs"> <i class="fa fa-exit"></i> Details</a>
+
+                        </p>
                       </td>
                     </tr>
                   </tbody>
@@ -105,5 +119,20 @@
 <script type="text/javascript" src="/aju/assets/js/owl.carousel.min.js"></script>
 <script type="text/javascript" src="/aju/assets/js/wow.js"></script>
 <script type="text/javascript" src="/aju/assets/js/main.js"></script>
-
+<script type="text/javascript" src="/aju/assets/js/sweetalert.min.js"></script>
+<script type="text/javascript">
+     @if(Session::has('authMsg'))
+      swal({
+      title: "Alert",
+      text: "{{ Session::get('authMsg')}}",
+      type: 'warning'
+    })
+    @elseif(Session::has('success'))
+      swal({
+        title: "{{Session::get('title')}}",
+        text:  "{{Session::get('success')}}",
+        type: 'info'
+      })
+    @endif
+</script>
 @stop
