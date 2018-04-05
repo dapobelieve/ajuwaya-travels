@@ -18,7 +18,11 @@
           <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav navbar-right">
               <li><a href="{{ route('home') }}"><i class="lnr lnr-home"></i> Home</a></li>
-              <li><a href="{{ route('auth.login') }}"><i class="lnr lnr-enter"></i> Log in</a></li>
+              @if(!Auth::check())
+                <li><a href="{{ route('auth.login') }}"><i class="lnr lnr-enter"></i> Log in</a></li>
+            @else
+                <li><a href="{{ route('auth.signout') }}"><i class="lnr lnr-enter"></i> Log out</a></li>
+            @endif
             </ul>
           </div>
           <!-- Navbar End -->

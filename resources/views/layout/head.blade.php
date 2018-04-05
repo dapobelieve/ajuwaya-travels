@@ -11,10 +11,11 @@
     <link rel="shortcut icon" href="/aju/assets/img/favicon.html">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/aju/assets/css/bootstrap.min.css" type="text/css">    
+    <link rel="stylesheet" href="/aju/assets/css/bootstrap-social.css" type="text/css">    
     <link rel="stylesheet" href="/aju/assets/css/jasny-bootstrap.min.css" type="text/css">    
     <link rel="stylesheet" href="/aju/assets/css/jasny-bootstrap.min.css" type="text/css">
     <!-- Material CSS -->
-    <link rel="stylesheet" href="/aju/assets/css/material-kit.css" type="text/css">
+    
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="/aju/assets/css/font-awesome.min.css" type="text/css">
         <!-- Line Icons CSS -->

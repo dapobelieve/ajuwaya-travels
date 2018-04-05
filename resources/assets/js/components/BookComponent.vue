@@ -39,7 +39,6 @@
                                   <input type="text" v-model="phoneNumber"  class="form-control" placeholder="Phone Number">
                                 </div>
 
-                                {{ phoneNumber }}
                                 
                                 <!-- <div class="form-group">
                                   <div class="well">
@@ -83,7 +82,7 @@
                         </div>                     
                     </div>
                     <div class=" csd col-sm-8 col-md-offset-2">
-                        <router-link :to="{name: 'confirmBook'}" type="submit" class=" btn btn-common">submit</router-link>
+                        <router-link :to="{name: 'confirmBook',params:{ bookId: 'aRtTds34s9iSk9Njh' } }" type="submit" class=" btn btn-common">submit</router-link>
                     </div>
                 </form>
             </div>

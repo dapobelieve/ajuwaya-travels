@@ -35,7 +35,7 @@
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : ''}}">
                   <div class="input-icon">
                     <i class="icon fa fa-envelope"></i>
-                    <input type="text"  class="form-control" name="email" placeholder="Email Address">
+                    <input type="text" value="{{ Request::old('email') ?: ''}}" class="form-control" name="email" placeholder="Email Address">
                     @if($errors->has('email'))
                     <span class="help-block formlert">
                         {{$errors->first('email')}}
@@ -46,7 +46,8 @@
                 <div class="form-group{{ $errors->has('fname') ? ' has-error' : ''}}">
                   <div class="input-icon">
                     <i class="icon fa fa-user"></i>
-                    <input type="text"  class="form-control" name="fname" placeholder="Full Name">
+                <div class="form-group{{ $errors->has('fname') ? ' has-error' : ''}}">
+                    <input type="text" value="{{ Request::old('fname') ?: ''}}" value="{{ Request::old('fname') ?: ''}}" class="form-control" name="fname" placeholder="Full Name">
                     @if($errors->has('fname'))
                     <span class="help-block formlert">
                         {{$errors->first('fname')}}
@@ -77,6 +78,12 @@
                 </div> --}}
                 <button class="btn btn-common log-btn type="submit ">Register</button>
                 {{ csrf_field() }}
+                <a style="text-transform: none; border-radius: 2px" class="btn btn-xs  btn-social btn-google">
+                    <span class="fa fa-google"></span> Sign up with Google
+                </a>
+                <a style="text-transform: none; border-radius: 2px" class="btn btn-xs  btn-social btn-facebook">
+                    <span class="fa fa-facebook"></span> Sign up with Facebook
+                </a>
               </form>
             </div>
           </div>

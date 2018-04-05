@@ -6,7 +6,7 @@ Welcome to AjuwayaTravels
 @stop
 
 @section('styles')
-
+<link rel="stylesheet" href="/aju/assets/css/material-kit.css" type="text/css">
 <link rel="stylesheet" href="/aju/assets/css/sweetalert.css" type="text/css">
 
 @stop

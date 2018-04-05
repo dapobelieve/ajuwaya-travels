@@ -19,14 +19,25 @@ const routes = [
         name: 'bookBus'
     },
     {
-        path: 'confirm.html',
+        path: '/confirm/:bookId',
         component: ConfirmComponent,
-        name: 'confirmBook'
+        name: 'confirmBook',
+        beforeEnter (to, from, next) {
+            alert('hello world');
+            
+        }
     }
 
 ]
 
 const router = new VueRouter({ routes });
+
+router.beforeEach((to, from, next) => {
+
+    next();
+});
+
+
 
 const app = new Vue(
     { 

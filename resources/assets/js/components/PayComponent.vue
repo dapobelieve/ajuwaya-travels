@@ -5,8 +5,8 @@
                 <ul>
                     <li><a class="icon icon-home"  ><span>Home</span></a></li>
                     <li :class="{'tab-current': activeNav}" ><a href=""  class="icon icon-box"><span>Archive</span></a></li>
-                    <li  ><a class="icon icon-display"><span>Analytics</span></a></li>
-                    <li><a class="icon icon-upload"><span>Upload</span></a></li>
+                    <li  ><a class="icon icon-display"><span>Confirmation</span></a></li>
+                    <li :class="{'tab-current': activeNav}"><a class="icon icon-upload"><span>Summary</span></a></li>
                     <li><a class="icon icon-tools"><span>Settings</span></a></li>
                 </ul>
             </nav>
@@ -14,8 +14,7 @@
               <div class="container">
                 <div class="row">
                   <div class="col-sm-6">
-                      this is the confirm component
-                      {{ $route.params.bookId}}
+                      this is the Payment or summary component
                   </div>
                   <div class="col-sm-6"></div>
                 </div>
@@ -29,19 +28,11 @@
     export default {
         data () {
             return {
-                activeNav: true,
-                dum: ['aRtTds34s9iSk9Njh','aRtTds34s9iSk9Njhcsdf']
+                activeNav: true
             }
         },
         mounted() {
             // console.log('Component mounted.')
-        },
-        beforeRouteEnter (to, from, next) {
-
-            console.log(to.params.bookId);
-            next(vm => {
-                
-            });
         }
     }
 </script>
