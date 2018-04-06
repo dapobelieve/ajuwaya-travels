@@ -1,4 +1,7 @@
 
+let model = window.ajt_model;
+
+// app.model = model;
 require('./bootstrap');
 
 window.Vue = require('vue');
@@ -16,7 +19,10 @@ const routes = [
     {
         path: '/',
         component: BookComponent,
-        name: 'bookBus'
+        name: 'bookBus',
+        meta: {
+            mdata: model
+        },
     },
     {
         path: '/confirm/:bookId',
@@ -24,6 +30,7 @@ const routes = [
         name: 'confirmBook',
         beforeEnter (to, from, next) {
             alert('hello world');
+            next();
         }
     }
 
@@ -40,5 +47,11 @@ router.beforeEach((to, from, next) => {
 
 const app = new Vue(
     { 
-        router 
-    }).$mount('#app')
+        router,
+        data: {
+            model: {}
+        },
+        mounted () {
+            // console.log(model)
+        }
+}).$mount('#app')

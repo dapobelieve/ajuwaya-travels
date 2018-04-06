@@ -86,7 +86,7 @@
         data () {
             return {
                 activeNav: true,
-                isSelect: false,
+                ref: '',
                 book: {
                     name:  '',
                     email: '',
@@ -109,18 +109,18 @@
                 button.classList.toggle('iselect');
             },
         },
-        computed: {
-            phoneNumber: {
-                get () {
-                    // 
-                },
-                set (value) {
-                    // console.log(value)
-                }
-            },
+        beforeRouteUpdate ( to, from , next ) {
+              // console.log('Entering User', to.params.userId)
+            
+            next()
+        },
+        created () {
+            console.log(this.book);
         },
         mounted() {
-            console.log('Component mounted.')
+            this.ref = this.$route.meta.mdata
+            console.log(this.ref+"  "+this.book)
+            console.log('Book Component mounted.')
         }
     }
 </script>

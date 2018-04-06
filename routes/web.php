@@ -28,7 +28,7 @@ Route::get('/results', 'HomeController@results')->name('route.search');
 
 
 
-Route::get('/book', 'Booking\BookingController@index')->name('book.start');
+Route::get('/book/{route}', 'Booking\BookingController@index')->name('book.start');
 
 
 

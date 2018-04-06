@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+
+use App\Models\Booking\Route;
 use App\Models\Booking\Location;
 use App\Models\Booking\Camp;
-use App\Models\Booking\Route;
+
 
 class HomeController extends Controller
 {
@@ -13,8 +16,10 @@ class HomeController extends Controller
     {
         // get all locations and camps
         $locs = Location::all();
-        $routes = Route::all();
+        $routes = Route::with('camp', 'location')->get(); //eager loading
         $camps = Camp::orderBy('name', 'asc')->get();
+
+        // dd($routes);
 
         return view('pages.home')
             ->with('locations', $locs)

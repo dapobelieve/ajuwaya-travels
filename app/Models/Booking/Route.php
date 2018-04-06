@@ -11,6 +11,26 @@ class Route extends Model
         return $this->hasMany(Booking::class);
     }
 
+    public function location()
+    {
+        return $this->belongsTo(Location::class);
+    }
+
+    public function camp()
+    {
+        return $this->belongsTo(Camp::class);
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'ref';
+    }
+
+    public function takeoff()
+    {
+        return strtolower($this->take_off);
+    }
+
     protected $fillable = [
         'location_id',
         'camp_id',

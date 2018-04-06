@@ -1396,6 +1396,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_ConfirmComponent_vue__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_ConfirmComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_ConfirmComponent_vue__);
 
+var model = window.ajt_model;
+
+// app.model = model;
 __webpack_require__(14);
 
 window.Vue = __webpack_require__(38);
@@ -1411,13 +1414,17 @@ window.Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]);
 var routes = [{
     path: '/',
     component: __WEBPACK_IMPORTED_MODULE_1__components_BookComponent_vue___default.a,
-    name: 'bookBus'
+    name: 'bookBus',
+    meta: {
+        mdata: model
+    }
 }, {
     path: '/confirm/:bookId',
     component: __WEBPACK_IMPORTED_MODULE_2__components_ConfirmComponent_vue___default.a,
     name: 'confirmBook',
     beforeEnter: function beforeEnter(to, from, next) {
         alert('hello world');
+        next();
     }
 }];
 
@@ -1429,7 +1436,13 @@ router.beforeEach(function (to, from, next) {
 });
 
 var app = new Vue({
-    router: router
+    router: router,
+    data: {
+        model: {}
+    },
+    mounted: function mounted() {
+        // console.log(model)
+    }
 }).$mount('#app');
 
 /***/ }),
@@ -46343,7 +46356,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             activeNav: true,
-            isSelect: false,
+            ref: '',
             book: {
                 name: '',
                 email: '',
@@ -46367,18 +46380,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             button.classList.toggle('iselect');
         }
     },
-    computed: {
-        phoneNumber: {
-            get: function get() {
-                // 
-            },
-            set: function set(value) {
-                // console.log(value)
-            }
-        }
+    beforeRouteUpdate: function beforeRouteUpdate(to, from, next) {
+        // console.log('Entering User', to.params.userId)
+
+        next();
+    },
+    created: function created() {
+        console.log(this.book);
     },
     mounted: function mounted() {
-        console.log('Component mounted.');
+        this.ref = this.$route.meta.mdata;
+        console.log(this.ref + "  " + this.book);
+        console.log('Book Component mounted.');
     }
 });
 

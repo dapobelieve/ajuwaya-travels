@@ -8,8 +8,8 @@ $factory->define(App\Models\Booking\Route::class, function (Faker $faker) {
     $x = mt_rand(1, 36);
 
     return [
-        'location_id' => $t,
-        'camp_id'     => $x,
+        'location_id' => $x,
+        'camp_id'     => $t,
         'take_off'    => $faker->realText(12),
         'price'       => $faker->numberBetween(5000, 20000),
         'bus_type'    => $faker->randomElement([15, 35]),

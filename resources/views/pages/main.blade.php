@@ -8,9 +8,16 @@
     <script src="/tabstyle/js/modernizr.custom.js"></script>
     <script type="text/javascript" src="/aju/assets/fonts/all.js"></script>
 
+    <script>
+        window.ajt_model = "{{ $model }}";
+        // console.log(model);
+    </script>
+
 
 @stop
 @section('content')
+    
+
     <div style="padding: 0.9rem" id="app">
         <router-view name="bookBus"></router-view>
         <router-view></router-view>
@@ -29,6 +36,10 @@
         });
 
     })();
+
+
 </script>
+
+
 
 @stop

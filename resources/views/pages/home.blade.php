@@ -63,39 +63,47 @@ Welcome to AjuwayaTravels
       </div>
     </section>
     <!-- end intro section -->
-    <div class="continer">
-        <h2><p>Latest Routes</p></h2>
-        
-        @foreach($routes as $route)
-        <div class="adds-wrapper results">
-            <div class="item-list">
-                <div class="col-sm-8 add-desc-box">
-                  <div class="add-details">
-                    <h5 class="add-title"><a href="">Brand New All about iPhones</a></h5>
-                    <div class="info">
-                      <span class="add-type">B</span>
-                      <span class="date">
-                        <i class="fas fa-clock"></i>
-                        16:22:13 2016-02-29
-                      </span> -
-                      <span class="category">Electronics</span> -
-                      <span class="item-location"><i class="fas fa-map-pin"></i> London</span>
-                    </div>
-                    <div class="item_desc">
-                      <a href="#">Donec ut quam felis. Cras egestas, quam in plac erat dictum, erat mauris inte rdum est nec.</a>
-                    </div>
-                  </div>
+    <section id="categories-homepage">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="section-title">Latest Routes</h3>
                 </div>
-                <div class="col-sm-4 price-box">
-                  <h2 class="item-price pricy"> &#x20A6 320 </h2>
-                  <a class="btn btn-danger btn-sm"><i class="fas fa-info-circle"></i>
-                  <span>Details</span></a> 
-                  <a class="btn btn-common btn-sm"> <i class="fas fa-bus"></i> <span>Book</span> </a> 
+                @foreach($routes as $route)
+                <div class="adds-wrapper results">
+                    <div class="item-list">
+                        <div class="col-sm-8 add-desc-box">
+                          <div class="add-details">
+                            <h5 class="add-title"><a href="{{ route('book.start', ['route' => $route->ref]) }}">
+                               <span class="take-off">{{ $route->location->state }}</span>  to 
+                               <span class="dest">{{ $route->camp->toUp() }}</span>  </a></h5>
+                            <div class="info">
+                              <span class="add-type">B</span>
+                              <span class="date">
+                                <i class="fas fa-clock"></i>
+                                16:22:13 2016-02-29
+                              </span> -
+                              <span class="category takeoff">Takeoff point</span> -
+                              <span class="item-location takeoff"><i class="fas fa-map-pin"></i> {{ $route->takeoff()}}</span>
+                            </div>
+                            <div class="item_desc">
+                              <a href="#">Donec ut quam felis. Cras egestas, quam in plac erat dictum, erat mauris inte rdum est nec.</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 price-box">
+                          <h2 class="item-price pricy"> &#x20A6 {{ number_format($route->price) }} </h2>
+                          <a class="btn btn-danger btn-sm"><i class="fas fa-info-circle"></i>
+                          <span>Details</span></a> 
+                          <a href="{{ route('book.start', ['route' => $route->ref]) }}" class="btn btn-common btn-sm"> <i class="fas fa-bus"></i> <span>Book</span> </a> 
+                        </div>
+                    </div>
                 </div>
-              </div>
+                @endforeach
+            </div>
         </div>
-        @endforeach
-    </div>
+    </section>
+
 @stop
 @section('scripts')
 
