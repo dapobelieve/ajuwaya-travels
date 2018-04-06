@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Models\\Booking;
+namespace App\Models\Booking;
 
 use Illuminate\Database\Eloquent\Model;
 
-class \Camp extends Model
+class Camp extends Model
 {
     //
 }

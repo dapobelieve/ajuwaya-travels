@@ -8,6 +8,7 @@ Welcome to AjuwayaTravels
 @section('styles')
 <link rel="stylesheet" href="/aju/assets/css/material-kit.css" type="text/css">
 <link rel="stylesheet" href="/aju/assets/css/sweetalert.css" type="text/css">
+ <script type="text/javascript" src="/aju/assets/fonts/all.js"></script>
 
 @stop
 @section('content')
@@ -22,20 +23,16 @@ Welcome to AjuwayaTravels
             <!-- Start Search box -->
             <div class="row search-bar">
               <div class="advanced-search">
-                <form class="search-form" method="get">
+                <form class="search-form" action="{{ route('route.search') }}" method="get">
                   <div class="col-md-3 col-sm-6 search-col">
                     <div class="input-group-addon search-category-container">
                       <label class="styled-select">
-                        <select class="dropdown-product selectpicker" name="product-cat" >
-                          <option value="0">All Categories Items For Sale Items For Sale</option>
-                          <option class="subitem" value="community"> Community</option>
-                          <option value="items-for-sale"> Items For Sale</option>
-                          <option value="jobs"> Jobs</option>
-                          <option value="personals"> Personals</option>
-                          <option value="training"> Training</option>
-                          <option value="real_estate"> Real Estate</option>
-                          <option value="services"> Services</option>
-                          <option value="vehicles"> Vehicles</option>
+                        <select class="dropdown-product selectpicker" name="location" >
+                          <option value="0">Select Location</option>
+                          @foreach($locations as $location)
+                            <option value="{{ $location->id }}">{{ $location->state }}</option>
+                          @endforeach
+
                         </select>                                    
                       </label>
                     </div>
@@ -43,14 +40,11 @@ Welcome to AjuwayaTravels
                   <div class="col-md-3 col-sm-6 search-col">
                     <div class="input-group-addon search-category-container">
                       <label class="styled-select location-select">
-                        <select class="dropdown-product selectpicker" name="product-cat" >
-                          <option value="0">All Locations</option>
-                          <option value="New York">New York</option>
-                          <option value="California">California</option>
-                          <option value="Washington">Washington</option>
-                          <option value="churches">Birmingham</option>
-                          <option value="Birmingham">Chicago</option>
-                          <option value="Phoenix">Phoenix</option>
+                        <select class="dropdown-product selectpicker" name="camp" >
+                          <option value="0">Select Orientation Camp</option>
+                          @foreach($camps as $camp)
+                            <option value="{{ $camp->id }}">{{ ucwords($camp->name) }}</option>
+                          @endforeach
                         </select>                                    
                       </label>
                     </div>
@@ -69,46 +63,38 @@ Welcome to AjuwayaTravels
       </div>
     </section>
     <!-- end intro section -->
-    <div id="content">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-              <h2 class="title-2"><i class="fa fa-search"></i> Search Results</h2>
-              <div class="table-responsive">
-                <table class="table table-striped add-manage-table">
-                  <thead>
-                    <tr>
-                      <th> Details</th>
-                      <th>Price</th>
-                      <th>Option</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="ads-details-td">
-                        <h4><a href="ads-details.html">Brand New All about iPhones</a></h4>
-                        <p> <strong> Posted On </strong>:
-                        02-Oct-2016, 04:38 PM </p>
-                        <p> <strong>Visitors </strong>: 221 <br> <strong>Located In:</strong> New York </p>
-                      </td>
-                      <td class="">
-                        <strong> $199</strong>
-                      </td>
-                      <td class="action-td">
-                        <p><a class="btn btn-success btn-xs"> <i class="fa fa-bus"></i> Book Now</a>
-                        <a class="btn btn-info btn-xs"> <i class="fa fa-exit"></i> Details</a>
-
-                        </p>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>               
-          </div>
-          
-        </div> 
-      </div> 
-
+    <div class="continer">
+        <h2><p>Latest Routes</p></h2>
+        
+        @foreach($routes as $route)
+        <div class="adds-wrapper results">
+            <div class="item-list">
+                <div class="col-sm-8 add-desc-box">
+                  <div class="add-details">
+                    <h5 class="add-title"><a href="">Brand New All about iPhones</a></h5>
+                    <div class="info">
+                      <span class="add-type">B</span>
+                      <span class="date">
+                        <i class="fas fa-clock"></i>
+                        16:22:13 2016-02-29
+                      </span> -
+                      <span class="category">Electronics</span> -
+                      <span class="item-location"><i class="fas fa-map-pin"></i> London</span>
+                    </div>
+                    <div class="item_desc">
+                      <a href="#">Donec ut quam felis. Cras egestas, quam in plac erat dictum, erat mauris inte rdum est nec.</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4 price-box">
+                  <h2 class="item-price pricy"> &#x20A6 320 </h2>
+                  <a class="btn btn-danger btn-sm"><i class="fas fa-info-circle"></i>
+                  <span>Details</span></a> 
+                  <a class="btn btn-common btn-sm"> <i class="fas fa-bus"></i> <span>Book</span> </a> 
+                </div>
+              </div>
+        </div>
+        @endforeach
     </div>
 @stop
 @section('scripts')

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Models\\Booking;
+namespace App\Models\Booking;
 
 use Illuminate\Database\Eloquent\Model;
 
-class \Location extends Model
+class Location extends Model
 {
-    //
+    protected $table = 'states';
 }

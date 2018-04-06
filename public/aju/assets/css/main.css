@@ -1348,7 +1348,7 @@ footer .menu li a:hover {
   overflow: hidden;
   clear: both;
   margin-bottom: 15px;
-  box-shadow: 1px 1px 3px 0px #F1F1F1;
+  box-shadow: 1px 2px 3px 0px #F1F1F4;
   -webkit-transition: background 0.25s ease-in 0s;
   -moz-transition: background 0.25s ease-in 0s;
   -ms-transition: background 0.25s ease-in 0s;
@@ -1380,7 +1380,7 @@ footer .menu li a:hover {
   width: 25px;
 }
 .adds-wrapper .price-box {
-  padding: 0px;
+  /*padding: 0px;*/
 }
 .adds-wrapper .price-box .item-price {
   font-size: 24px;

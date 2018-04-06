@@ -36,19 +36,9 @@
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label" for="textarea">Phone Number</label>
-                                  <input type="text" v-model="phoneNumber"  class="form-control" placeholder="Phone Number">
+                                  <input type="text" v-model="book.phone"  class="form-control" placeholder="Phone Number">
                                 </div>
 
-                                
-                                <!-- <div class="form-group">
-                                  <div class="well">
-                                    <div class="checkbox">
-                                      <label><input type="checkbox"> I agree to the <a href="#">Terms of Use</a></label>
-                                    </div>
-                                    <router-link :to="{name: 'confirmBook'}" class="btn btn-common">deset</router-link>
-                                    
-                                  </div> 
-                                </div> -->                            
                         </div>
                         <div class="col-sm-6">
                                 <!-- <p>Select Seat Number</p> -->
@@ -117,17 +107,17 @@
 
                 let button = e.target;
                 button.classList.toggle('iselect');
-            }
-
+            },
         },
         computed: {
-            phoneNumber () {
-                // if()
-                return this.book.phone;
-                // set () {
-                    
-                // }
-            }
+            phoneNumber: {
+                get () {
+                    // 
+                },
+                set (value) {
+                    // console.log(value)
+                }
+            },
         },
         mounted() {
             console.log('Component mounted.')

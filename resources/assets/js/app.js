@@ -24,7 +24,6 @@ const routes = [
         name: 'confirmBook',
         beforeEnter (to, from, next) {
             alert('hello world');
-            
         }
     }
 

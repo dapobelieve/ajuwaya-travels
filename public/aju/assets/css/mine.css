@@ -1,8 +1,23 @@
 .contain {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     /*background-color: */
     padding: 5px;
+}
+
+.results {
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 2rem;
+    /*align-items: start;*/
+}
+
+.pricy {
+    padding: 2rem;
+}
+
+.price {
+    font-size: 2rem;
 }
 
 .item-details {
