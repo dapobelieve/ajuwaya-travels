@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\\Booking;
+namespace App\Models\Booking;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -26,7 +26,7 @@ class Booking extends Model
         'seat',
         'bk_ref',
         'seat_num',
-        'pay_status',
+        // 'pay_status',
         'amount',
     ];
 }

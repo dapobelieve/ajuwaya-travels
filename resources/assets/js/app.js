@@ -6,6 +6,10 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import axios from 'axios';
+
+axios.defaults.baseURL = 'http://localhost:8000/';
+
 import VueRouter from 'vue-router';
 
 window.Vue.use(VueRouter);
@@ -14,16 +18,18 @@ window.Vue.use(VueRouter);
 import BookComponent    from './components/BookComponent.vue';
 import ConfirmComponent from './components/ConfirmComponent.vue';
 
+Vue.component('booking', BookComponent);
+
 
 const routes = [
-    {
-        path: '/',
-        component: BookComponent,
-        name: 'bookBus',
-        meta: {
-            mdata: model
-        },
-    },
+    // {
+    //     path: '/',
+    //     component: BookComponent,
+    //     name: 'bookBus',
+    //     meta: {
+    //         mdata: model
+    //     },
+    // },
     {
         path: '/confirm/:bookId',
         component: ConfirmComponent,
@@ -33,15 +39,11 @@ const routes = [
             next();
         }
     }
-
 ]
 
 const router = new VueRouter({ routes });
 
-router.beforeEach((to, from, next) => {
 
-    next();
-});
 
 
 

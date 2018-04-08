@@ -26,9 +26,14 @@ Route::get('/confirm/{token}','Emails\Confirm@getEmailToken')->name('email.token
 Route::get('/results', 'HomeController@results')->name('route.search');
 
 
-
+// Route::get('book/api/details', function () {
+//     dd("here");
+// });
 
 Route::get('/book/{route}', 'Booking\BookingController@index')->name('book.start');
+
+
+
 
 
 

@@ -12,39 +12,45 @@
             </nav>
             <section id="content">
             <div class="container">
-                <form class="">
+                <form @submit="sendData" class="">
                     <div class="row">
                         <div class="col-sm-6">
                                 <h2 class="">
-                                    <!-- Booking Details -->
+                                    Fill your Details
                                 </h2>
+                                <br>
+                                <br>
                                 <div class="form-group">
                                   <label class="control-label" for="textarea">Full Name</label>
-                                  <input type="text" v-model="book.name" required class="form-control" placeholder="Your Full Name" >
+                                  <input type="text" v-model="book.name"  class="form-control" placeholder="Your Full Name" >
+                                  <span v-if="errors.name"  class="alata smalld">* {{ errors.name }} </span>
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label" for="seller-Location">Gender</label>
-                                  <select v-model="book.sex" id="Location" name="Location" class="form-control">
-                                    <option disabled >Sex</option>
+                                  <select v-model="book.sex" class="form-control">
+                                    <option>Sex</option>
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
                                   </select>
+                                  <span v-if="errors.sex" class="alata smalld">* {{ errors.sex }}</span>
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label" for="textarea">Email</label>
                                   <input type="text" v-model="book.email" class="form-control" placeholder="Your Email" >
+                                  <span v-if="errors.phone"  class="alata smalld">* {{ errors.email }}</span>
                                 </div>
                                 <div class="form-group">
                                   <label class="control-label" for="textarea">Phone Number</label>
                                   <input type="text" v-model="book.phone"  class="form-control" placeholder="Phone Number">
+                                  <span v-if="errors.phone"  class="alata smalld">* {{ errors.phone }}</span>
                                 </div>
-
                         </div>
                         <div class="col-sm-6">
                                 <!-- <p>Select Seat Number</p> -->
-                                {{ book }}
-                                <h5 style="text-align: center; display: block">Select Seat Number</h5>
-                                <small style="text-align: center; display: block">*disabled buttons are seats that have been booked*</small>
+                                <!-- {{ errors }} -->
+                                <h5 class="smalld">Select Seat Number</h5>
+                                <small class="smalld">*disabled buttons are seats that have been booked*</small>
+                                <span v-if="errors.seat"  class="alata smalld">* {{ errors.seat }} </span>
                                 <div class="calculator">
                                     <input v-model="book.seat" readonly type="text">
                                     <div class="calculator-buttons">
@@ -72,7 +78,8 @@
                         </div>                     
                     </div>
                     <div class=" csd col-sm-8 col-md-offset-2">
-                        <router-link :to="{name: 'confirmBook',params:{ bookId: 'aRtTds34s9iSk9Njh' } }" type="submit" class=" btn btn-common">submit</router-link>
+                        <button type="submit" class=" btn btn-common" >Submit</button>
+                        <!-- <router-link :to="{name: 'confirmBook',params:{ bookId: 'aRtTds34s9iSk9Njh' } }" type="submit" class=" btn btn-common">submit</router-link> -->
                     </div>
                 </form>
             </div>
@@ -92,8 +99,11 @@
                     email: '',
                     phone: '',
                     sex:   '',
-                    seat:  []
-                }
+                    seat:  [],
+                    rid:  '',
+                },
+                // route: '',
+                errors: [],
             }
         },
         methods: {
@@ -108,19 +118,44 @@
                 let button = e.target;
                 button.classList.toggle('iselect');
             },
+            fetchRoute (ref)
+            {
+                axios.get('api/details/'+ref)
+                .then(response => {
+                    // load some of the b0ok data of this component
+                    this.book.rid = response.data.id;
+                    // console.log(this.rid );
+                })
+                .catch(function (error) {
+                    console.log(error.data);
+                    // console.log('ERROR::', error.response.data);
+                    alert('Server Error');
+                });
+            },
+            sendData (e) {
+                 e.preventDefault();
+                var data = this.book;
+                // console.log(data)
+                axios.post('/api/process', data )
+                .then (response => {
+                    console.log(response.data);
+                })
+                .catch(error => {
+                    this.errors = error.response.data.errors;
+                    // console.log(this.errors);
+                });
+            } 
         },
         beforeRouteUpdate ( to, from , next ) {
-              // console.log('Entering User', to.params.userId)
-            
             next()
         },
-        created () {
-            console.log(this.book);
-        },
         mounted() {
-            this.ref = this.$route.meta.mdata
-            console.log(this.ref+"  "+this.book)
-            console.log('Book Component mounted.')
+            // grab the booking ref from the routes meta data
+            var ref = this.$route.meta.mdata;
+            this.fetchRoute(ref)
+
+            // send axios request
+                        
         }
     }
 </script>
@@ -151,6 +186,10 @@
         box-shadow: 0 1px 5px rgba(204, 104, 204, 1.6);
     }
 
+    .alata {
+        color: red;
+    }
+
     .calculator input {
         background: none;
         border: none;
@@ -178,6 +217,10 @@
 
     .s1 {
         grid-column: 3 / 4; 
+    }
+    .smalld {
+        text-align: center;
+        display: block;
     }
 
 
