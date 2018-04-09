@@ -43,6 +43,8 @@ class BookingController extends Controller
             //get all the booking for this route
             $ids = $route->books()->pluck('seat')->toArray();
 
+            //flattened this bloody collection
+            //since i coudnt find a lara method to do it
             function flater(array $arr, array $flatten = [])
             {
                 foreach ($arr as $item) {
@@ -62,6 +64,7 @@ class BookingController extends Controller
             
             $seats = flater($ids, $flatten = []);
 
+            // return details of a route and seats thats been booked
             return response()->json([
                 'route' => $route,
                 'seats' => $seats,
@@ -74,20 +77,23 @@ class BookingController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'name'  => 'required|string',
-            'phone' => 'required|unique:bookings|digits:11',
-            'email' => 'required|unique:bookings|email',
-            'seat'  => 'required|array',
-            'userId' => 'required',
-        ],[
-            'name.required'   => 'Please provide your full name',
-            'phone.digits'    => 'Your phone number must be 11 digits',
-            'phone.required'  => 'Enter your phone number',
-            'email.required'  => 'The Email field is required',
-            'email.unique'    => 'That email address has already been taken',
-            'seat.required'   => 'Please select your seat number(s)'
-        ]);
+        // $this->validate($request, [
+        //     'name'  => 'required|string',
+        //     'phone' => 'required|unique:bookings|digits:11',
+        //     'email' => 'required|unique:bookings|email',
+        //     'seat'  => 'required|array',
+        //     'sex'   => 'required',
+        //     'userId' => 'required',
+        // ],[
+        //     'name.required'   => 'Please provide your full name',
+        //     'phone.digits'    => 'Your phone number must be 11 digits',
+        //     'phone.unique'    => 'That phone number has already been used',
+        //     'phone.required'  => 'Enter your phone number',
+        //     'email.required'  => 'The Email field is required',
+        //     'email.unique'    => 'That email address has already been taken',
+        //     'seat.required'   => 'Please select your seat number(s)',
+        //     'sex.required'   => 'Please select your Gender'
+        // ]);
 
         $book = Booking::create([
                     // 'user_id'  => $requestuser()->id,

@@ -1414,6 +1414,8 @@ window.Vue = __webpack_require__(38);
 
 
 
+// axios.defaults.baseURL = 'http://192.168.43.204/'; use when connected to phone
+
 __WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.baseURL = 'http://localhost:8000/';
 
 
@@ -1437,11 +1439,11 @@ var routes = [{
 }, {
     path: '/confirm/:bookId',
     component: __WEBPACK_IMPORTED_MODULE_3__components_ConfirmComponent_vue___default.a,
-    name: 'confirmBook',
-    beforeEnter: function beforeEnter(to, from, next) {
-        alert('hello world');
-        next();
-    }
+    name: 'confirmBook'
+    // beforeEnter (to, from, next) {
+    //     alert('hello world');
+    //     next();
+    // }
 }];
 
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({ routes: routes });
@@ -46229,7 +46231,7 @@ exports = module.exports = __webpack_require__(10)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n.csd {\n    text-align: center;\n    padding-top: 2rem;\n    /*display: inherit;*/\n}\n.* {\n    box-sizing: border-box;\n}\n.iselect {\n    background: #19b507fa !important;\n    color: #fff !important;\n    border: none;\n    border-radius: 5px;\n}\n.calculator {\n    background-color: #f6f6f6;\n    padding-bottom: 2rem;\n    padding: 0.4rem;\n    max-width: 300px;\n    margin: 0 auto;\n    /*border: 0.1rem light #111;*/\n    border-radius: 5px;\n    box-shadow: 0 1px 5px rgba(204, 104, 204, 1.6);\n}\n.alata {\n    color: red;\n}\n.calculator input {\n    background: none;\n    border: none;\n    box-shadow: none;\n    width: 100%;\n    /*border-bottom: 0.1rem solid #111;*/\n    text-align: center;\n    font-size: 2rem;\n}\n.free {\n    cursor: none;\n    background: #cc0000fa !important;\n    box-shadow: none !important;\n}\n\n/*css grid happens here*/\n.calculator-buttons {\n    padding: 1.6rem;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr 1fr;\n    grid-template-rows: repeat(5, 1fr);\n    grid-gap: 1rem;\n}\n.s1 {\n    grid-column: 3 / 4;\n}\n.smalld {\n    text-align: center;\n    display: block;\n}\n.disabled {\n}\n.calc-button {\n    background: #5dc1a2;\n    border: none;\n    padding: 1.5rem;\n    color: #fff;\n    border-radius: 5px;\n    font-size: 1.4rem;\n    cursor: pointer;\n    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n.csd {\n    text-align: center;\n    padding-top: 2rem;\n    /*display: inherit;*/\n}\n.* {\n    box-sizing: border-box;\n}\n.iselect {\n    background: #19b507fa !important;\n    color: #fff !important;\n    border: none;\n    border-radius: 5px;\n}\n.calculator {\n    background-color: #f6f6f6;\n    padding-bottom: 2rem;\n    padding: 0.4rem;\n    max-width: 300px;\n    margin: 0 auto;\n    /*border: 0.1rem light #111;*/\n    border-radius: 5px;\n    box-shadow: 0 1px 5px rgba(204, 104, 204, 1.6);\n}\n.alata {\n    color: red;\n}\n.calculator input {\n    background: none;\n    border: none;\n    box-shadow: none;\n    width: 100%;\n    /*border-bottom: 0.1rem solid #111;*/\n    text-align: center;\n    font-size: 2rem;\n}\n.free {\n    cursor: none;\n    background: #cc0000fa !important;\n    box-shadow: none !important;\n}\n\n/*css grid happens here*/\n.calculator-buttons {\n    padding: 1.6rem;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr 1fr;\n    grid-template-rows: repeat(5, 1fr);\n    grid-gap: 1rem;\n}\n.s1 {\n    grid-column: 3 / 4;\n}\n.smalld {\n    text-align: center;\n    display: block;\n}\n.disabled {\n}\n.calc-button {\n    background: #5dc1a2;\n    border: none;\n    padding: 1.5rem;\n    color: #fff;\n    border-radius: 5px;\n    font-size: 1.4rem;\n    cursor: pointer;\n    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);\n}\n", ""]);
 
 // exports
 
@@ -46414,13 +46416,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
                 _this.route.seats = response.data.seats;
 
-                console.log(_this.route.seats);
+                // console.log(this.route.seats);
                 // this.book.rid = response.data.route.id;
             }).catch(function (error) {
                 console.log(error.data);
                 alert('Server Error');
             });
         },
+
+        //method to check if a seat has been booked
         checkSeat: function checkSeat(x) {
             if (this.route.seats.includes(x)) {
                 return true;
@@ -46435,12 +46439,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var data = this.book;
             // console.log(data)
             axios.post('/api/process', data).then(function (response) {
+                var bkId = response.data;
                 //go to the next route with the booking ref
-
-                console.log(response.data);
+                _this2.$router.push({ name: 'confirmBook', params: { bookId: bkId } });
             }).catch(function (error) {
-                _this2.errors = error.response.data.errors;
-                // console.log(this.errors);
+                // this.errors = error.response.data.errors;
+                console.log(error);
             });
         }
     },
@@ -46528,7 +46532,7 @@ var render = function() {
                   _vm._v(" "),
                   _vm.errors.name
                     ? _c("span", { staticClass: "alata smalld" }, [
-                        _vm._v("* " + _vm._s(_vm.errors.name) + " ")
+                        _vm._v("* " + _vm._s(_vm.errors.name[0]) + " ")
                       ])
                     : _vm._e()
                 ]),
@@ -46590,7 +46594,7 @@ var render = function() {
                   _vm._v(" "),
                   _vm.errors.sex
                     ? _c("span", { staticClass: "alata smalld" }, [
-                        _vm._v("* " + _vm._s(_vm.errors.sex))
+                        _vm._v("* " + _vm._s(_vm.errors.sex[0]))
                       ])
                     : _vm._e()
                 ]),
@@ -46629,7 +46633,7 @@ var render = function() {
                   _vm._v(" "),
                   _vm.errors.phone
                     ? _c("span", { staticClass: "alata smalld" }, [
-                        _vm._v("* " + _vm._s(_vm.errors.email))
+                        _vm._v("* " + _vm._s(_vm.errors.email[0]))
                       ])
                     : _vm._e()
                 ]),
@@ -46668,7 +46672,7 @@ var render = function() {
                   _vm._v(" "),
                   _vm.errors.phone
                     ? _c("span", { staticClass: "alata smalld" }, [
-                        _vm._v("* " + _vm._s(_vm.errors.phone))
+                        _vm._v("* " + _vm._s(_vm.errors.phone[0]))
                       ])
                     : _vm._e()
                 ])
@@ -46685,7 +46689,7 @@ var render = function() {
                 _vm._v(" "),
                 _vm.errors.seat
                   ? _c("span", { staticClass: "alata smalld" }, [
-                      _vm._v("* " + _vm._s(_vm.errors.seat) + " ")
+                      _vm._v("* " + _vm._s(_vm.errors.seat[0]) + " ")
                     ])
                   : _vm._e(),
                 _vm._v(" "),
@@ -47001,7 +47005,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("li", [
       _c("a", { staticClass: "icon icon-tools" }, [
-        _c("span", [_vm._v("Archive")])
+        _c("span", [_vm._v("Confirm")])
       ])
     ])
   },
@@ -47133,7 +47137,7 @@ exports = module.exports = __webpack_require__(10)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n.tabs-nav {\n    position: fixed;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n.tabs-nav {\n    position: fixed;\n}\n", ""]);
 
 // exports
 
@@ -47171,6 +47175,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -47180,12 +47185,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
     mounted: function mounted() {
-        // console.log('Component mounted.')
+        console.log('Confirm Component mounted.');
     },
     beforeRouteEnter: function beforeRouteEnter(to, from, next) {
-
         console.log(to.params.bookId);
-        next(function (vm) {});
+
+        // we confirm if the booking id exists and pull in the record
+        // send axios request
+
+        setTimeout(function () {
+            alert("Hello");
+            next();
+        }, 3000);
+
+        // next(vm => {
+
+        // });
     }
 });
 
@@ -47217,6 +47232,7 @@ var render = function() {
         _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-sm-6" }, [
+              _c("h2", [_vm._v("Confirm Your Details")]),
               _vm._v(
                 "\n                  this is the confirm component\n                  " +
                   _vm._s(_vm.$route.params.bookId) +
@@ -47237,7 +47253,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", [
-      _c("a", { staticClass: "icon icon-home" }, [_c("span", [_vm._v("Home")])])
+      _c("a", { staticClass: "icon icon-home" }, [
+        _c("span", [_vm._v("Details")])
+      ])
     ])
   },
   function() {
@@ -47245,7 +47263,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("a", { staticClass: "icon icon-box", attrs: { href: "" } }, [
-      _c("span", [_vm._v("Archive")])
+      _c("span", [_vm._v("Confirm")])
     ])
   },
   function() {

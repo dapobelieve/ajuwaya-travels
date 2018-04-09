@@ -9,6 +9,8 @@ window.Vue = require('vue');
 
 import axios from 'axios';
 
+// axios.defaults.baseURL = 'http://192.168.43.204/'; use when connected to phone
+
 axios.defaults.baseURL = 'http://localhost:8000/';
 
 import VueRouter from 'vue-router';
@@ -35,10 +37,10 @@ const routes = [
         path: '/confirm/:bookId',
         component: ConfirmComponent,
         name: 'confirmBook',
-        beforeEnter (to, from, next) {
-            alert('hello world');
-            next();
-        }
+        // beforeEnter (to, from, next) {
+        //     alert('hello world');
+        //     next();
+        // }
     }
 
 ]
