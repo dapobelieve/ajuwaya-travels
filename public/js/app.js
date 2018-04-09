@@ -46229,7 +46229,7 @@ exports = module.exports = __webpack_require__(10)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n.csd {\n    text-align: center;\n    padding-top: 2rem;\n    /*display: inherit;*/\n}\n.* {\n    box-sizing: border-box;\n}\n.iselect {\n    background: yellow !important;\n    color: #000 !important;\n}\n.calculator {\n    background-color: #f6f6f6;\n    padding-bottom: 2rem;\n    padding: 0.4rem;\n    max-width: 300px;\n    margin: 0 auto;\n    /*border: 0.1rem light #111;*/\n    border-radius: 5px;\n    box-shadow: 0 1px 5px rgba(204, 104, 204, 1.6);\n}\n.alata {\n    color: red;\n}\n.calculator input {\n    background: none;\n    border: none;\n    box-shadow: none;\n    width: 100%;\n    /*border-bottom: 0.1rem solid #111;*/\n    text-align: center;\n    font-size: 2rem;\n}\n.free {\n    cursor: none;\n    background: #af2c2c !important;\n    box-shadow: none !important;\n}\n\n/*css grid happens here*/\n.calculator-buttons {\n    padding: 1.6rem;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr 1fr;\n    grid-template-rows: repeat(5, 1fr);\n    grid-gap: 1rem;\n}\n.s1 {\n    grid-column: 3 / 4;\n}\n.smalld {\n    text-align: center;\n    display: block;\n}\n.calc-button {\n    background: #4caf50;\n    border: none;\n    padding: 1.5rem;\n    color: #fff;\n    border-radius: 5px;\n    font-size: 1.4rem;\n    cursor: pointer;\n    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n.csd {\n    text-align: center;\n    padding-top: 2rem;\n    /*display: inherit;*/\n}\n.* {\n    box-sizing: border-box;\n}\n.iselect {\n    background: #19b507fa !important;\n    color: #fff !important;\n    border: none;\n    border-radius: 5px;\n}\n.calculator {\n    background-color: #f6f6f6;\n    padding-bottom: 2rem;\n    padding: 0.4rem;\n    max-width: 300px;\n    margin: 0 auto;\n    /*border: 0.1rem light #111;*/\n    border-radius: 5px;\n    box-shadow: 0 1px 5px rgba(204, 104, 204, 1.6);\n}\n.alata {\n    color: red;\n}\n.calculator input {\n    background: none;\n    border: none;\n    box-shadow: none;\n    width: 100%;\n    /*border-bottom: 0.1rem solid #111;*/\n    text-align: center;\n    font-size: 2rem;\n}\n.free {\n    cursor: none;\n    background: #cc0000fa !important;\n    box-shadow: none !important;\n}\n\n/*css grid happens here*/\n.calculator-buttons {\n    padding: 1.6rem;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr 1fr;\n    grid-template-rows: repeat(5, 1fr);\n    grid-gap: 1rem;\n}\n.s1 {\n    grid-column: 3 / 4;\n}\n.smalld {\n    text-align: center;\n    display: block;\n}\n.disabled {\n}\n.calc-button {\n    background: #5dc1a2;\n    border: none;\n    padding: 1.5rem;\n    color: #fff;\n    border-radius: 5px;\n    font-size: 1.4rem;\n    cursor: pointer;\n    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);\n}\n", ""]);
 
 // exports
 
@@ -46363,6 +46363,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -46370,7 +46375,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             activeNav: true,
             ref: '',
             route: {
-                busType: ''
+                busType: '',
+                seats: []
             },
             book: {
                 name: '',
@@ -46380,6 +46386,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 seat: [],
                 rid: '',
                 userId: ''
+                // amount: 
             },
             // route: '',
             errors: []
@@ -46399,17 +46406,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             button.classList.toggle('iselect');
         },
         fetchRoute: function fetchRoute(ref) {
+            var _this = this;
+
             axios.get('api/details/' + ref).then(function (response) {
                 // load some of the b0ok data of this component
-                console.log(response.data.route.bus_type);
+                _this.route.busType = response.data.route.bus_type;
+
+                _this.route.seats = response.data.seats;
+
+                console.log(_this.route.seats);
                 // this.book.rid = response.data.route.id;
             }).catch(function (error) {
                 console.log(error.data);
                 alert('Server Error');
             });
         },
+        checkSeat: function checkSeat(x) {
+            if (this.route.seats.includes(x)) {
+                return true;
+            } else {
+                return false;
+            }
+        },
         sendData: function sendData(e) {
-            var _this = this;
+            var _this2 = this;
 
             e.preventDefault();
             var data = this.book;
@@ -46419,7 +46439,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
                 console.log(response.data);
             }).catch(function (error) {
-                _this.errors = error.response.data.errors;
+                _this2.errors = error.response.data.errors;
                 // console.log(this.errors);
             });
         }
@@ -46700,6 +46720,8 @@ var render = function() {
                       "button",
                       {
                         staticClass: "calc-button s1",
+                        class: { free: _vm.checkSeat(1) },
+                        attrs: { disabled: _vm.checkSeat(1) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46707,13 +46729,15 @@ var render = function() {
                           }
                         }
                       },
-                      [_vm._v("1")]
+                      [_vm._v("1\n                                    ")]
                     ),
                     _vm._v(" "),
                     _c(
                       "button",
                       {
                         staticClass: "calc-button s2",
+                        class: { free: _vm.checkSeat(2) },
+                        attrs: { disabled: _vm.checkSeat(2) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46728,6 +46752,8 @@ var render = function() {
                       "button",
                       {
                         staticClass: "calc-button ",
+                        class: { free: _vm.checkSeat(3) },
+                        attrs: { disabled: _vm.checkSeat(3) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46742,6 +46768,8 @@ var render = function() {
                       "button",
                       {
                         staticClass: "calc-button",
+                        class: { free: _vm.checkSeat(4) },
+                        attrs: { disabled: _vm.checkSeat(4) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46756,6 +46784,8 @@ var render = function() {
                       "button",
                       {
                         staticClass: "calc-button  ",
+                        class: { free: _vm.checkSeat(5) },
+                        attrs: { disabled: _vm.checkSeat(5) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46779,6 +46809,8 @@ var render = function() {
                       "button",
                       {
                         staticClass: "calc-button ",
+                        class: { free: _vm.checkSeat(6) },
+                        attrs: { disabled: _vm.checkSeat(6) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46793,6 +46825,8 @@ var render = function() {
                       "button",
                       {
                         staticClass: "calc-button",
+                        class: { free: _vm.checkSeat(7) },
+                        attrs: { disabled: _vm.checkSeat(7) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46807,6 +46841,8 @@ var render = function() {
                       "button",
                       {
                         staticClass: "calc-button ",
+                        class: { free: _vm.checkSeat(8) },
+                        attrs: { disabled: _vm.checkSeat(8) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46826,6 +46862,8 @@ var render = function() {
                       "button",
                       {
                         staticClass: "calc-button ",
+                        class: { free: _vm.checkSeat(9) },
+                        attrs: { disabled: _vm.checkSeat(9) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46840,6 +46878,8 @@ var render = function() {
                       "button",
                       {
                         staticClass: "calc-button",
+                        class: { free: _vm.checkSeat(10) },
+                        attrs: { disabled: _vm.checkSeat(10) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46854,6 +46894,8 @@ var render = function() {
                       "button",
                       {
                         staticClass: "calc-button",
+                        class: { free: _vm.checkSeat(11) },
+                        attrs: { disabled: _vm.checkSeat(11) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46873,6 +46915,8 @@ var render = function() {
                       "button",
                       {
                         staticClass: "calc-button",
+                        class: { free: _vm.checkSeat(12) },
+                        attrs: { disabled: _vm.checkSeat(12) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46887,6 +46931,8 @@ var render = function() {
                       "button",
                       {
                         staticClass: "calc-button",
+                        class: { free: _vm.checkSeat(13) },
+                        attrs: { disabled: _vm.checkSeat(13) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46901,6 +46947,8 @@ var render = function() {
                       "button",
                       {
                         staticClass: "calc-button",
+                        class: { free: _vm.checkSeat(14) },
+                        attrs: { disabled: _vm.checkSeat(14) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46915,6 +46963,8 @@ var render = function() {
                       "button",
                       {
                         staticClass: "calc-button",
+                        class: { free: _vm.checkSeat(15) },
+                        attrs: { disabled: _vm.checkSeat(15) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46942,7 +46992,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("a", { staticClass: "icon icon-upload" }, [
-      _c("span", [_vm._v("Home")])
+      _c("span", [_vm._v("Details")])
     ])
   },
   function() {

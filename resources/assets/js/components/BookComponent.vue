@@ -3,7 +3,7 @@
         <div class="tabs tabs-style-bar">
             <nav>
                 <ul>
-                    <li :class="{'tab-current': activeNav}" ><a  class="icon icon-upload"  ><span>Home</span></a></li>
+                    <li :class="{'tab-current': activeNav}" ><a  class="icon icon-upload"  ><span>Details</span></a></li>
                     <li><a  class="icon icon-tools"><span>Archive</span></a></li>
                     <li  ><a class="icon icon-display"><span>Analytics</span></a></li>
                     <li><a class="icon icon-upload"><span>Upload</span></a></li>
@@ -55,24 +55,29 @@
                                     <input v-model="book.seat" readonly type="text">
                                     <div class="calculator-buttons">
                                         <img src="/aju/assets/images/icon.svg" alt="">
-                                        <button @click.prevent="toggleButton" class="calc-button s1">1</button>
-                                        <button @click.prevent="toggleButton" class="calc-button s2">2</button>
-                                        <button @click.prevent="toggleButton" class="calc-button ">3</button>
-                                        <button @click.prevent="toggleButton" class="calc-button">4</button>
-                                        <button @click.prevent="toggleButton" class="calc-button  ">5</button>
+                                        <button 
+                                            :disabled="checkSeat(1)" 
+                                            :class="{ 'free' : checkSeat(1) }" 
+                                            @click.prevent="toggleButton" 
+                                            class="calc-button s1">1
+                                        </button>
+                                        <button :disabled="checkSeat(2)" :class="{ 'free' : checkSeat(2) }" @click.prevent="toggleButton" class="calc-button s2">2</button>
+                                        <button :disabled="checkSeat(3)" :class="{ 'free' : checkSeat(3) }" @click.prevent="toggleButton" class="calc-button ">3</button>
+                                        <button :disabled="checkSeat(4)" :class="{ 'free' : checkSeat(4) }" @click.prevent="toggleButton" class="calc-button">4</button>
+                                        <button :disabled="checkSeat(5)" :class="{ 'free' : checkSeat(5) }" @click.prevent="toggleButton" class="calc-button  ">5</button>
                                         <button disabled class="calc-button free">Exit</button>
-                                        <button @click.prevent="toggleButton" class="calc-button ">6</button>
-                                        <button @click.prevent="toggleButton" class="calc-button">7</button>
-                                        <button @click.prevent="toggleButton" class="calc-button ">8</button>
+                                        <button :disabled="checkSeat(6)" :class="{ 'free' : checkSeat(6) }" @click.prevent="toggleButton" class="calc-button ">6</button>
+                                        <button :disabled="checkSeat(7)" :class="{ 'free' : checkSeat(7) }" @click.prevent="toggleButton" class="calc-button">7</button>
+                                        <button :disabled="checkSeat(8)" :class="{ 'free' : checkSeat(8) }" @click.prevent="toggleButton" class="calc-button ">8</button>
                                         <button disabled class="calc-button  free"></button>
-                                        <button @click.prevent="toggleButton" class="calc-button ">9</button>
-                                        <button @click.prevent="toggleButton" class="calc-button">10</button>
-                                        <button @click.prevent="toggleButton" class="calc-button">11</button>
+                                        <button :disabled="checkSeat(9)" :class="{ 'free' : checkSeat(9) }" @click.prevent="toggleButton" class="calc-button ">9</button>
+                                        <button :disabled="checkSeat(10)" :class="{ 'free' : checkSeat(10) }" @click.prevent="toggleButton" class="calc-button">10</button>
+                                        <button :disabled="checkSeat(11)" :class="{ 'free' : checkSeat(11) }" @click.prevent="toggleButton" class="calc-button">11</button>
                                         <button  disabled class="calc-button  free"></button>
-                                        <button @click.prevent="toggleButton" class="calc-button">12</button>
-                                        <button @click.prevent="toggleButton" class="calc-button">13</button>
-                                        <button @click.prevent="toggleButton" class="calc-button">14</button>
-                                        <button @click.prevent="toggleButton" class="calc-button">15</button>
+                                        <button :disabled="checkSeat(12)" :class="{ 'free' : checkSeat(12) }" @click.prevent="toggleButton" class="calc-button">12</button>
+                                        <button :disabled="checkSeat(13)" :class="{ 'free' : checkSeat(13) }" @click.prevent="toggleButton" class="calc-button">13</button>
+                                        <button :disabled="checkSeat(14)" :class="{ 'free' : checkSeat(14) }" @click.prevent="toggleButton" class="calc-button">14</button>
+                                        <button :disabled="checkSeat(15)" :class="{ 'free' : checkSeat(15) }" @click.prevent="toggleButton" class="calc-button">15</button>
                                     </div>
                                 </div>
                         </div>                     
@@ -96,6 +101,7 @@
                 ref: '',
                 route: {
                     busType: '',
+                    seats: [],
                 },
                 book: {
                     name:  '',
@@ -105,6 +111,7 @@
                     seat:  [],
                     rid:  '',
                     userId: '',
+                    // amount: 
                 },
                 // route: '',
                 errors: [],
@@ -127,7 +134,11 @@
                 axios.get('api/details/'+ref)
                 .then(response => {
                     // load some of the b0ok data of this component
-                    console.log(response.data.route.bus_type)
+                    this.route.busType = response.data.route.bus_type;
+
+                    this.route.seats = response.data.seats;
+
+                    console.log(this.route.seats);
                     // this.book.rid = response.data.route.id;
                 })
                 .catch(function (error) {
@@ -135,20 +146,28 @@
                     alert('Server Error');
                 });
             },
+            checkSeat (x)
+            {
+                if(this.route.seats.includes(x)){
+                    return true;
+                }else {
+                    return false;
+                }                
+            },
             sendData (e) {
                  e.preventDefault();
-                var data = this.book;
-                // console.log(data)
-                axios.post('/api/process', data )
-                .then (response => {
+                 var data = this.book;
+                 // console.log(data)
+                 axios.post('/api/process', data )
+                 .then (response => {
                     //go to the next route with the booking ref
 
                     console.log(response.data);
-                })
-                .catch(error => {
+                 })
+                 .catch(error => {
                     this.errors = error.response.data.errors;
                     // console.log(this.errors);
-                });
+                 });
             } 
         },
         beforeRouteUpdate ( to, from , next ) {
@@ -178,8 +197,10 @@
     }
 
     .iselect {
-        background: yellow !important;
-        color: #000 !important;
+        background: #19b507fa !important;
+        color: #fff !important;
+        border: none;
+        border-radius: 5px;
     }
     .calculator {
         background-color: #f6f6f6;
@@ -208,7 +229,7 @@
 
     .free {
         cursor: none;
-        background: #af2c2c !important;
+        background: #cc0000fa !important;
         box-shadow: none !important;
     }
 
@@ -229,9 +250,13 @@
         display: block;
     }
 
+    .disabled {
+
+    }
+
 
     .calc-button {
-        background: #4caf50;
+        background: #5dc1a2;
         border: none;
         padding: 1.5rem;
         color: #fff;
