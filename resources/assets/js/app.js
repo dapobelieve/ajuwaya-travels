@@ -1,5 +1,6 @@
 
-let model = window.ajt_model;
+let model  = window.ajt_model;
+let userId = window.currUser; 
 
 // app.model = model;
 require('./bootstrap');
@@ -18,18 +19,18 @@ window.Vue.use(VueRouter);
 import BookComponent    from './components/BookComponent.vue';
 import ConfirmComponent from './components/ConfirmComponent.vue';
 
-Vue.component('booking', BookComponent);
-
+// Vue.component('booking', BookComponent);
 
 const routes = [
-    // {
-    //     path: '/',
-    //     component: BookComponent,
-    //     name: 'bookBus',
-    //     meta: {
-    //         mdata: model
-    //     },
-    // },
+    {
+        path: '/',
+        component: BookComponent,
+        name: 'bookBus',
+        meta: {
+            mdata: model,
+            userId: userId 
+        },
+    },
     {
         path: '/confirm/:bookId',
         component: ConfirmComponent,
@@ -39,13 +40,10 @@ const routes = [
             next();
         }
     }
+
 ]
 
 const router = new VueRouter({ routes });
-
-
-
-
 
 const app = new Vue(
     { 

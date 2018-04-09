@@ -1405,6 +1405,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_ConfirmComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_ConfirmComponent_vue__);
 
 var model = window.ajt_model;
+var userId = window.currUser;
 
 // app.model = model;
 __webpack_require__(15);
@@ -1423,18 +1424,17 @@ window.Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 
 
 
-Vue.component('booking', __WEBPACK_IMPORTED_MODULE_2__components_BookComponent_vue___default.a);
+// Vue.component('booking', BookComponent);
 
-var routes = [
-// {
-//     path: '/',
-//     component: BookComponent,
-//     name: 'bookBus',
-//     meta: {
-//         mdata: model
-//     },
-// },
-{
+var routes = [{
+    path: '/',
+    component: __WEBPACK_IMPORTED_MODULE_2__components_BookComponent_vue___default.a,
+    name: 'bookBus',
+    meta: {
+        mdata: model,
+        userId: userId
+    }
+}, {
     path: '/confirm/:bookId',
     component: __WEBPACK_IMPORTED_MODULE_3__components_ConfirmComponent_vue___default.a,
     name: 'confirmBook',
@@ -46229,7 +46229,7 @@ exports = module.exports = __webpack_require__(10)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n.csd {\n    text-align: center;\n    padding-top: 2rem;\n    /*display: inherit;*/\n}\n.* {\n    box-sizing: border-box;\n}\n.iselect {\n    background: yellow !important;\n    color: #000 !important;\n}\n.calculator {\n    background-color: #f6f6f6;\n    padding-bottom: 2rem;\n    padding: 0.4rem;\n    max-width: 300px;\n    margin: 0 auto;\n    /*border: 0.1rem light #111;*/\n    border-radius: 5px;\n    box-shadow: 0 1px 5px rgba(204, 104, 204, 1.6);\n}\n.alata {\n    color: red;\n}\n.calculator input {\n    background: none;\n    border: none;\n    box-shadow: none;\n    width: 100%;\n    /*border-bottom: 0.1rem solid #111;*/\n    text-align: center;\n    font-size: 2rem;\n}\n.free {\n    cursor: none;\n    background: #af2c2c !important;\n    box-shadow: none !important;\n}\n\n/*css grid happens here*/\n.calculator-buttons {\n    padding: 1.6rem;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr 1fr;\n    grid-template-rows: repeat(5, 1fr);\n    grid-gap: 1rem;\n}\n.s1 {\n    grid-column: 3 / 4;\n}\n.smalld {\n    text-align: center;\n    display: block;\n}\n.calc-button {\n    background: #4caf50;\n    border: none;\n    padding: 1.5rem;\n    color: #fff;\n    border-radius: 5px;\n    font-size: 1.4rem;\n    cursor: pointer;\n    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n.csd {\n    text-align: center;\n    padding-top: 2rem;\n    /*display: inherit;*/\n}\n.* {\n    box-sizing: border-box;\n}\n.iselect {\n    background: yellow !important;\n    color: #000 !important;\n}\n.calculator {\n    background-color: #f6f6f6;\n    padding-bottom: 2rem;\n    padding: 0.4rem;\n    max-width: 300px;\n    margin: 0 auto;\n    /*border: 0.1rem light #111;*/\n    border-radius: 5px;\n    box-shadow: 0 1px 5px rgba(204, 104, 204, 1.6);\n}\n.alata {\n    color: red;\n}\n.calculator input {\n    background: none;\n    border: none;\n    box-shadow: none;\n    width: 100%;\n    /*border-bottom: 0.1rem solid #111;*/\n    text-align: center;\n    font-size: 2rem;\n}\n.free {\n    cursor: none;\n    background: #af2c2c !important;\n    box-shadow: none !important;\n}\n\n/*css grid happens here*/\n.calculator-buttons {\n    padding: 1.6rem;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr 1fr;\n    grid-template-rows: repeat(5, 1fr);\n    grid-gap: 1rem;\n}\n.s1 {\n    grid-column: 3 / 4;\n}\n.smalld {\n    text-align: center;\n    display: block;\n}\n.calc-button {\n    background: #4caf50;\n    border: none;\n    padding: 1.5rem;\n    color: #fff;\n    border-radius: 5px;\n    font-size: 1.4rem;\n    cursor: pointer;\n    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);\n}\n", ""]);
 
 // exports
 
@@ -46369,13 +46369,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             activeNav: true,
             ref: '',
+            route: {
+                busType: ''
+            },
             book: {
                 name: '',
                 email: '',
                 phone: '',
                 sex: '',
                 seat: [],
-                rid: ''
+                rid: '',
+                userId: ''
             },
             // route: '',
             errors: []
@@ -46395,28 +46399,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             button.classList.toggle('iselect');
         },
         fetchRoute: function fetchRoute(ref) {
-            var _this = this;
-
             axios.get('api/details/' + ref).then(function (response) {
                 // load some of the b0ok data of this component
-                _this.book.rid = response.data.id;
-                // console.log(this.rid );
+                console.log(response.data.route.bus_type);
+                // this.book.rid = response.data.route.id;
             }).catch(function (error) {
                 console.log(error.data);
-                // console.log('ERROR::', error.response.data);
                 alert('Server Error');
             });
         },
         sendData: function sendData(e) {
-            var _this2 = this;
+            var _this = this;
 
             e.preventDefault();
             var data = this.book;
             // console.log(data)
             axios.post('/api/process', data).then(function (response) {
+                //go to the next route with the booking ref
+
                 console.log(response.data);
             }).catch(function (error) {
-                _this2.errors = error.response.data.errors;
+                _this.errors = error.response.data.errors;
                 // console.log(this.errors);
             });
         }
@@ -46427,9 +46430,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
         // grab the booking ref from the routes meta data
         var ref = this.$route.meta.mdata;
-        this.fetchRoute(ref);
+        this.book.userId = this.$route.meta.userId;
 
         // send axios request
+        this.fetchRoute(ref);
     }
 });
 

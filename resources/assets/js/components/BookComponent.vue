@@ -94,6 +94,9 @@
             return {
                 activeNav: true,
                 ref: '',
+                route: {
+                    busType: '',
+                },
                 book: {
                     name:  '',
                     email: '',
@@ -101,6 +104,7 @@
                     sex:   '',
                     seat:  [],
                     rid:  '',
+                    userId: '',
                 },
                 // route: '',
                 errors: [],
@@ -123,12 +127,11 @@
                 axios.get('api/details/'+ref)
                 .then(response => {
                     // load some of the b0ok data of this component
-                    this.book.rid = response.data.id;
-                    // console.log(this.rid );
+                    console.log(response.data.route.bus_type)
+                    // this.book.rid = response.data.route.id;
                 })
                 .catch(function (error) {
                     console.log(error.data);
-                    // console.log('ERROR::', error.response.data);
                     alert('Server Error');
                 });
             },
@@ -138,6 +141,8 @@
                 // console.log(data)
                 axios.post('/api/process', data )
                 .then (response => {
+                    //go to the next route with the booking ref
+
                     console.log(response.data);
                 })
                 .catch(error => {
@@ -152,9 +157,10 @@
         mounted() {
             // grab the booking ref from the routes meta data
             var ref = this.$route.meta.mdata;
-            this.fetchRoute(ref)
+            this.book.userId = this.$route.meta.userId;
 
             // send axios request
+            this.fetchRoute(ref);        
                         
         }
     }

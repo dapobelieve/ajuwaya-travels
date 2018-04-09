@@ -13,7 +13,7 @@ use App\Http\Controllers\Controller;
 
 class BookingController extends Controller
 {
-    private $userId;
+    // private $userId;
 
 
     public function __construct()
@@ -33,15 +33,43 @@ class BookingController extends Controller
     {
         $this->setUserId();
         $model = $route->ref;
+
         return view('pages.main', ['model' => $model ]);
     }
 
     public function feed(Request $request, Route $route)
     {
-        if($request->ajax())
-            return $route->toJson();
-        else
+        if($request->ajax()){
+            //get all the booking for this route
+            $ids = $route->books()->pluck('seat')->toArray();
+
+            function flater(array $arr, array $flatten = [])
+            {
+                foreach ($arr as $item) {
+
+                    $item = json_decode($item, true);
+
+                    if(is_array($item)){
+                        $flatten = flater($item, $flatten);
+                        continue;
+                    }
+
+                    $flatten[] = $item;            
+                }
+
+                return $flatten;
+            }
+            
+            $seats = flater($ids, $flatten = []);
+
+            return response()->json([
+                'route' => $route,
+                'seats' => $seats,
+            ]);
+        }
+        else{
             return redirect()->route('home');
+        }
     }
 
     public function store(Request $request)
@@ -51,7 +79,7 @@ class BookingController extends Controller
             'phone' => 'required|unique:bookings|digits:11',
             'email' => 'required|unique:bookings|email',
             'seat'  => 'required|array',
-            // ''
+            'userId' => 'required',
         ],[
             'name.required'   => 'Please provide your full name',
             'phone.digits'    => 'Your phone number must be 11 digits',
@@ -63,7 +91,7 @@ class BookingController extends Controller
 
         $book = Booking::create([
                     // 'user_id'  => $requestuser()->id,
-                    'user_id'  => 1,
+                    'user_id'  => $request->userId,
                     'route_id' => $request->rid,
                     'name'     => $request->name,
                     'email'    => $request->email,
@@ -71,8 +99,10 @@ class BookingController extends Controller
                     'gender'   => $request->sex,
                     'seat'     => json_encode($request->seat),
                     'seat_num' => count($request->seat),
+                    'pay_status' => 0,
                     'bk_ref'   => 'bk-'.Hasher::getHashedToken(10),
                 ]);
-        return "$book->bk_ref";
+
+        return $book->bk_ref;
     }
 }

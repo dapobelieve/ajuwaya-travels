@@ -11,17 +11,21 @@
     <script>
         window.ajt_model = "{{ $model }}";
         window.currUser  = {{ Auth::user()->id }};
-        // console.log(model);
     </script>
 
 
 @stop
+
+@section('title')
+Booking | AjuwayaTravels
+@stop
+
+
 @section('content')
     
 
     <div style="padding: 0.9rem" id="app">
-        {{-- <router-view name="bookBus"></router-view> --}}
-        <booking></booking>
+        <router-view name="bookBus"></router-view>
         <router-view></router-view>
     </div>
         
