@@ -35,6 +35,6 @@
     <link rel="stylesheet" href="/aju/assets/css/slicknav.css" type="text/css">
     <!-- Bootstrap Select -->
     <link rel="stylesheet" href="/aju/assets/css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="/aju/assets/css/mine.css">
+    <link rel="stylesheet" href="/aju/assets/css/mine.css ">
     @yield('styles')
 </head>

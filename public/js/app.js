@@ -1396,46 +1396,66 @@ module.exports = __webpack_require__(14);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_router__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_BookComponent_vue__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_BookComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_BookComponent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_ConfirmComponent_vue__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_ConfirmComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_ConfirmComponent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_BookComponent_vue__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_BookComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_BookComponent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_ConfirmComponent_vue__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_ConfirmComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_ConfirmComponent_vue__);
 
+var model = window.ajt_model;
+var userId = window.currUser;
+
+// app.model = model;
 __webpack_require__(15);
 
 window.Vue = __webpack_require__(38);
 
 
 
-window.Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]);
+// axios.defaults.baseURL = 'http://192.168.43.204/'; use when connected to phone
+
+__WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.baseURL = 'http://localhost:8000/';
+
+
+
+window.Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 
 // Import Components
 
 
 
+// Vue.component('booking', BookComponent);
+
 var routes = [{
     path: '/',
-    component: __WEBPACK_IMPORTED_MODULE_1__components_BookComponent_vue___default.a,
-    name: 'bookBus'
+    component: __WEBPACK_IMPORTED_MODULE_2__components_BookComponent_vue___default.a,
+    name: 'bookBus',
+    meta: {
+        mdata: model,
+        userId: userId
+    }
 }, {
     path: '/confirm/:bookId',
-    component: __WEBPACK_IMPORTED_MODULE_2__components_ConfirmComponent_vue___default.a,
-    name: 'confirmBook',
-    beforeEnter: function beforeEnter(to, from, next) {
-        alert('hello world');
-    }
+    component: __WEBPACK_IMPORTED_MODULE_3__components_ConfirmComponent_vue___default.a,
+    name: 'confirmBook'
+    // beforeEnter (to, from, next) {
+    //     alert('hello world');
+    //     next();
+    // }
 }];
 
-var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({ routes: routes });
-
-router.beforeEach(function (to, from, next) {
-
-    next();
-});
+var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({ routes: routes });
 
 var app = new Vue({
-    router: router
+    router: router,
+    data: {
+        model: {}
+    },
+    mounted: function mounted() {
+        // console.log(model)
+    }
 }).$mount('#app');
 
 /***/ }),
@@ -46211,7 +46231,7 @@ exports = module.exports = __webpack_require__(10)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n.csd {\n    text-align: center;\n    padding-top: 2rem;\n    /*display: inherit;*/\n}\n.* {\n    box-sizing: border-box;\n}\n.iselect {\n    background: yellow !important;\n    color: #000 !important;\n}\n.calculator {\n    background-color: #f6f6f6;\n    padding-bottom: 2rem;\n    padding: 0.4rem;\n    max-width: 300px;\n    margin: 0 auto;\n    /*border: 0.1rem light #111;*/\n    border-radius: 5px;\n    box-shadow: 0 1px 5px rgba(204, 104, 204, 1.6);\n}\n.calculator input {\n    background: none;\n    border: none;\n    box-shadow: none;\n    width: 100%;\n    /*border-bottom: 0.1rem solid #111;*/\n    text-align: center;\n    font-size: 2rem;\n}\n.free {\n    cursor: none;\n    background: #af2c2c !important;\n    box-shadow: none !important;\n}\n\n/*css grid happens here*/\n.calculator-buttons {\n    padding: 1.6rem;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr 1fr;\n    grid-template-rows: repeat(5, 1fr);\n    grid-gap: 1rem;\n}\n.s1 {\n    grid-column: 3 / 4;\n}\n.calc-button {\n    background: #4caf50;\n    border: none;\n    padding: 1.5rem;\n    color: #fff;\n    border-radius: 5px;\n    font-size: 1.4rem;\n    cursor: pointer;\n    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n.csd {\n    text-align: center;\n    padding-top: 2rem;\n    /*display: inherit;*/\n}\n.* {\n    box-sizing: border-box;\n}\n.iselect {\n    background: #19b507fa !important;\n    color: #fff !important;\n    border: none;\n    border-radius: 5px;\n}\n.calculator {\n    background-color: #f6f6f6;\n    padding-bottom: 2rem;\n    padding: 0.4rem;\n    max-width: 300px;\n    margin: 0 auto;\n    /*border: 0.1rem light #111;*/\n    border-radius: 5px;\n    box-shadow: 0 1px 5px rgba(204, 104, 204, 1.6);\n}\n.alata {\n    color: red;\n}\n.calculator input {\n    background: none;\n    border: none;\n    box-shadow: none;\n    width: 100%;\n    /*border-bottom: 0.1rem solid #111;*/\n    text-align: center;\n    font-size: 2rem;\n}\n.free {\n    cursor: none;\n    background: #cc0000fa !important;\n    box-shadow: none !important;\n}\n\n/*css grid happens here*/\n.calculator-buttons {\n    padding: 1.6rem;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr 1fr;\n    grid-template-rows: repeat(5, 1fr);\n    grid-gap: 1rem;\n}\n.s1 {\n    grid-column: 3 / 4;\n}\n.smalld {\n    text-align: center;\n    display: block;\n}\n.disabled {\n}\n.calc-button {\n    background: #5dc1a2;\n    border: none;\n    padding: 1.5rem;\n    color: #fff;\n    border-radius: 5px;\n    font-size: 1.4rem;\n    cursor: pointer;\n    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);\n}\n", ""]);
 
 // exports
 
@@ -46348,19 +46368,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             activeNav: true,
-            isSelect: false,
+            ref: '',
+            route: {
+                busType: '',
+                seats: []
+            },
             book: {
                 name: '',
                 email: '',
                 phone: '',
                 sex: '',
-                seat: []
-            }
+                seat: [],
+                rid: '',
+                userId: ''
+                // amount: 
+            },
+            // route: '',
+            errors: []
         };
     },
 
@@ -46375,19 +46406,58 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             var button = e.target;
             button.classList.toggle('iselect');
+        },
+        fetchRoute: function fetchRoute(ref) {
+            var _this = this;
+
+            axios.get('api/details/' + ref).then(function (response) {
+                // load some of the b0ok data of this component
+                _this.route.busType = response.data.route.bus_type;
+
+                _this.route.seats = response.data.seats;
+
+                // console.log(this.route.seats);
+                // this.book.rid = response.data.route.id;
+            }).catch(function (error) {
+                console.log(error.data);
+                alert('Server Error');
+            });
+        },
+
+        //method to check if a seat has been booked
+        checkSeat: function checkSeat(x) {
+            if (this.route.seats.includes(x)) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+        sendData: function sendData(e) {
+            var _this2 = this;
+
+            e.preventDefault();
+            var data = this.book;
+            // console.log(data)
+            axios.post('/api/process', data).then(function (response) {
+                var bkId = response.data;
+                //go to the next route with the booking ref
+                _this2.$router.push({ name: 'confirmBook', params: { bookId: bkId } });
+            }).catch(function (error) {
+                // this.errors = error.response.data.errors;
+                console.log(error);
+            });
         }
     },
-    computed: {
-        phoneNumber: function phoneNumber() {
-            // if()
-            return this.book.phone;
-            // set () {
-
-            // }
-        }
+    beforeRouteUpdate: function beforeRouteUpdate(to, from, next) {
+        next();
     },
     mounted: function mounted() {
-        console.log('Component mounted.');
+        // grab the booking ref from the routes meta data
+        var ref = this.$route.meta.mdata;
+        this.book.userId = this.$route.meta.userId;
+
+        // send axios request
+        this.fetchRoute(ref);
     }
 });
 
@@ -46415,10 +46485,18 @@ var render = function() {
       _vm._v(" "),
       _c("section", { attrs: { id: "content" } }, [
         _c("div", { staticClass: "container" }, [
-          _c("form", {}, [
+          _c("form", { on: { submit: _vm.sendData } }, [
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col-sm-6" }, [
-                _c("h2", {}),
+                _c("h2", {}, [
+                  _vm._v(
+                    "\n                                Fill your Details\n                            "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(" "),
+                _c("br"),
                 _vm._v(" "),
                 _c("div", { staticClass: "form-group" }, [
                   _c(
@@ -46440,11 +46518,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      required: "",
-                      placeholder: "Your Full Name"
-                    },
+                    attrs: { type: "text", placeholder: "Your Full Name" },
                     domProps: { value: _vm.book.name },
                     on: {
                       input: function($event) {
@@ -46454,7 +46528,13 @@ var render = function() {
                         _vm.$set(_vm.book, "name", $event.target.value)
                       }
                     }
-                  })
+                  }),
+                  _vm._v(" "),
+                  _vm.errors.name
+                    ? _c("span", { staticClass: "alata smalld" }, [
+                        _vm._v("* " + _vm._s(_vm.errors.name[0]) + " ")
+                      ])
+                    : _vm._e()
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "form-group" }, [
@@ -46479,7 +46559,6 @@ var render = function() {
                         }
                       ],
                       staticClass: "form-control",
-                      attrs: { id: "Location", name: "Location" },
                       on: {
                         change: function($event) {
                           var $$selectedVal = Array.prototype.filter
@@ -46501,9 +46580,7 @@ var render = function() {
                       }
                     },
                     [
-                      _c("option", { attrs: { disabled: "" } }, [
-                        _vm._v("Sex")
-                      ]),
+                      _c("option", [_vm._v("Sex")]),
                       _vm._v(" "),
                       _c("option", { attrs: { value: "male" } }, [
                         _vm._v("Male")
@@ -46513,7 +46590,13 @@ var render = function() {
                         _vm._v("Female")
                       ])
                     ]
-                  )
+                  ),
+                  _vm._v(" "),
+                  _vm.errors.sex
+                    ? _c("span", { staticClass: "alata smalld" }, [
+                        _vm._v("* " + _vm._s(_vm.errors.sex[0]))
+                      ])
+                    : _vm._e()
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "form-group" }, [
@@ -46546,7 +46629,13 @@ var render = function() {
                         _vm.$set(_vm.book, "email", $event.target.value)
                       }
                     }
-                  })
+                  }),
+                  _vm._v(" "),
+                  _vm.errors.phone
+                    ? _c("span", { staticClass: "alata smalld" }, [
+                        _vm._v("* " + _vm._s(_vm.errors.email[0]))
+                      ])
+                    : _vm._e()
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "form-group" }, [
@@ -46564,42 +46653,45 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.phoneNumber,
-                        expression: "phoneNumber"
+                        value: _vm.book.phone,
+                        expression: "book.phone"
                       }
                     ],
                     staticClass: "form-control",
                     attrs: { type: "text", placeholder: "Phone Number" },
-                    domProps: { value: _vm.phoneNumber },
+                    domProps: { value: _vm.book.phone },
                     on: {
                       input: function($event) {
                         if ($event.target.composing) {
                           return
                         }
-                        _vm.phoneNumber = $event.target.value
+                        _vm.$set(_vm.book, "phone", $event.target.value)
                       }
                     }
-                  })
+                  }),
+                  _vm._v(" "),
+                  _vm.errors.phone
+                    ? _c("span", { staticClass: "alata smalld" }, [
+                        _vm._v("* " + _vm._s(_vm.errors.phone[0]))
+                      ])
+                    : _vm._e()
                 ])
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "col-sm-6" }, [
-                _vm._v(
-                  "\n                            " +
-                    _vm._s(_vm.book) +
-                    "\n                            "
-                ),
-                _c(
-                  "h5",
-                  { staticStyle: { "text-align": "center", display: "block" } },
-                  [_vm._v("Select Seat Number")]
-                ),
+                _c("h5", { staticClass: "smalld" }, [
+                  _vm._v("Select Seat Number")
+                ]),
                 _vm._v(" "),
-                _c(
-                  "small",
-                  { staticStyle: { "text-align": "center", display: "block" } },
-                  [_vm._v("*disabled buttons are seats that have been booked*")]
-                ),
+                _c("small", { staticClass: "smalld" }, [
+                  _vm._v("*disabled buttons are seats that have been booked*")
+                ]),
+                _vm._v(" "),
+                _vm.errors.seat
+                  ? _c("span", { staticClass: "alata smalld" }, [
+                      _vm._v("* " + _vm._s(_vm.errors.seat[0]) + " ")
+                    ])
+                  : _vm._e(),
                 _vm._v(" "),
                 _c("div", { staticClass: "calculator" }, [
                   _c("input", {
@@ -46632,6 +46724,8 @@ var render = function() {
                       "button",
                       {
                         staticClass: "calc-button s1",
+                        class: { free: _vm.checkSeat(1) },
+                        attrs: { disabled: _vm.checkSeat(1) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46639,13 +46733,15 @@ var render = function() {
                           }
                         }
                       },
-                      [_vm._v("1")]
+                      [_vm._v("1\n                                    ")]
                     ),
                     _vm._v(" "),
                     _c(
                       "button",
                       {
                         staticClass: "calc-button s2",
+                        class: { free: _vm.checkSeat(2) },
+                        attrs: { disabled: _vm.checkSeat(2) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46660,6 +46756,8 @@ var render = function() {
                       "button",
                       {
                         staticClass: "calc-button ",
+                        class: { free: _vm.checkSeat(3) },
+                        attrs: { disabled: _vm.checkSeat(3) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46674,6 +46772,8 @@ var render = function() {
                       "button",
                       {
                         staticClass: "calc-button",
+                        class: { free: _vm.checkSeat(4) },
+                        attrs: { disabled: _vm.checkSeat(4) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46688,6 +46788,8 @@ var render = function() {
                       "button",
                       {
                         staticClass: "calc-button  ",
+                        class: { free: _vm.checkSeat(5) },
+                        attrs: { disabled: _vm.checkSeat(5) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46711,6 +46813,8 @@ var render = function() {
                       "button",
                       {
                         staticClass: "calc-button ",
+                        class: { free: _vm.checkSeat(6) },
+                        attrs: { disabled: _vm.checkSeat(6) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46725,6 +46829,8 @@ var render = function() {
                       "button",
                       {
                         staticClass: "calc-button",
+                        class: { free: _vm.checkSeat(7) },
+                        attrs: { disabled: _vm.checkSeat(7) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46739,6 +46845,8 @@ var render = function() {
                       "button",
                       {
                         staticClass: "calc-button ",
+                        class: { free: _vm.checkSeat(8) },
+                        attrs: { disabled: _vm.checkSeat(8) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46758,6 +46866,8 @@ var render = function() {
                       "button",
                       {
                         staticClass: "calc-button ",
+                        class: { free: _vm.checkSeat(9) },
+                        attrs: { disabled: _vm.checkSeat(9) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46772,6 +46882,8 @@ var render = function() {
                       "button",
                       {
                         staticClass: "calc-button",
+                        class: { free: _vm.checkSeat(10) },
+                        attrs: { disabled: _vm.checkSeat(10) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46786,6 +46898,8 @@ var render = function() {
                       "button",
                       {
                         staticClass: "calc-button",
+                        class: { free: _vm.checkSeat(11) },
+                        attrs: { disabled: _vm.checkSeat(11) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46805,6 +46919,8 @@ var render = function() {
                       "button",
                       {
                         staticClass: "calc-button",
+                        class: { free: _vm.checkSeat(12) },
+                        attrs: { disabled: _vm.checkSeat(12) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46819,6 +46935,8 @@ var render = function() {
                       "button",
                       {
                         staticClass: "calc-button",
+                        class: { free: _vm.checkSeat(13) },
+                        attrs: { disabled: _vm.checkSeat(13) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46833,6 +46951,8 @@ var render = function() {
                       "button",
                       {
                         staticClass: "calc-button",
+                        class: { free: _vm.checkSeat(14) },
+                        attrs: { disabled: _vm.checkSeat(14) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46847,6 +46967,8 @@ var render = function() {
                       "button",
                       {
                         staticClass: "calc-button",
+                        class: { free: _vm.checkSeat(15) },
+                        attrs: { disabled: _vm.checkSeat(15) },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -46861,27 +46983,7 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: " csd col-sm-8 col-md-offset-2" },
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: " btn btn-common",
-                    attrs: {
-                      to: {
-                        name: "confirmBook",
-                        params: { bookId: "aRtTds34s9iSk9Njh" }
-                      },
-                      type: "submit"
-                    }
-                  },
-                  [_vm._v("submit")]
-                )
-              ],
-              1
-            )
+            _vm._m(4)
           ])
         ])
       ])
@@ -46894,7 +46996,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("a", { staticClass: "icon icon-upload" }, [
-      _c("span", [_vm._v("Home")])
+      _c("span", [_vm._v("Details")])
     ])
   },
   function() {
@@ -46903,7 +47005,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("li", [
       _c("a", { staticClass: "icon icon-tools" }, [
-        _c("span", [_vm._v("Archive")])
+        _c("span", [_vm._v("Confirm")])
       ])
     ])
   },
@@ -46925,6 +47027,18 @@ var staticRenderFns = [
       _c("a", { staticClass: "icon icon-upload" }, [
         _c("span", [_vm._v("Upload")])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: " csd col-sm-8 col-md-offset-2" }, [
+      _c(
+        "button",
+        { staticClass: " btn btn-common", attrs: { type: "submit" } },
+        [_vm._v("Submit")]
+      )
     ])
   }
 ]
@@ -47023,7 +47137,7 @@ exports = module.exports = __webpack_require__(10)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n.tabs-nav {\n    position: fixed;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n.tabs-nav {\n    position: fixed;\n}\n", ""]);
 
 // exports
 
@@ -47061,21 +47175,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            activeNav: true,
-            dum: ['aRtTds34s9iSk9Njh', 'aRtTds34s9iSk9Njhcsdf']
+            activeNav: true
         };
     },
     mounted: function mounted() {
-        // console.log('Component mounted.')
+        console.log('Confirm Component mounted.');
     },
     beforeRouteEnter: function beforeRouteEnter(to, from, next) {
-
         console.log(to.params.bookId);
-        next(function (vm) {});
+
+        // we confirm if the booking id exists and pull in the record
+        // send axios request
+
+        setTimeout(function () {
+            alert("Hello");
+            next();
+        }, 3000);
     }
 });
 
@@ -47107,6 +47227,7 @@ var render = function() {
         _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-sm-6" }, [
+              _c("h2", [_vm._v("Confirm Your Details")]),
               _vm._v(
                 "\n                  this is the confirm component\n                  " +
                   _vm._s(_vm.$route.params.bookId) +
@@ -47127,7 +47248,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", [
-      _c("a", { staticClass: "icon icon-home" }, [_c("span", [_vm._v("Home")])])
+      _c("a", { staticClass: "icon icon-home" }, [
+        _c("span", [_vm._v("Details")])
+      ])
     ])
   },
   function() {
@@ -47135,7 +47258,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("a", { staticClass: "icon icon-box", attrs: { href: "" } }, [
-      _c("span", [_vm._v("Archive")])
+      _c("span", [_vm._v("Confirm")])
     ])
   },
   function() {
