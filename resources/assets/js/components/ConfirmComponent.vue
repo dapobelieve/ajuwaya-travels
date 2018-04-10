@@ -31,7 +31,6 @@
         data () {
             return {
                 activeNav: true,
-                dum: ['aRtTds34s9iSk9Njh','aRtTds34s9iSk9Njhcsdf']
             }
         },
         mounted() {
@@ -47,10 +46,6 @@
                 alert("Hello");
                 next();
             },3000);
-            
-            // next(vm => {
-                
-            // });
         }
     }
 </script>

@@ -47137,7 +47137,7 @@ exports = module.exports = __webpack_require__(10)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n.tabs-nav {\n    position: fixed;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n.tabs-nav {\n    position: fixed;\n}\n", ""]);
 
 // exports
 
@@ -47180,8 +47180,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            activeNav: true,
-            dum: ['aRtTds34s9iSk9Njh', 'aRtTds34s9iSk9Njhcsdf']
+            activeNav: true
         };
     },
     mounted: function mounted() {
@@ -47197,10 +47196,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             alert("Hello");
             next();
         }, 3000);
-
-        // next(vm => {
-
-        // });
     }
 });
 
