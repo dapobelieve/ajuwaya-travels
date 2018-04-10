@@ -30,6 +30,8 @@ Route::get('/results', 'HomeController@results')->name('route.search');
 //     dd("here");
 // });
 
+
+
 Route::get('/book/{route}', 'Booking\BookingController@index')->name('book.start');
 
 

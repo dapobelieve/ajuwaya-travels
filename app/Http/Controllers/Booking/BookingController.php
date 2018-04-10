@@ -111,4 +111,19 @@ class BookingController extends Controller
 
         return $book->bk_ref;
     }
+
+    public function bookFeed(Request $request, Booking $bookRef)
+    {
+        // $bookR = $bookRef->route()->get();
+
+        if($request->ajax()){
+
+            return response()->json([
+                'details' => $bookRef,
+            ]);
+
+        }else{
+            return redirect()->route('home');
+        }
+    }
 }

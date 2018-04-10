@@ -29,4 +29,9 @@ class Booking extends Model
         // 'pay_status',
         'amount',
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'bk_ref';
+    }
 }
