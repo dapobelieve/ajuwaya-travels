@@ -15,6 +15,8 @@ Route::post('process', 'Booking\BookingController@store');
 // update users booking
 Route::post('update', 'Booking\BookingController@update');
 
+// get booking details
+Route::get('getpay/{booking}', 'Payment\PaymentController@index');
 
 //Payment Route
 Route::post('payment', 'Payment\PaymentController@pay');

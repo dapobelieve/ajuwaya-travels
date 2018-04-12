@@ -14,7 +14,6 @@ use App\Http\Controllers\Controller;
 
 class BookingController extends Controller
 {
-    // private $userId;
 
 
     public function __construct()
@@ -132,28 +131,28 @@ class BookingController extends Controller
             ],
             'seat'  => 'required|array',
             'sex'   => 'required',
-        ],[
-            'name.required'   => 'Please provide your full name',
-            'phone.digits'    => 'Your phone number must be 11 digits',
-            'phone.unique'    => 'That phone number has already been used',
-            'phone.required'  => 'Enter your phone number',
-            'email.required'  => 'The Email field is required',
-            'email.unique'    => 'That email address has already been taken',
-            'seat.required'   => 'Please select your seat number(s)',
-            'sex.required'   => 'Please select your Gender'
-        ]);
+            ],[
+                'name.required'   => 'Please provide your full name',
+                'phone.digits'    => 'Your phone number must be 11 digits',
+                'phone.unique'    => 'That phone number has already been used',
+                'phone.required'  => 'Enter your phone number',
+                'email.required'  => 'The Email field is required',
+                'email.unique'    => 'That email address has already been taken',
+                'seat.required'   => 'Please select your seat number(s)',
+                'sex.required'   => 'Please select your Gender'
+            ]);
 
-        Booking::where('bk_ref', $request->bkRef)->update([
-                    'name'     => $request->name,
-                    'email'    => $request->email,
-                    'phone'    => $request->phone,
-                    'gender'   => $request->sex,
-                    'seat'     => json_encode($request->seat),
-                    'seat_num' => count($request->seat),
-                    'amount'   => $request->price,
-                ]);
+            $book = Booking::where('bk_ref', $request->bkRef)->update([
+                        'name'     => $request->name,
+                        'email'    => $request->email,
+                        'phone'    => $request->phone,
+                        'gender'   => $request->sex,
+                        'seat'     => json_encode($request->seat),
+                        'seat_num' => count($request->seat),
+                        'amount'   => $request->price,
+                    ]);
 
-        return 'Good Boy';
+            return $request->bkRef;
     }
 
     public function bookFeed(Request $request, Booking $booking)

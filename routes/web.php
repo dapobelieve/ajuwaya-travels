@@ -20,17 +20,8 @@ Route::get('signout', [
 // Confirm Email Route
 Route::get('/confirm/{token}','Emails\Confirm@getEmailToken')->name('email.token');
 
-
-
 // Search Results
 Route::get('/results', 'HomeController@results')->name('route.search');
-
-Route::post('/payment', function() {
-    dd('OK');
-})->name('pay');
-// Route::post('book/api/details', function () {
-//     dd("here");
-// });
 
 
 

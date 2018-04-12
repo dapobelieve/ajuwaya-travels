@@ -162,10 +162,11 @@
                  // console.log(data)
                  axios.post('/api/update', data )
                  .then (response => {
+                    var bref = response.data;
                     //go to the next route with the booking ref
                     alert('Update Successful');
-                    this.$router.push({ name: 'pay-now'})
-                    // console.log(response.data)
+
+                    this.$router.push({ name: 'payNow', params: { bRef: bref } })
                     
                  })
                  .catch(error => {

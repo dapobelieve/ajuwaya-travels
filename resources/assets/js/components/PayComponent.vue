@@ -16,13 +16,12 @@
             <section id="content">
               <div class="container">
                 <div class="row">
-                  <div class="col-sm-6">
+                  <div class="col-sm-12 center">
                       this is the Payment or summary component
                       <form @submit.prevent="payNow" action="">
                           <button type="submit" class="btn-success center btn btn-lg">Pay &#x20A6 1000 </button>
                       </form>
                   </div>
-                  <div class="col-sm-6"></div>
                 </div>
               </div>
             </section>
@@ -34,16 +33,39 @@
     export default {
         data () {
             return {
-                activeNav: true
+                activeNav: true,
+                bookRef: '',
+                payObj: {
+                    email:     '',
+                    amount:    '',
+                    key:       '',
+                    reference: ''
+                },
             }
         },
         methods: {
             payNow () {
                 alert('Paying...');
+
+                axios.post('api/payment')
             }
         },
-        mounted() {
-            console.log('Payment Component mounted.')
+        beforeRouteEnter(to, from, next)
+        {
+            let bookRef = to.params.bRef;
+            console.log(bookRef);
+
+            axios.get('/api/getpay/'+bookRef)
+            .then( response => {
+                console.log(response.data)
+                // next(vm => {
+
+                // })
+            })
+        .catch( error => {
+
+            })
+            next();
         }
     }
 </script>

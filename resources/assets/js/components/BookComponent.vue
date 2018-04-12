@@ -5,7 +5,7 @@
                 <ul>
                     <li :class="{'tab-current': activeNav}" ><a class="icon icon-upload"  ><span>Submit Details</span></a></li>
                     <li><a class="icon icon-config"><span>Confirm Details</span></a></li>
-                    <li><a class="icon icon-plug"><span>Analytics</span></a></li>
+                    <li><a class="icon icon-plug"><span>Payment</span></a></li>
                     <!-- <li><a class="icon icon-upload"><span>Upload</span></a></li> -->
                 </ul>
             </nav>

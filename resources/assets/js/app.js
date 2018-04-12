@@ -22,7 +22,7 @@ import BookComponent    from './components/BookComponent.vue';
 import ConfirmComponent from './components/ConfirmComponent.vue';
 import PayComponent from './components/PayComponent.vue';
 
-// Vue.component('booking', BookComponent);
+
 
 const routes = [
     {
@@ -38,19 +38,11 @@ const routes = [
         path: '/confirm/:bookId',
         component: ConfirmComponent,
         name: 'confirmBook',
-        // beforeEnter (to, from, next) {
-        //     alert('hello world');
-        //     next();
-        // }
     },
     {
-        path: '/pay',
+        path: 'payment/:bookRef',
         component: PayComponent,
-        name: 'pay-now',
-        // beforeEnter (to, from, next) {
-        //     alert('PaymentComponent');
-        //     next();
-        // }
+        name: 'payNow',
     }
 
 ]
