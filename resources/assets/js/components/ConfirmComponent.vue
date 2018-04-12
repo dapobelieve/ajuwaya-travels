@@ -3,11 +3,10 @@
         <div class="tabs tabs-style-bar">
             <nav>
                 <ul>
-                    <li><a class="icon icon-home"  ><span>Details</span></a></li>
-                    <li :class="{'tab-current': activeNav}" ><a href=""  class="icon icon-box"><span>Confirm</span></a></li>
-                    <li  ><a class="icon icon-display"><span>Analytics</span></a></li>
-                    <li><a class="icon icon-upload"><span>Upload</span></a></li>
-                    <li><a class="icon icon-tools"><span>Settings</span></a></li>
+                    <li><a class="icon icon-home"><span>Submit Details</span></a></li>
+                    <li :class="{'tab-current': activeNav}" ><a href=""  class="icon icon-config"><span>Confirm Details</span></a></li>
+                    <li  ><a class="icon icon-plug"><span>Payment</span></a></li>
+                    <!-- <li><a class="icon icon-upload"><span>Upload</span></a></li> -->
                 </ul>
             </nav>
             <section id="content">
@@ -16,7 +15,7 @@
                         <div class="row">
                             <div class="col-sm-6">
                                     <h2 class="">
-                                        Fill your Details
+                                        Confirm your Details
                                     </h2>
                                     <br>
                                     <br>
@@ -26,11 +25,11 @@
                                       <span v-if="errors.name"  class="alata smalld">* {{ errors.name[0] }} </span>
                                     </div>
                                     <div class="form-group">
-                                      <label class="control-label" for="seller-Location">Gender</label>
+                                      <label >Gender</label>
                                       <select v-model="book.sex" class="form-control">
-                                        <option>Sex</option>
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
+                                        <option value="">Select Gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
                                       </select>
                                       <span v-if="errors.sex" class="alata smalld">* {{ errors.sex[0] }}</span>
                                     </div>
@@ -56,26 +55,28 @@
                                         <div class="calculator-buttons">
                                             <img src="/aju/assets/images/icon.svg" alt="">
                                             <button 
+                                                :disabled="checkSeat(1)" 
+                                                :class="{ 'free' : checkSeat(1) }" 
                                                 @click.prevent="toggleButton" 
                                                 class="calc-button s1">1
                                             </button>
-                                            <button @click.prevent="toggleButton" class="calc-button s2">2</button>
-                                            <button @click.prevent="toggleButton" class="calc-button ">3</button>
-                                            <button @click.prevent="toggleButton" class="calc-button">4</button>
-                                            <button @click.prevent="toggleButton" class="calc-button  ">5</button>
+                                            <button :disabled="checkSeat(2)" :class="{ 'free' : checkSeat(2) }" @click.prevent="toggleButton" class="calc-button s2">2</button>
+                                            <button :disabled="checkSeat(3)" :class="{ 'free' : checkSeat(3) }" @click.prevent="toggleButton" class="calc-button ">3</button>
+                                            <button :disabled="checkSeat(4)" :class="{ 'free' : checkSeat(4) }" @click.prevent="toggleButton" class="calc-button">4</button>
+                                            <button :disabled="checkSeat(5)" :class="{ 'free' : checkSeat(5) }" @click.prevent="toggleButton" class="calc-button  ">5</button>
                                             <button disabled class="calc-button free">Exit</button>
-                                            <button @click.prevent="toggleButton" class="calc-button ">6</button>
-                                            <button @click.prevent="toggleButton" class="calc-button">7</button>
-                                            <button @click.prevent="toggleButton" class="calc-button ">8</button>
+                                            <button :disabled="checkSeat(6)" :class="{ 'free' : checkSeat(6) }" @click.prevent="toggleButton" class="calc-button ">6</button>
+                                            <button :disabled="checkSeat(7)" :class="{ 'free' : checkSeat(7) }" @click.prevent="toggleButton" class="calc-button">7</button>
+                                            <button :disabled="checkSeat(8)" :class="{ 'free' : checkSeat(8) }" @click.prevent="toggleButton" class="calc-button ">8</button>
                                             <button disabled class="calc-button  free"></button>
-                                            <button @click.prevent="toggleButton" class="calc-button ">9</button>
-                                            <button @click.prevent="toggleButton" class="calc-button">10</button>
-                                            <button @click.prevent="toggleButton" class="calc-button">11</button>
+                                            <button :disabled="checkSeat(9)" :class="{ 'free' : checkSeat(9) }" @click.prevent="toggleButton" class="calc-button ">9</button>
+                                            <button :disabled="checkSeat(10)" :class="{ 'free' : checkSeat(10) }" @click.prevent="toggleButton" class="calc-button">10</button>
+                                            <button :disabled="checkSeat(11)" :class="{ 'free' : checkSeat(11) }" @click.prevent="toggleButton" class="calc-button">11</button>
                                             <button  disabled class="calc-button  free"></button>
-                                            <button @click.prevent="toggleButton" class="calc-button">12</button>
-                                            <button @click.prevent="toggleButton" class="calc-button">13</button>
-                                            <button @click.prevent="toggleButton" class="calc-button">14</button>
-                                            <button @click.prevent="toggleButton" class="calc-button">15</button>
+                                            <button :disabled="checkSeat(12)" :class="{ 'free' : checkSeat(12) }" @click.prevent="toggleButton" class="calc-button">12</button>
+                                            <button :disabled="checkSeat(13)" :class="{ 'free' : checkSeat(13) }" @click.prevent="toggleButton" class="calc-button">13</button>
+                                            <button :disabled="checkSeat(14)" :class="{ 'free' : checkSeat(14) }" @click.prevent="toggleButton" class="calc-button">14</button>
+                                            <button :disabled="checkSeat(15)" :class="{ 'free' : checkSeat(15) }" @click.prevent="toggleButton" class="calc-button">15</button>
                                         </div>
                                     </div>
                             </div>                     
@@ -96,15 +97,19 @@
         data () {
             return {
                 activeNav: true,
+                route: {
+                    busType: '',
+                    seats: [],
+                },
                 book: {
                     name:  '',
                     email: '',
                     phone: '',
                     sex:   '',
                     seat:  [],
-                    rid:  '',
-                    userId: '',
-                    // amount: 
+                    bkRef:  '',
+                    bkId: '',
+                    price: '',
                 },
 
                 errors: [],
@@ -112,6 +117,7 @@
         },
         methods: {
             toggleButton (e) {
+                // alert('hello world');
                 var val = e.target.textContent;
                 if(this.book.seat.includes(val)){
                     this.book.seat.pop();
@@ -154,38 +160,47 @@
                  e.preventDefault();
                  var data = this.book;
                  // console.log(data)
-                 axios.post('/api/process', data )
+                 axios.post('/api/update', data )
                  .then (response => {
-                    var bkId = response.data;
                     //go to the next route with the booking ref
-                    this.$router.push({ name: 'confirmBook', params: { bookId: bkId }})
+                    alert('Update Successful');
+                    this.$router.push({ name: 'pay-now'})
+                    // console.log(response.data)
                     
                  })
                  .catch(error => {
-                    // this.errors = error.response.data.errors;
-                    console.log(error);
+                    this.errors = error.response.data.errors;
+                    console.log(error.response.data);
                  });
             } 
         },
-        mounted() {
-            console.log('Confirm Component mounted.')
-        },
         beforeRouteEnter (to, from, next) {
             // console.log(to.params.bookId);
-
             let bookRef = to.params.bookId;
-            // we confirm if the booking id exists and pull in the record
-            // send axios request
 
             axios.get('api/book-details/' +bookRef)
             .then(response => {
                 // this.book = response.data.details;
-                console.log(response.data.details);
-                next();
+                // console.log(response.data.details.route.price);
+                next(vm => {
+                    vm.book.name   = response.data.details.name;
+                    vm.book.email  = response.data.details.email;
+                    vm.book.sex    = response.data.details.gender;
+                    vm.book.phone  = response.data.details.phone;
+                    vm.book.bkRef  = to.params.bookId;
+                    vm.route.seats = response.data.seats;
+                    vm.book.bkId   = response.data.details.id,
+                    vm.book.price  = response.data.details.route.price
+                });
             })
             .catch( error => {
-                alert('Invalid Details');
-                console.log(error.data);
+                alert('Couldnt get your booking details. Unauthorised Access!');
+                // next(false);
+                // console.log(error.data);
+                // next(vm => {
+                //     this.$router.push({ name: 'bookBus'})
+                // })
+                
             });
 
         }

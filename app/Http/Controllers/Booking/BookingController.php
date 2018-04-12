@@ -1,8 +1,9 @@
 <?php
-
 namespace App\Http\Controllers\Booking;
 
 use Illuminate\Http\Request;
+
+use Illuminate\Validation\Rule; 
 use App\Models\Booking\Route;
 use App\Models\Booking\Booking;
 use App\Http\Controllers\Funcs\Hasher;
@@ -41,7 +42,7 @@ class BookingController extends Controller
     {
         if($request->ajax()){
             //get all the booking for this route
-            $ids = $route->books()->pluck('seat')->toArray();
+            $ids = $route->booking()->pluck('seat')->toArray();
 
             //flattened this bloody collection
             //since i coudnt find a lara method to do it
@@ -75,6 +76,7 @@ class BookingController extends Controller
         }
     }
 
+    // Create a booking record
     public function store(Request $request)
     {
         // $this->validate($request, [
@@ -103,23 +105,88 @@ class BookingController extends Controller
                     'email'    => $request->email,
                     'phone'    => $request->phone,
                     'gender'   => $request->sex,
-                    'seat'     => json_encode($request->seat),
-                    'seat_num' => count($request->seat),
-                    'pay_status' => 0,
+                    // 'seat'     => json_encode($request->seat),
+                    // 'seat_num' => count($request->seat),
+                    // 'pay_status' => 0,
                     'bk_ref'   => 'bk-'.Hasher::getHashedToken(10),
                 ]);
 
         return $book->bk_ref;
     }
 
-    public function bookFeed(Request $request, Booking $bookRef)
+
+    // Update a booking record
+    public function update(Request $request)
     {
-        // $bookR = $bookRef->route()->get();
+         $this->validate($request, [
+            'name'  => 'required|string',
+            'phone' => [
+                'required',
+                'digits:11',
+                Rule::unique('bookings')->ignore($request->bkId),
+            ],
+            'email' => [
+                'required',
+                'email',
+                Rule::unique('bookings')->ignore($request->bkId)
+            ],
+            'seat'  => 'required|array',
+            'sex'   => 'required',
+        ],[
+            'name.required'   => 'Please provide your full name',
+            'phone.digits'    => 'Your phone number must be 11 digits',
+            'phone.unique'    => 'That phone number has already been used',
+            'phone.required'  => 'Enter your phone number',
+            'email.required'  => 'The Email field is required',
+            'email.unique'    => 'That email address has already been taken',
+            'seat.required'   => 'Please select your seat number(s)',
+            'sex.required'   => 'Please select your Gender'
+        ]);
+
+        Booking::where('bk_ref', $request->bkRef)->update([
+                    'name'     => $request->name,
+                    'email'    => $request->email,
+                    'phone'    => $request->phone,
+                    'gender'   => $request->sex,
+                    'seat'     => json_encode($request->seat),
+                    'seat_num' => count($request->seat),
+                    'amount'   => $request->price,
+                ]);
+
+        return 'Good Boy';
+    }
+
+    public function bookFeed(Request $request, Booking $booking)
+    {
+        // dd($booking->exists);
+        $bookR = $booking->route;
+
+        $ids = $bookR->booking()->pluck('seat')->toArray();
+
+        function flater(array $arr, array $flatten = [])
+        {
+            foreach ($arr as $item) {
+
+                $item = json_decode($item, true);
+
+                if(is_array($item)){
+                    $flatten = flater($item, $flatten);
+                    continue;
+                }
+
+                $flatten[] = $item;            
+            }
+
+            return $flatten;
+        }
+        
+        $seats = flater($ids, $flatten = []);
 
         if($request->ajax()){
 
             return response()->json([
-                'details' => $bookRef,
+                'details' => $booking->toArray(),
+                'seats'   => $seats,
             ]);
 
         }else{

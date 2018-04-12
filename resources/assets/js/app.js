@@ -20,6 +20,7 @@ window.Vue.use(VueRouter);
 // Import Components
 import BookComponent    from './components/BookComponent.vue';
 import ConfirmComponent from './components/ConfirmComponent.vue';
+import PayComponent from './components/PayComponent.vue';
 
 // Vue.component('booking', BookComponent);
 
@@ -41,6 +42,15 @@ const routes = [
         //     alert('hello world');
         //     next();
         // }
+    },
+    {
+        path: '/pay',
+        component: PayComponent,
+        name: 'pay-now',
+        // beforeEnter (to, from, next) {
+        //     alert('PaymentComponent');
+        //     next();
+        // }
     }
 
 ]
@@ -51,7 +61,8 @@ const app = new Vue(
     { 
         router,
         data: {
-            model: {}
+            // model: {}
+            mute: false
         },
         mounted () {
             // console.log(model)

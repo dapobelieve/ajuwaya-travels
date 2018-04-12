@@ -3,19 +3,18 @@
         <div class="tabs tabs-style-bar">
             <nav>
                 <ul>
-                    <li :class="{'tab-current': activeNav}" ><a  class="icon icon-upload"  ><span>Details</span></a></li>
-                    <li><a  class="icon icon-tools"><span>Confirm</span></a></li>
-                    <li  ><a class="icon icon-display"><span>Analytics</span></a></li>
-                    <li><a class="icon icon-upload"><span>Upload</span></a></li>
-                    <!-- <li><a class="icon icon-tools"><span>Settings</span></a></li> -->
+                    <li :class="{'tab-current': activeNav}" ><a class="icon icon-upload"  ><span>Submit Details</span></a></li>
+                    <li><a class="icon icon-config"><span>Confirm Details</span></a></li>
+                    <li><a class="icon icon-plug"><span>Analytics</span></a></li>
+                    <!-- <li><a class="icon icon-upload"><span>Upload</span></a></li> -->
                 </ul>
             </nav>
             <section id="content">
                 <div class="container">
                     <form @submit="sendData" class="">
-                        <div class="row">
+                        <div class="row"> 
                             <div class="col-sm-6">
-                                    <h2 class="">
+                                    <h2 class="head">
                                         Fill your Details
                                     </h2>
                                     <br>
@@ -28,7 +27,6 @@
                                     <div class="form-group">
                                       <label class="control-label" for="seller-Location">Gender</label>
                                       <select v-model="book.sex" class="form-control">
-                                        <option>Sex</option>
                                         <option value="male">Male</option>
                                         <option value="female">Female</option>
                                       </select>
@@ -36,12 +34,12 @@
                                     </div>
                                     <div class="form-group">
                                       <label class="control-label" for="textarea">Email</label>
-                                      <input type="text" v-model="book.email" class="form-control" placeholder="Your Email" >
+                                      <input type="email" v-model="book.email" class="form-control" placeholder="Your Email" >
                                       <span v-if="errors.phone"  class="alata smalld">* {{ errors.email[0] }}</span>
                                     </div>
                                     <div class="form-group">
                                       <label class="control-label" for="textarea">Phone Number</label>
-                                      <input type="text" v-model="book.phone"  class="form-control" placeholder="Phone Number">
+                                      <input type="number" v-model="book.phone"  class="form-control" placeholder="Phone Number">
                                       <span v-if="errors.phone"  class="alata smalld">* {{ errors.phone[0] }}</span>
                                     </div>
                             </div>
@@ -49,7 +47,7 @@
                                     <!-- <p>Select Seat Number</p> -->
                                     <!-- {{ errors }} -->
                                     <h5 class="smalld">Select Seat Number</h5>
-                                    <small class="smalld">*disabled buttons are seats that have been booked*</small>
+                                    <small class="smalld" style="color: red">*disabled buttons are seats that have been booked*</small>
                                     <span v-if="errors.seat"  class="alata smalld">* {{ errors.seat[0] }} </span>
                                     <div class="calculator">
                                         <input v-model="book.seat" readonly type="text">
@@ -97,7 +95,7 @@
     export default {
         data () {
             return {
-                activeNav: true,
+                activeNav: false,
                 ref: '',
                 route: {
                     busType: '',
@@ -169,13 +167,14 @@
                     
                  })
                  .catch(error => {
-                    // this.errors = error.response.data.errors;
-                    console.log(error);
+                    this.errors = error.response.data.errors;
+                    console.log(error.response.data);
                  });
             } 
         },
         beforeRouteUpdate ( to, from , next ) {
-            next()
+            alert('now ure here');
+            // next()
         },
         mounted() {
             // grab the booking ref from the routes meta data
@@ -254,8 +253,8 @@
         display: block;
     }
 
-    .disabled {
-
+    .head {
+        color: #000;
     }
 
 

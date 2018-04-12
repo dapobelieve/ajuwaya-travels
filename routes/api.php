@@ -6,8 +6,15 @@ Route::get('details/{route}', 'Booking\BookingController@feed');
 
 
 //get booking details
-Route::get('/book-details/{bookRef}','Booking\BookingController@bookFeed');
+Route::get('/book-details/{booking}','Booking\BookingController@bookFeed');
 
 
 // post users booking
 Route::post('process', 'Booking\BookingController@store');
+
+// update users booking
+Route::post('update', 'Booking\BookingController@update');
+
+
+//Payment Route
+Route::post('payment', 'Payment\PaymentController@pay');

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Route extends Model
 {
     // route has many bookings
-    public function books()
+    public function booking()
     {
         return $this->hasMany(Booking::class);
     }
