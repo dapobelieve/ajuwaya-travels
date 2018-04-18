@@ -3,91 +3,89 @@
         <div class="tabs tabs-style-bar">
             <nav>
                 <ul>
-                    <li :class="{'tab-current': activeNav}" ><a  class="icon icon-upload"  ><span>Details</span></a></li>
-                    <li><a  class="icon icon-tools"><span>Confirm</span></a></li>
-                    <li  ><a class="icon icon-display"><span>Analytics</span></a></li>
-                    <li><a class="icon icon-upload"><span>Upload</span></a></li>
-                    <!-- <li><a class="icon icon-tools"><span>Settings</span></a></li> -->
+                    <li :class="{'tab-current': activeNav}" ><a class="icon icon-upload"  ><span>Submit Details</span></a></li>
+                    <li><a class="icon icon-config"><span>Confirm Details</span></a></li>
+                    <li><a class="icon icon-plug"><span>Payment</span></a></li>
+                    <!-- <li><a class="icon icon-upload"><span>Upload</span></a></li> -->
                 </ul>
             </nav>
             <section id="content">
-            <div class="container">
-                <form @submit="sendData" class="">
-                    <div class="row">
-                        <div class="col-sm-6">
-                                <h2 class="">
-                                    Fill your Details
-                                </h2>
-                                <br>
-                                <br>
-                                <div class="form-group">
-                                  <label class="control-label" for="textarea">Full Name</label>
-                                  <input type="text" v-model="book.name"  class="form-control" placeholder="Your Full Name" >
-                                  <span v-if="errors.name"  class="alata smalld">* {{ errors.name[0] }} </span>
-                                </div>
-                                <div class="form-group">
-                                  <label class="control-label" for="seller-Location">Gender</label>
-                                  <select v-model="book.sex" class="form-control">
-                                    <option>Sex</option>
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                  </select>
-                                  <span v-if="errors.sex" class="alata smalld">* {{ errors.sex[0] }}</span>
-                                </div>
-                                <div class="form-group">
-                                  <label class="control-label" for="textarea">Email</label>
-                                  <input type="text" v-model="book.email" class="form-control" placeholder="Your Email" >
-                                  <span v-if="errors.phone"  class="alata smalld">* {{ errors.email[0] }}</span>
-                                </div>
-                                <div class="form-group">
-                                  <label class="control-label" for="textarea">Phone Number</label>
-                                  <input type="text" v-model="book.phone"  class="form-control" placeholder="Phone Number">
-                                  <span v-if="errors.phone"  class="alata smalld">* {{ errors.phone[0] }}</span>
-                                </div>
-                        </div>
-                        <div class="col-sm-6">
-                                <!-- <p>Select Seat Number</p> -->
-                                <!-- {{ errors }} -->
-                                <h5 class="smalld">Select Seat Number</h5>
-                                <small class="smalld">*disabled buttons are seats that have been booked*</small>
-                                <span v-if="errors.seat"  class="alata smalld">* {{ errors.seat[0] }} </span>
-                                <div class="calculator">
-                                    <input v-model="book.seat" readonly type="text">
-                                    <div class="calculator-buttons">
-                                        <img src="/aju/assets/images/icon.svg" alt="">
-                                        <button 
-                                            :disabled="checkSeat(1)" 
-                                            :class="{ 'free' : checkSeat(1) }" 
-                                            @click.prevent="toggleButton" 
-                                            class="calc-button s1">1
-                                        </button>
-                                        <button :disabled="checkSeat(2)" :class="{ 'free' : checkSeat(2) }" @click.prevent="toggleButton" class="calc-button s2">2</button>
-                                        <button :disabled="checkSeat(3)" :class="{ 'free' : checkSeat(3) }" @click.prevent="toggleButton" class="calc-button ">3</button>
-                                        <button :disabled="checkSeat(4)" :class="{ 'free' : checkSeat(4) }" @click.prevent="toggleButton" class="calc-button">4</button>
-                                        <button :disabled="checkSeat(5)" :class="{ 'free' : checkSeat(5) }" @click.prevent="toggleButton" class="calc-button  ">5</button>
-                                        <button disabled class="calc-button free">Exit</button>
-                                        <button :disabled="checkSeat(6)" :class="{ 'free' : checkSeat(6) }" @click.prevent="toggleButton" class="calc-button ">6</button>
-                                        <button :disabled="checkSeat(7)" :class="{ 'free' : checkSeat(7) }" @click.prevent="toggleButton" class="calc-button">7</button>
-                                        <button :disabled="checkSeat(8)" :class="{ 'free' : checkSeat(8) }" @click.prevent="toggleButton" class="calc-button ">8</button>
-                                        <button disabled class="calc-button  free"></button>
-                                        <button :disabled="checkSeat(9)" :class="{ 'free' : checkSeat(9) }" @click.prevent="toggleButton" class="calc-button ">9</button>
-                                        <button :disabled="checkSeat(10)" :class="{ 'free' : checkSeat(10) }" @click.prevent="toggleButton" class="calc-button">10</button>
-                                        <button :disabled="checkSeat(11)" :class="{ 'free' : checkSeat(11) }" @click.prevent="toggleButton" class="calc-button">11</button>
-                                        <button  disabled class="calc-button  free"></button>
-                                        <button :disabled="checkSeat(12)" :class="{ 'free' : checkSeat(12) }" @click.prevent="toggleButton" class="calc-button">12</button>
-                                        <button :disabled="checkSeat(13)" :class="{ 'free' : checkSeat(13) }" @click.prevent="toggleButton" class="calc-button">13</button>
-                                        <button :disabled="checkSeat(14)" :class="{ 'free' : checkSeat(14) }" @click.prevent="toggleButton" class="calc-button">14</button>
-                                        <button :disabled="checkSeat(15)" :class="{ 'free' : checkSeat(15) }" @click.prevent="toggleButton" class="calc-button">15</button>
+                <div class="container">
+                    <form @submit="sendData" class="">
+                        <div class="row"> 
+                            <div class="col-sm-6">
+                                    <h2 class="head">
+                                        Fill your Details
+                                    </h2>
+                                    <br>
+                                    <br>
+                                    <div class="form-group">
+                                      <label class="control-label" for="textarea">Full Name</label>
+                                      <input type="text" v-model="book.name"  class="form-control" placeholder="Your Full Name" >
+                                      <span v-if="errors.name"  class="alata smalld">* {{ errors.name[0] }} </span>
                                     </div>
-                                </div>
-                        </div>                     
-                    </div>
-                    <div class=" csd col-sm-8 col-md-offset-2">
-                        <button type="submit" class=" btn btn-common" >Submit</button>
-                        <!-- <router-link :to="{name: 'confirmBook',params:{ bookId: 'aRtTds34s9iSk9Njh' } }" type="submit" class=" btn btn-common">submit</router-link> -->
-                    </div>
-                </form>
-            </div>
+                                    <div class="form-group">
+                                      <label class="control-label" for="seller-Location">Gender</label>
+                                      <select v-model="book.sex" class="form-control">
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                      </select>
+                                      <span v-if="errors.sex" class="alata smalld">* {{ errors.sex[0] }}</span>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="control-label" for="textarea">Email</label>
+                                      <input type="email" v-model="book.email" class="form-control" placeholder="Your Email" >
+                                      <span v-if="errors.phone"  class="alata smalld">* {{ errors.email[0] }}</span>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="control-label" for="textarea">Phone Number</label>
+                                      <input type="number" v-model="book.phone"  class="form-control" placeholder="Phone Number">
+                                      <span v-if="errors.phone"  class="alata smalld">* {{ errors.phone[0] }}</span>
+                                    </div>
+                            </div>
+                            <div class="col-sm-6">
+                                    <!-- <p>Select Seat Number</p> -->
+                                    <!-- {{ errors }} -->
+                                    <h5 class="smalld">Select Seat Number</h5>
+                                    <small class="smalld" style="color: red">*disabled buttons are seats that have been booked*</small>
+                                    <span v-if="errors.seat"  class="alata smalld">* {{ errors.seat[0] }} </span>
+                                    <div class="calculator">
+                                        <input v-model="book.seat" readonly type="text">
+                                        <div class="calculator-buttons">
+                                            <img src="/aju/assets/images/icon.svg" alt="">
+                                            <button 
+                                                :disabled="checkSeat(1)" 
+                                                :class="{ 'free' : checkSeat(1) }" 
+                                                @click.prevent="toggleButton" 
+                                                class="calc-button s1">1
+                                            </button>
+                                            <button :disabled="checkSeat(2)" :class="{ 'free' : checkSeat(2) }" @click.prevent="toggleButton" class="calc-button s2">2</button>
+                                            <button :disabled="checkSeat(3)" :class="{ 'free' : checkSeat(3) }" @click.prevent="toggleButton" class="calc-button ">3</button>
+                                            <button :disabled="checkSeat(4)" :class="{ 'free' : checkSeat(4) }" @click.prevent="toggleButton" class="calc-button">4</button>
+                                            <button :disabled="checkSeat(5)" :class="{ 'free' : checkSeat(5) }" @click.prevent="toggleButton" class="calc-button  ">5</button>
+                                            <button disabled class="calc-button free">Exit</button>
+                                            <button :disabled="checkSeat(6)" :class="{ 'free' : checkSeat(6) }" @click.prevent="toggleButton" class="calc-button ">6</button>
+                                            <button :disabled="checkSeat(7)" :class="{ 'free' : checkSeat(7) }" @click.prevent="toggleButton" class="calc-button">7</button>
+                                            <button :disabled="checkSeat(8)" :class="{ 'free' : checkSeat(8) }" @click.prevent="toggleButton" class="calc-button ">8</button>
+                                            <button disabled class="calc-button  free"></button>
+                                            <button :disabled="checkSeat(9)" :class="{ 'free' : checkSeat(9) }" @click.prevent="toggleButton" class="calc-button ">9</button>
+                                            <button :disabled="checkSeat(10)" :class="{ 'free' : checkSeat(10) }" @click.prevent="toggleButton" class="calc-button">10</button>
+                                            <button :disabled="checkSeat(11)" :class="{ 'free' : checkSeat(11) }" @click.prevent="toggleButton" class="calc-button">11</button>
+                                            <button  disabled class="calc-button  free"></button>
+                                            <button :disabled="checkSeat(12)" :class="{ 'free' : checkSeat(12) }" @click.prevent="toggleButton" class="calc-button">12</button>
+                                            <button :disabled="checkSeat(13)" :class="{ 'free' : checkSeat(13) }" @click.prevent="toggleButton" class="calc-button">13</button>
+                                            <button :disabled="checkSeat(14)" :class="{ 'free' : checkSeat(14) }" @click.prevent="toggleButton" class="calc-button">14</button>
+                                            <button :disabled="checkSeat(15)" :class="{ 'free' : checkSeat(15) }" @click.prevent="toggleButton" class="calc-button">15</button>
+                                        </div>
+                                    </div>
+                            </div>                     
+                        </div>
+                        <div class=" csd col-sm-8 col-md-offset-2">
+                            <button type="submit" class=" btn btn-common" >Submit</button>
+                            <!-- <router-link :to="{name: 'confirmBook',params:{ bookId: 'aRtTds34s9iSk9Njh' } }" type="submit" class=" btn btn-common">submit</router-link> -->
+                        </div>
+                    </form>
+                </div>
             </section>
         </div><!-- /tabs -->     
     </section>
@@ -97,7 +95,7 @@
     export default {
         data () {
             return {
-                activeNav: true,
+                activeNav: false,
                 ref: '',
                 route: {
                     busType: '',
@@ -138,8 +136,10 @@
 
                     this.route.seats = response.data.seats;
 
+                    // set id
+                    this.book.rid = response.data.route.id;
                     // console.log(this.route.seats);
-                    // this.book.rid = response.data.route.id;
+                    
                 })
                 .catch(function (error) {
                     console.log(error.data);
@@ -167,13 +167,10 @@
                     
                  })
                  .catch(error => {
-                    // this.errors = error.response.data.errors;
-                    console.log(error);
+                    this.errors = error.response.data.errors;
+                    console.log(error.response.data);
                  });
             } 
-        },
-        beforeRouteUpdate ( to, from , next ) {
-            next()
         },
         mounted() {
             // grab the booking ref from the routes meta data
@@ -252,8 +249,8 @@
         display: block;
     }
 
-    .disabled {
-
+    .head {
+        color: #000;
     }
 
 

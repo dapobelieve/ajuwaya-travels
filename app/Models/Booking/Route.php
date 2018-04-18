@@ -6,10 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Route extends Model
 {
-    public function books()
+    // route has many bookings
+    public function booking()
     {
         return $this->hasMany(Booking::class);
     }
+
+    // public function booked()
+    // {
+    //     return $this->booking()->where('pay_status', 1)->get();
+    // }
 
     public function location()
     {

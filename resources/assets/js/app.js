@@ -20,8 +20,11 @@ window.Vue.use(VueRouter);
 // Import Components
 import BookComponent    from './components/BookComponent.vue';
 import ConfirmComponent from './components/ConfirmComponent.vue';
+import PayComponent from './components/PayComponent.vue';
 
-// Vue.component('booking', BookComponent);
+// Vue.component('booker',BookComponent);
+
+
 
 const routes = [
     {
@@ -37,23 +40,21 @@ const routes = [
         path: '/confirm/:bookId',
         component: ConfirmComponent,
         name: 'confirmBook',
-        // beforeEnter (to, from, next) {
-        //     alert('hello world');
-        //     next();
-        // }
+    },
+    {
+        path: 'payment/:bookRef',
+        component: PayComponent,
+        name: 'payNow',
     }
 
 ]
 
-const router = new VueRouter({ routes });
+const router = new VueRouter({ 
+    // mode: 'history',
+    routes 
+});
 
 const app = new Vue(
     { 
         router,
-        data: {
-            model: {}
-        },
-        mounted () {
-            // console.log(model)
-        }
 }).$mount('#app')
