@@ -110,7 +110,10 @@
                           email: this.payObj.email,
                           amount: this.payObj.amount,
                           ref: this.payObj.reference,
-                          callback: this.payNow(response),
+                          callback: (response) => {
+                              this.payNow(response)
+                              // alert(response)
+                          },
                           onClose: () => {
                               this.close()
                           },

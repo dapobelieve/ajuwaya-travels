@@ -161,7 +161,7 @@ class BookingController extends Controller
         // dd($booking->exists);
         $bookR = $booking->route;
 
-        $ids = $bookR->booking()->pluck('seat')->toArray();
+        $ids = $bookR->booking()->where('pay_status', 1)->pluck('seat')->toArray();
 
         function flater(array $arr, array $flatten = [])
         {
