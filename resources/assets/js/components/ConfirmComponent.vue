@@ -82,8 +82,7 @@
                             </div>                     
                         </div>
                         <div class=" csd col-sm-8 col-md-offset-2">
-                            <button type="submit" class=" btn btn-common" >Submit</button>
-                            <!-- <router-link :to="{name: 'confirmBook',params:{ bookId: 'aRtTds34s9iSk9Njh' } }" type="submit" class=" btn btn-common">submit</router-link> -->
+                            <button type="submit" class=" btn btn-lg btn-success" >Confirm</button>
                         </div>
                     </form>
                 </div>
@@ -195,15 +194,8 @@
                 });
             })
             .catch( error => {
-                alert('Couldnt get your booking details. Unauthorised Access!');
-                // next(false);
-                // console.log(error.data);
-                // next(vm => {
-                //     this.$router.push({ name: 'bookBus'})
-                // })
-                
+                alert('Couldnt get your booking details. Unauthorised Access!');                
             });
-
         }
     }
 </script>

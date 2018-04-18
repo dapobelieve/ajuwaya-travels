@@ -22,6 +22,8 @@ import BookComponent    from './components/BookComponent.vue';
 import ConfirmComponent from './components/ConfirmComponent.vue';
 import PayComponent from './components/PayComponent.vue';
 
+// Vue.component('booker',BookComponent);
+
 
 
 const routes = [
@@ -47,16 +49,12 @@ const routes = [
 
 ]
 
-const router = new VueRouter({ routes });
+const router = new VueRouter({ 
+    // mode: 'history',
+    routes 
+});
 
 const app = new Vue(
     { 
         router,
-        data: {
-            // model: {}
-            mute: false
-        },
-        mounted () {
-            // console.log(model)
-        }
 }).$mount('#app')

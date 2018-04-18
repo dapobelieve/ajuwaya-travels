@@ -25,8 +25,12 @@ Booking | AjuwayaTravels
     
     {{-- <div id="mute" class="on"></div> --}}
     <div style="padding: 0.9rem" id="app">
+
         <router-view name="bookBus"></router-view>
         <router-view></router-view>
+        {{-- <booker></booker> --}}
+        
+        
     </div>
         
 @stop

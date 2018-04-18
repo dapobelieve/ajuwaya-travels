@@ -14,7 +14,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // dd(config());
+        // dd(config('paystack.secretKey'));
         // get all locations and camps
         $locs = Location::all();
         $routes = Route::with('camp', 'location')->get(); //eager loading

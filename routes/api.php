@@ -18,5 +18,8 @@ Route::post('update', 'Booking\BookingController@update');
 // get booking details
 Route::get('getpay/{booking}', 'Payment\PaymentController@index');
 
+// goto payment gateway
+Route::post('payment', 'Payment\PaymentController@redirecToPayStack');
+
 //Payment Route
-Route::post('payment', 'Payment\PaymentController@pay');
+// Route::post('payment', 'Payment\PaymentController@pay');
