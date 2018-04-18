@@ -41,10 +41,11 @@ class BookingController extends Controller
     {
         if($request->ajax()){
             //get all the booking for this route
-            $ids = $route->booking()->pluck('seat')->toArray();
+            $ids = $route->booking()->where('pay_status', 1)->pluck('seat')->toArray();
+
 
             //flattened this bloody collection
-            //since i coudnt find a lara method to do it
+            //since i coudnt find a lara method to do it s/o alex garret
             function flater(array $arr, array $flatten = [])
             {
                 foreach ($arr as $item) {

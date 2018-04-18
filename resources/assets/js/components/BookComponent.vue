@@ -172,10 +172,6 @@
                  });
             } 
         },
-        beforeRouteUpdate ( to, from , next ) {
-            alert('now ure here');
-            // next()
-        },
         mounted() {
             // grab the booking ref from the routes meta data
             var ref = this.$route.meta.mdata;

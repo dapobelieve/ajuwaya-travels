@@ -12,6 +12,11 @@ class Route extends Model
         return $this->hasMany(Booking::class);
     }
 
+    // public function booked()
+    // {
+    //     return $this->booking()->where('pay_status', 1)->get();
+    // }
+
     public function location()
     {
         return $this->belongsTo(Location::class);

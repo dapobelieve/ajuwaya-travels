@@ -46232,7 +46232,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n.csd {\n    text-align: center;\n    padding-top: 2rem;\n    /*display: inherit;*/\n}\n.* {\n    box-sizing: border-box;\n}\n.iselect {\n    background: #19b507fa !important;\n    color: #fff !important;\n    border: none;\n    border-radius: 5px;\n}\n.calculator {\n    background-color: #f6f6f6;\n    padding-bottom: 2rem;\n    padding: 0.4rem;\n    max-width: 300px;\n    margin: 0 auto;\n    /*border: 0.1rem light #111;*/\n    border-radius: 5px;\n    box-shadow: 0 1px 5px rgba(204, 104, 204, 1.6);\n}\n.alata {\n    color: red;\n}\n.calculator input {\n    background: none;\n    border: none;\n    box-shadow: none;\n    width: 100%;\n    /*border-bottom: 0.1rem solid #111;*/\n    text-align: center;\n    font-size: 2rem;\n}\n.free {\n    cursor: none;\n    background: #cc0000fa !important;\n    box-shadow: none !important;\n}\n\n/*css grid happens here*/\n.calculator-buttons {\n    padding: 1.6rem;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr 1fr;\n    grid-template-rows: repeat(5, 1fr);\n    grid-gap: 1rem;\n}\n.s1 {\n    grid-column: 3 / 4;\n}\n.smalld {\n    text-align: center;\n    display: block;\n}\n.head {\n    color: #000;\n}\n.calc-button {\n    background: #5dc1a2;\n    border: none;\n    padding: 1.5rem;\n    color: #fff;\n    border-radius: 5px;\n    font-size: 1.4rem;\n    cursor: pointer;\n    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n.csd {\n    text-align: center;\n    padding-top: 2rem;\n    /*display: inherit;*/\n}\n.* {\n    box-sizing: border-box;\n}\n.iselect {\n    background: #19b507fa !important;\n    color: #fff !important;\n    border: none;\n    border-radius: 5px;\n}\n.calculator {\n    background-color: #f6f6f6;\n    padding-bottom: 2rem;\n    padding: 0.4rem;\n    max-width: 300px;\n    margin: 0 auto;\n    /*border: 0.1rem light #111;*/\n    border-radius: 5px;\n    box-shadow: 0 1px 5px rgba(204, 104, 204, 1.6);\n}\n.alata {\n    color: red;\n}\n.calculator input {\n    background: none;\n    border: none;\n    box-shadow: none;\n    width: 100%;\n    /*border-bottom: 0.1rem solid #111;*/\n    text-align: center;\n    font-size: 2rem;\n}\n.free {\n    cursor: none;\n    background: #cc0000fa !important;\n    box-shadow: none !important;\n}\n\n/*css grid happens here*/\n.calculator-buttons {\n    padding: 1.6rem;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr 1fr;\n    grid-template-rows: repeat(5, 1fr);\n    grid-gap: 1rem;\n}\n.s1 {\n    grid-column: 3 / 4;\n}\n.smalld {\n    text-align: center;\n    display: block;\n}\n.head {\n    color: #000;\n}\n.calc-button {\n    background: #5dc1a2;\n    border: none;\n    padding: 1.5rem;\n    color: #fff;\n    border-radius: 5px;\n    font-size: 1.4rem;\n    cursor: pointer;\n    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);\n}\n", ""]);
 
 // exports
 
@@ -46447,10 +46447,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 console.log(error.response.data);
             });
         }
-    },
-    beforeRouteUpdate: function beforeRouteUpdate(to, from, next) {
-        alert('now ure here');
-        // next()
     },
     mounted: function mounted() {
         // grab the booking ref from the routes meta data
@@ -47919,7 +47915,7 @@ var normalizeComponent = __webpack_require__(5)
 /* script */
 var __vue_script__ = __webpack_require__(56)
 /* template */
-var __vue_template__ = __webpack_require__(57)
+var __vue_template__ = __webpack_require__(58)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -47992,7 +47988,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n/*.tabs-nav {\n    position: fixed;\n}*/\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n/*.tabs-nav {\n    position: fixed;\n}*/\n", ""]);
 
 // exports
 
@@ -48034,7 +48030,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
+// import paystack from 'vue-paystack';
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
@@ -48042,23 +48052,93 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             bookRef: '',
             payObj: {
                 email: '',
-                amount: '',
+                amount: null,
                 format: '',
                 key: '',
-                reference: ''
+                reference: '',
+                psKey: 'pk_test_baad97319b760bb836a0c1cb81848264cde2fea6',
+                bearer: 'DapoMichaels'
             }
         };
     },
 
+    computed: {
+        scriptLoaded: function scriptLoaded() {
+            var _this = this;
+
+            return new Promise(function (resolve) {
+                _this.loadScript(function () {
+                    resolve();
+                });
+            });
+        }
+    },
     methods: {
-        payNow: function payNow() {
+        payNow: function payNow(response) {
             alert('Paying...');
 
-            axios.post('api/payment', this.payObj).then(function (response) {
+            axios.post('api/payment', {
+                ref: response
+            }).then(function (response) {
                 console.log(response.data);
             }).catch(function (error) {
                 console.log(error.data);
             });
+        },
+
+        close: function close() {
+            console.log("Payment closed");
+        },
+        loadScript: function loadScript(callback) {
+            var script = document.createElement('script');
+            script.src = 'https://js.paystack.co/v1/inline.js';
+            document.getElementsByTagName('head')[0].appendChild(script);
+            if (script.readyState) {
+                // IE
+                script.onreadystatechange = function () {
+                    if (script.readyState === 'loaded' || script.readyState === 'complete') {
+                        script.onreadystatechange = null;
+                        callback();
+                    }
+                };
+            } else {
+                // Others
+                script.onload = function () {
+                    callback();
+                };
+            }
+        },
+        payWithPaystack: function payWithPaystack() {
+            var _this2 = this;
+
+            this.scriptLoaded.then(function () {
+                var paystackOptions = {
+                    key: _this2.payObj.psKey,
+                    email: _this2.payObj.email,
+                    amount: _this2.payObj.amount,
+                    ref: _this2.payObj.reference,
+                    callback: _this2.payNow(response),
+                    onClose: function onClose() {
+                        _this2.close();
+                    },
+                    metadata: _this2.metadata,
+                    currency: _this2.currency
+                };
+
+                if (_this2.embed) {
+                    paystackOptions.container = 'paystackEmbedContainer';
+                }
+
+                var handler = window.PaystackPop.setup(paystackOptions);
+                if (!_this2.embed) {
+                    handler.openIframe();
+                }
+            });
+        }
+    },
+    mounted: function mounted() {
+        if (this.embed) {
+            this.payWithPaystack();
         }
     },
     beforeRouteEnter: function beforeRouteEnter(to, from, next) {
@@ -48067,7 +48147,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         axios.get('/api/getpay/' + bookRef).then(function (response) {
             // console.log(response.data);
             next(function (vm) {
-                vm.payObj.amount = response.data.amount;
+                vm.payObj.amount = parseInt(response.data.amount * 100);
                 vm.payObj.format = response.data.format;
                 vm.payObj.email = response.data.email;
                 vm.payObj.key = response.data.psKey;
@@ -48080,7 +48160,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 57 */
+/* 57 */,
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -48106,6 +48187,7 @@ var render = function() {
               _vm._v(
                 "\n                  this is the Payment or summary component\n                  "
               ),
+              _vm._v(" "),
               _c(
                 "form",
                 {
@@ -48113,7 +48195,7 @@ var render = function() {
                   on: {
                     submit: function($event) {
                       $event.preventDefault()
-                      return _vm.payNow($event)
+                      return _vm.payWithPaystack($event)
                     }
                   }
                 },

@@ -30,6 +30,8 @@ class Booking extends Model
         'amount',
     ];
 
+    // public function booked()
+
     public function getRouteKeyName()
     {
         return 'bk_ref';

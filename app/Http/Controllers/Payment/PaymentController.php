@@ -32,8 +32,13 @@ class PaymentController extends Controller
 
     public function redirecToPayStack(Request $request)
     {
-        return $request;
-        return Paystack::getAuthorizationUrl()->redirectNow();
+        // update paystatus
+
+        // send mail
+
+        // redirext to congrats page
+        
+        return response()->json($request, 200);
     }
 
 }
