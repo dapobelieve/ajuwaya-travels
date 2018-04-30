@@ -334,7 +334,7 @@
                 </tr>
                 <tr>
                   <td class="content-block powered-by">
-                    Powered by <a href="#">AjuwayaTravels</a>.
+                    Powered by <a href="http://ajuwayatravel.com">AjuwayaTravel</a>.
                   </td>
                 </tr>
               </table>

@@ -11,7 +11,11 @@
     padding-top: 2rem;
     /*align-items: start;*/
 }
-
+.depart {
+    font-size: 1.5rem;
+    color: #2bf933;
+    text-shadow: 1px 1px #4caf50;
+}
 .floater {
     padding-top: 11.5rem !important;
 }
@@ -28,7 +32,16 @@
     letter-spacing: 0.05rem
 }
 
+.details-book {
+    margin-top: 25px;
+}
+
+.book-btn {
+    margin-bottom: 25px;
+}
+
 .takeoff {
+    font-weight: 600;
     text-shadow: 0 1px 2px #50ce4642;
 }
 

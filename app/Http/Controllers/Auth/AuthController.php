@@ -59,7 +59,7 @@ class AuthController extends Controller
         ]);
 
         // email user for verification
-        // event(new UserRegistered($user));
+        event(new UserRegistered($user));
 
         return redirect()->route('home')
                 ->with('title', 'Congratulations')

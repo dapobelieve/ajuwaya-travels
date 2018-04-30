@@ -38,5 +38,15 @@ class User extends Authenticatable
         return $this->hasMany(Booking::class);
     }
 
+    public function social()
+    {
+        return $this->hasMany(Social::class);
+    }
+
+    public function hasSocialLinked($service)
+    {
+        return (bool) $this->social->where('service', $service)->count();
+    }
+
 
 }

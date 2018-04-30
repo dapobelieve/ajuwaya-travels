@@ -17,4 +17,9 @@ class Camp extends Model
     {
         return ucwords($this->name);
     }
+
+    public function firstLetter()
+    {
+        return ucwords($this->name[0]);;
+    }
 }

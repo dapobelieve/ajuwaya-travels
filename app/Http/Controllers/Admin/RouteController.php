@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\Models\Booking\Route;
+
 class RouteController extends Controller
 {
     /**
@@ -14,7 +16,8 @@ class RouteController extends Controller
      */
     public function index()
     {
-        //
+        $routes = Route::with('camp', 'location')->latest()->get();
+        return view('admin.route.list')->with('routes', $routes);
     }
 
     /**

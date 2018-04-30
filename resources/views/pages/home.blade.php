@@ -78,10 +78,11 @@ Welcome to AjuwayaTravels
                                <span class="take-off">{{ $route->location->state }}</span>  to 
                                <span class="dest">{{ $route->camp->toUp() }}</span>  </a></h5>
                             <div class="info">
-                              <span class="add-type">B</span>
-                              <span class="date">
+                              <span class="add-type">{{ $route->camp->firstLetter() }}</span>
+                              <span class="date takeoff">
                                 <i class="fas fa-clock"></i>
-                                16:22:13 2016-02-29
+                                {{-- Carbon::createFromTimestampUTC(strtotime($suber->ends_at)) --}}
+                                {{ $route->takeoff->format('l jS \\of F Y h:i:s A') }}
                               </span> -
                               <span class="category takeoff">Takeoff point</span> -
                               <span class="item-location takeoff"><i class="fas fa-map-pin"></i> {{ $route->takeoff()}}</span>
@@ -93,9 +94,18 @@ Welcome to AjuwayaTravels
                         </div>
                         <div class="col-sm-4 price-box">
                           <h2 class="item-price pricy"> &#x20A6 {{ number_format($route->price) }} </h2>
-                          <a class="btn btn-danger btn-sm"><i class="fas fa-info-circle"></i>
-                          <span>Details</span></a> 
-                          <a href="{{ route('book.start', ['route' => $route->ref]) }}" class="btn btn-common btn-sm"> <i class="fas fa-bus"></i> <span>Book</span> </a> 
+                          <a
+                            href="{{ route('route.details', ['route' => $route->ref]) }}"
+                            class="btn btn-danger btn-sm">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Details</span>
+                        </a> 
+                          <a 
+                            href="{{ route('book.start', ['route' => $route->ref]) }}" 
+                            class="btn btn-common center btn-sm"> 
+                            <i class="fas fa-bus"></i> 
+                            <span>Book</span> 
+                        </a> 
                         </div>
                     </div>
                 </div>

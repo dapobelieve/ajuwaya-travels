@@ -50,7 +50,7 @@
                                     <h5 class="smalld">Select Seat Number</h5>
                                     <small class="smalld">*disabled buttons are seats that have been booked*</small>
                                     <span v-if="errors.seat"  class="alata smalld">* {{ errors.seat[0] }} </span>
-                                    <div class="calculator">
+                                    <div v-if="route.busType === 15" class="calculator v-15">
                                         <input v-model="book.seat" readonly type="text">
                                         <div class="calculator-buttons">
                                             <img src="/aju/assets/images/icon.svg" alt="">
@@ -77,6 +77,53 @@
                                             <button :disabled="checkSeat(13)" :class="{ 'free' : checkSeat(13) }" @click.prevent="toggleButton" class="calc-button">13</button>
                                             <button :disabled="checkSeat(14)" :class="{ 'free' : checkSeat(14) }" @click.prevent="toggleButton" class="calc-button">14</button>
                                             <button :disabled="checkSeat(15)" :class="{ 'free' : checkSeat(15) }" @click.prevent="toggleButton" class="calc-button">15</button>
+                                        </div>
+                                    </div>
+                                    <div v-else-if="route.busType === 35" class="calculator v-15">
+                                        <input v-model="book.seat" readonly type="text">
+                                        <div class="calculator-buttons">
+                                            <img src="/aju/assets/images/icon.svg" alt="">
+                                            <button 
+                                                :disabled="checkSeat(1)" 
+                                                :class="{ 'free' : checkSeat(1) }" 
+                                                @click.prevent="toggleButton" 
+                                                class="calc-button s1">1
+                                            </button>
+                                            <button :disabled="checkSeat(2)" :class="{ 'free' : checkSeat(2) }" @click.prevent="toggleButton" class="calc-button s2">2</button>
+                                            <button :disabled="checkSeat(3)" :class="{ 'free' : checkSeat(3) }" @click.prevent="toggleButton" class="calc-button ">3</button>
+                                            <button :disabled="checkSeat(4)" :class="{ 'free' : checkSeat(4) }" @click.prevent="toggleButton" class="calc-button">4</button>
+                                            <button :disabled="checkSeat(5)" :class="{ 'free' : checkSeat(5) }" @click.prevent="toggleButton" class="calc-button  ">5</button>
+                                            <button disabled class="calc-button free">Exit</button>
+                                            <button :disabled="checkSeat(6)" :class="{ 'free' : checkSeat(6) }" @click.prevent="toggleButton" class="calc-button ">6</button>
+                                            <button :disabled="checkSeat(7)" :class="{ 'free' : checkSeat(7) }" @click.prevent="toggleButton" class="calc-button">7</button>
+                                            <button :disabled="checkSeat(8)" :class="{ 'free' : checkSeat(8) }" @click.prevent="toggleButton" class="calc-button ">8</button>
+                                            <button :disabled="checkSeat(9)" :class="{ 'free' : checkSeat(9) }" @click.prevent="toggleButton" class="calc-button ">9</button>
+                                            <button :disabled="checkSeat(10)" :class="{ 'free' : checkSeat(10) }" @click.prevent="toggleButton" class="calc-button">10</button>
+                                            <button :disabled="checkSeat(11)" :class="{ 'free' : checkSeat(11) }" @click.prevent="toggleButton" class="calc-button">11</button>
+                                            <button :disabled="checkSeat(12)" :class="{ 'free' : checkSeat(12) }" @click.prevent="toggleButton" class="calc-button">12</button>
+                                            <button :disabled="checkSeat(13)" :class="{ 'free' : checkSeat(13) }" @click.prevent="toggleButton" class="calc-button">13</button>
+                                            <button :disabled="checkSeat(14)" :class="{ 'free' : checkSeat(14) }" @click.prevent="toggleButton" class="calc-button">14</button>
+                                            <button :disabled="checkSeat(15)" :class="{ 'free' : checkSeat(15) }" @click.prevent="toggleButton" class="calc-button">15</button>
+                                            <button :disabled="checkSeat(16)" :class="{ 'free' : checkSeat(16) }" @click.prevent="toggleButton" class="calc-button">16</button>
+                                            <button :disabled="checkSeat(17)" :class="{ 'free' : checkSeat(17) }" @click.prevent="toggleButton" class="calc-button">17</button>
+                                            <button :disabled="checkSeat(18)" :class="{ 'free' : checkSeat(18) }" @click.prevent="toggleButton" class="calc-button">18</button>
+                                            <button :disabled="checkSeat(19)" :class="{ 'free' : checkSeat(19) }" @click.prevent="toggleButton" class="calc-button">19</button>
+                                            <button :disabled="checkSeat(20)" :class="{ 'free' : checkSeat(20) }" @click.prevent="toggleButton" class="calc-button">20</button>
+                                            <button :disabled="checkSeat(21)" :class="{ 'free' : checkSeat(21) }" @click.prevent="toggleButton" class="calc-button">21</button>
+                                            <button :disabled="checkSeat(22)" :class="{ 'free' : checkSeat(22) }" @click.prevent="toggleButton" class="calc-button">22</button>
+                                            <button :disabled="checkSeat(23)" :class="{ 'free' : checkSeat(23) }" @click.prevent="toggleButton" class="calc-button">23</button>
+                                            <button :disabled="checkSeat(24)" :class="{ 'free' : checkSeat(24) }" @click.prevent="toggleButton" class="calc-button">24</button>
+                                            <button :disabled="checkSeat(25)" :class="{ 'free' : checkSeat(25) }" @click.prevent="toggleButton" class="calc-button">25</button>
+                                            <button :disabled="checkSeat(26)" :class="{ 'free' : checkSeat(26) }" @click.prevent="toggleButton" class="calc-button">26</button>
+                                            <button :disabled="checkSeat(27)" :class="{ 'free' : checkSeat(27) }" @click.prevent="toggleButton" class="calc-button">27</button>
+                                            <button :disabled="checkSeat(28)" :class="{ 'free' : checkSeat(28) }" @click.prevent="toggleButton" class="calc-button">28</button>
+                                            <button :disabled="checkSeat(29)" :class="{ 'free' : checkSeat(29) }" @click.prevent="toggleButton" class="calc-button">29</button>
+                                            <button :disabled="checkSeat(30)" :class="{ 'free' : checkSeat(30) }" @click.prevent="toggleButton" class="calc-button">30</button>
+                                            <button :disabled="checkSeat(31)" :class="{ 'free' : checkSeat(31) }" @click.prevent="toggleButton" class="calc-button">31</button>
+                                            <button :disabled="checkSeat(32)" :class="{ 'free' : checkSeat(32) }" @click.prevent="toggleButton" class="calc-button">32</button>
+                                            <button :disabled="checkSeat(33)" :class="{ 'free' : checkSeat(33) }" @click.prevent="toggleButton" class="calc-button">33</button>
+                                            <button :disabled="checkSeat(34)" :class="{ 'free' : checkSeat(34) }" @click.prevent="toggleButton" class="calc-button">34</button>
+                                            <button :disabled="checkSeat(35)" :class="{ 'free' : checkSeat(35) }" @click.prevent="toggleButton" class="calc-button">35</button>
                                         </div>
                                     </div>
                             </div>                     
@@ -127,25 +174,6 @@
                 let button = e.target;
                 button.classList.toggle('iselect');
             },
-            fetchRoute (ref)
-            {
-                axios.get('api/details/'+ref)
-                .then(response => {
-                    // load some of the b0ok data of this component
-                    this.route.busType = response.data.route.bus_type;
-
-                    this.route.seats = response.data.seats;
-
-                    // set id
-                    this.book.rid = response.data.route.id;
-                    // console.log(this.route.seats);
-                    
-                })
-                .catch(function (error) {
-                    console.log(error.data);
-                    alert('Server Error');
-                });
-            },
             //method to check if a seat has been booked
             checkSeat (x)
             {
@@ -181,7 +209,8 @@
             axios.get('api/book-details/' +bookRef)
             .then(response => {
                 // this.book = response.data.details;
-                // console.log(response.data.details.route.price);
+                // console.log();
+                // load some defaults
                 next(vm => {
                     vm.book.name   = response.data.details.name;
                     vm.book.email  = response.data.details.email;
@@ -189,6 +218,7 @@
                     vm.book.phone  = response.data.details.phone;
                     vm.book.bkRef  = to.params.bookId;
                     vm.route.seats = response.data.seats;
+                    vm.route.busType = response.data.details.route.bus_type;
                     vm.book.bkId   = response.data.details.id,
                     vm.book.price  = response.data.details.route.price
                 });

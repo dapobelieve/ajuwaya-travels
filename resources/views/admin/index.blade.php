@@ -40,13 +40,6 @@
                 </div>
                 <div class="container-fluid">
                         @yield('admin-tabs')
-                    {{-- @include('admin.template.tabs') --}}
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="alert alert-info">
-                                Welcome in the <strong>Unicorn Admin Theme</strong>. Don't forget to check all the pages!
-                                <a href="#" data-dismiss="alert" class="close">×</a>
-                            </div>
                             @yield('admin-content')                  
                         </div>
                     </div>

@@ -78,12 +78,12 @@
                 </div> --}}
                 <button class="btn btn-common log-btn type="submit ">Register</button>
                 {{ csrf_field() }}
-                <a style="text-transform: none; border-radius: 2px" class="btn btn-xs  btn-social btn-google">
+                <a href="/redirect/google" style="text-transform: none; border-radius: 2px" class="btn btn-xs  btn-social btn-google">
                     <span class="fa fa-google"></span> Sign up with Google
                 </a>
-                <a style="text-transform: none; border-radius: 2px" class="btn btn-xs  btn-social btn-facebook">
+                {{-- <a href="/redirect/facebook" style="text-transform: none; border-radius: 2px" class="btn btn-xs  btn-social btn-facebook">
                     <span class="fa fa-facebook"></span> Sign up with Facebook
-                </a>
+                </a> --}}
               </form>
             </div>
           </div>

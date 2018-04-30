@@ -9,8 +9,9 @@
     <script type="text/javascript" src="/aju/assets/fonts/all.js"></script>
 
     <script>
-        window.ajt_model = "{{ $model }}";
+        window.ajt_model = "{{ $route }}";
         window.currUser  = {{ Auth::user()->id }};
+        window.url  = "{{ env('APP_URL') }}";
     </script>
 
 
@@ -27,8 +28,8 @@ Booking | AjuwayaTravels
     <div style="padding: 0.9rem" id="app">
 
         <router-view name="bookBus"></router-view>
+        {{-- <booker :dref="{{ $route }}" :user="{{ Auth::user()->id }}"></booker> --}}
         <router-view></router-view>
-        {{-- <booker></booker> --}}
         
         
     </div>

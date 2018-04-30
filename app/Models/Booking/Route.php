@@ -12,6 +12,17 @@ class Route extends Model
         return $this->hasMany(Booking::class);
     }
 
+    protected $dates = [
+        'created_at',
+        'takeoff',
+        'updated_at'
+    ];
+
+    // public function booked()
+    // {
+    //     return $this->booking()->where('pay_status', 1)->get();
+    // }
+
     public function location()
     {
         return $this->belongsTo(Location::class);

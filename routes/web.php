@@ -2,8 +2,14 @@
 
 // Route::get('/')
 
+
+
 Route::get('/','HomeController@index' )->name('home');
 
+
+Route::get('/success', function () {
+    return view('pages.success');
+});
 
 // Register Page
 Route::get('/register','Auth\AuthController@getRegister')->name('auth.register')->middleware('guest');
@@ -26,13 +32,23 @@ Route::get('/results', 'HomeController@results')->name('route.search');
 
 Route::get('/book/{route}', 'Booking\BookingController@index')->name('book.start');
 
+// Social Login
+Route::get('/redirect/{service}','Social\SocialAuthController@redirect');
+Route::get('/{service}/callback','Social\SocialAuthController@callback');
+
+Route::get('/route/{route}', 'Route\RouteController@show')->name('route.details');
+
+
+
 
 
 
 // Admin  Routes
 
 // load the routes page as the first
-Route::get('admin', 'Admin\PageController@home')->name('index-routes');
+Route::get('admin', 'Admin\RouteController@index')->name('index-routes');
+
+Route::resource('routes', 'Admin\RouteController');
 
 
 

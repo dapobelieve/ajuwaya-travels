@@ -11,7 +11,7 @@ import axios from 'axios';
 
 // axios.defaults.baseURL = 'http://192.168.43.204/'; use when connected to phone
 
-axios.defaults.baseURL = 'http://localhost:8000/';
+axios.defaults.baseURL = window.url;
 
 import VueRouter from 'vue-router';
 
@@ -22,7 +22,7 @@ import BookComponent    from './components/BookComponent.vue';
 import ConfirmComponent from './components/ConfirmComponent.vue';
 import PayComponent from './components/PayComponent.vue';
 
-// Vue.component('booker',BookComponent);
+Vue.component('booker',BookComponent);
 
 
 
@@ -50,8 +50,8 @@ const routes = [
 ]
 
 const router = new VueRouter({ 
+    routes,
     // mode: 'history',
-    routes 
 });
 
 const app = new Vue(
