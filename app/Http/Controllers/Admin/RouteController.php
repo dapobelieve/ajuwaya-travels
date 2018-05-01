@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Models\Booking\Route;
+use App\Http\Requests\RouteRequest;
+
+use App\Models\Booking\Location;
+use App\Models\Booking\Camp;
+use App\Http\Controllers\Funcs\Hasher;
 
 class RouteController extends Controller
 {
@@ -27,7 +32,13 @@ class RouteController extends Controller
      */
     public function create()
     {
-        return view('admin.route.add');
+        $locs = Location::all();
+        $camps = Camp::orderBy('name', 'asc')->get();
+        $routeRef = 'AJT-'.Hasher::getHashedToken(8);
+        return view('admin.route.add')
+                        ->with('locations', $locs)
+                        ->with('ref', $routeRef)
+                        ->with('camps', $camps);
     }
 
     /**
@@ -36,9 +47,18 @@ class RouteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RouteRequest $request)
     {
-        //
+        // dd($request);
+        Route::firstOrCreate([
+            'location_id' => $request->state,
+            'camp_id'     => $request->camp,
+            'take_off'    => $request->location,
+            'price'       => $request->price,
+            'bus_type'    => $request->seater,
+            'takeoff'     => $request->date.':00',
+            'ref'         => $request->ref,
+        ]);
     }
 
     /**

@@ -2,6 +2,8 @@
 
 @section('admin-style')
     <link rel="stylesheet" href="/authmin/css/select2.css" />
+    <link rel="stylesheet" href="/authmin/datey/date.css" />
+    <script src="/authmin/datey/date.js"></script>
 @stop
 
 @section('big-name')
@@ -18,80 +20,72 @@
                 <h5>Route Details</h5>
             </div>
             <div class="widget-content nopadding">
-                <form action="#" method="get" class="form-horizontal">
+                <form action="{{ route('routes.store') }}" method="post" class="form-horizontal">
                     <div class="form-group">
-                        <label class="col-sm-3 col-md-3 col-lg-2 control-label">Select State</label>
+                        <label class="col-sm-3 col-md-3 col-lg-2 control-label">Select State:</label>
                         <div class="col-sm-9 col-md-9 col-lg-10">
-                            <select id="sel2">
-                                <option>First option</option>
-                                <option>Second option</option>
-                                <option>Third option</option>
-                                <option>Fourth option</option>
-                                <option>Fifth option</option>
-                                <option>Sixth option</option>
-                                <option>Seventh option</option>
-                                <option>Eighth option</option>
+                            <select required name="state" id="sel2">
+                                <option>States</option>
+                                @foreach($locations as $location)
+                                    <option value="{{ $location->id }}">{{ ucwords($location->state) }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 col-md-3 col-lg-2 control-label">Password input</label>
+                        <label class="col-sm-3 col-md-3 col-lg-2 control-label">Location:</label>
                         <div class="col-sm-9 col-md-9 col-lg-10">
-                            <input type="password" class="form-control input-sm" />
+                            <input name="location" type="text" placeholder="Take off point in selected state" class="form-control input-sm" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 col-md-3 col-lg-2 control-label">Input with placeholder</label>
+                        <label class="col-sm-3 col-md-3 col-lg-2 control-label">Destination:</label>
                         <div class="col-sm-9 col-md-9 col-lg-10">
-                            <input type="text" class="form-control input-sm" placeholder="This is a placeholder..." />
+                            <select name="camp" id="sel1">
+                                <option>Camps</option>
+                                @foreach($camps as $location)
+                                    <option value="{{ $location->id }}">{{ ucwords($location->name) }}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 col-md-3 col-lg-2 control-label">Read-only input</label>
+                        <label class="col-sm-3 col-md-3 col-lg-2 control-label">Price:</label>
                         <div class="col-sm-9 col-md-9 col-lg-10">
-                            <input type="text" class="form-control input-sm" placeholder="You can only read this..." readonly />
+                            <input name="price" type="text" onkeydown="return editInput(event)" placeholder="Transport Fare" class="form-control input-sm" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 col-md-3 col-lg-2 control-label">Disabled input</label>
+                        <label class="col-sm-3 col-md-3 col-lg-2 control-label">Bus Seater:</label>
                         <div class="col-sm-9 col-md-9 col-lg-10">
-                            <input type="text" class="form-control input-sm" placeholder="This input is disabled..." disabled />
+                            <select name="seater" id="sel1">
+                                <option value="">X Seater Bus</option>
+                                <option value="15">15</option>
+                                <option value="35">35</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 col-md-3 col-lg-2 control-label">Input with description</label>
+                        <label class="col-sm-3 col-md-3 col-lg-2 control-label">Ref Code:</label>
                         <div class="col-sm-9 col-md-9 col-lg-10">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <input type="text" class="form-control input-sm" />
-                                    <span class="help-block text-left">This is a description</span>
-                                </div>
-                                <div class="col-md-4">
-                                    <input type="text" class="form-control input-sm" />
-                                    <span class="help-block text-center">This is a description in center</span>
-                                </div>
-                                <div class="col-md-4">
-                                    <input type="text" class="form-control input-sm" />
-                                    <span class="help-block text-right">This is a description on right</span>
-                                </div>
-                            </div>
+                            <input type="text" name="ref" value="{{ $ref }}" readonly class="form-control input-sm" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">Input with tooltip</label>
+                        <label class="col-sm-3 col-md-3 col-lg-2 control-label">Date/Time:</label>
                         <div class="col-sm-9 col-md-9 col-lg-10">
-                            <input type='text' title="Tooltip on input field" class="tip-bottom form-control input-sm" />
+                            <input type="text" name="date" class="form-control input-sm" />
+                            <script type="text/javascript">
+                                $(function(){
+                                    $('*[name=date]').appendDtpicker();
+                                });
+                            </script>                       
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 col-md-3 col-lg-2 control-label">Normal textarea</label>
-                        <div class="col-sm-9 col-md-9 col-lg-10">
-                            <textarea rows="5" class="form-control"></textarea>
-                        </div>
-                    </div>
+                    </div>       
                     <div class="form-actions">
-                        <button type="submit" class="btn btn-primary btn-sm">Save</button> or <a class="text-danger" href="#">Cancel</a>
+                        <button type="submit" class="btn btn-primary btn-sm">Save</button>
                     </div>
+                    {{ csrf_field() }}
                 </form>
             </div>
         </div>                      
@@ -99,10 +93,20 @@
 @stop
 
 @section('admin-scripts')
-    <script src="/authmin/js/select2.min.js"></script>
+    <script src="/authmin/js/select2.min.js"></script>  
     <script>
         $(document).ready(function () {
+            $("#sel1").select2();
             $("#sel2").select2();
         })
+    </script>
+    <script>
+        function editInput(e)
+        {
+            var chaCode = (e.which) ? e.which : event.keyCode
+            if(chaCode > 31 && (chaCode < 48 || chaCode > 57))
+                return false
+            // console.log(e.target.value);
+        }
     </script>
 @stop

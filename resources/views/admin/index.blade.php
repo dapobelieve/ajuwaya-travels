@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/authmin/css/bootstrap.min.css" />
         <link rel="stylesheet" href="/authmin/css/font-awesome.css" />
-        <link rel="stylesheet" href="/authmin/css/fullcalendar.css" />
+        <script src="/authmin/js/jquery.min.js"></script>
         <link rel="stylesheet" href="/authmin/css/jquery.jscrollpane.css" /> 
         <link rel="stylesheet" href="/authmin/css/unicorn.css" />
         @yield('admin-style')
@@ -45,12 +45,12 @@
                 {{-- </div> --}}
                 <div class="row">
                     <div id="footer" class="col-xs-12">
-                        2017 &copy;  Brought to you by <a href="facebook.com/dapobelieve">Believe</a>
+                        2017 &copy;  Brought to you by <a href="http://facebook.com/dapobelieve">Believe</a>
                     </div>
                 </div>
             </div>
 
-            <script src="/authmin/js/jquery.min.js"></script>
+            
             <script src="/authmin/js/jquery-ui.custom.js"></script>
             <script src="/authmin/js/bootstrap.min.js"></script>
             <script src="/authmin/js/jquery.nicescroll.min.js"></script>
