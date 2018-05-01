@@ -27,7 +27,7 @@ class RouteController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.route.add');
     }
 
     /**

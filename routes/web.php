@@ -48,7 +48,12 @@ Route::get('/route/{route}', 'Route\RouteController@show')->name('route.details'
 // load the routes page as the first
 Route::get('admin', 'Admin\RouteController@index')->name('index-routes');
 
-Route::resource('routes', 'Admin\RouteController');
+Route::group(['prefix' => 'admin'], function () {
+
+    Route::resource('routes', 'Admin\RouteController');
+    
+});
+
 
 
 

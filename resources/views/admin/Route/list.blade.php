@@ -1,5 +1,7 @@
 @extends('admin.index')
-
+@section('big-name')
+    Create New Route
+@stop
 
 @section('admin-content')
 <div class="row">
@@ -17,7 +19,7 @@
                 </form>
             </div>
             <div class="form-actions">
-                <button type="submit" class="btn btn-success btn-sm">Add Route</button>
+                <a href="{{ route('routes.create') }}" type="submit" class="btn btn-success btn-sm">Add Route</a>
             </div>
         </span>
 
@@ -84,6 +86,8 @@
 </div>
 
 @stop
+
+
 @section('admin-scripts')
 
 @stop

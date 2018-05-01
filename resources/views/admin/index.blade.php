@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="/authmin/css/fullcalendar.css" />
         <link rel="stylesheet" href="/authmin/css/jquery.jscrollpane.css" /> 
         <link rel="stylesheet" href="/authmin/css/unicorn.css" />
-        @yield('style')
+        @yield('admin-style')
        
    
     </head>    
@@ -31,26 +31,24 @@
             @include('admin.template.nav')
 
             <div id="content">
-                <div id="content-header" class="mini">
-                    <h1>@yield('big-name')</h1>
-                </div>
-                <div id="breadcrumb">
-                    <a href="#" title="Go to Home" class="tip-bottom"><i class="fa fa-home"></i> Home</a>
-                    <a href="#" class="current">Dashboard</a>
-                </div>
-                <div class="container-fluid">
-                        @yield('admin-tabs')
-                            @yield('admin-content')                  
-                        </div>
+                    <div id="content-header" class="mini">
+                        <h1>@yield('big-name')</h1>
+                    </div>
+                    <div id="breadcrumb">
+                        <a href="#" title="Go to Home" class="tip-bottom"><i class="fa fa-home"></i> Home</a>
+                        <a href="#" class="current">Dashboard</a>
+                    </div>
+                    <div class="container-fluid">
+                            {{-- @yield('admin-tabs') --}}
+                        @yield('admin-content')                  
+                    </div>
+                {{-- </div> --}}
+                <div class="row">
+                    <div id="footer" class="col-xs-12">
+                        2017 &copy;  Brought to you by <a href="facebook.com/dapobelieve">Believe</a>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div id="footer" class="col-xs-12">
-                    2017 &copy;  Brought to you by <a href="facebook.com/dapobelieve">Believe</a>
-                </div>
-            </div>
-        </div>
 
             <script src="/authmin/js/jquery.min.js"></script>
             <script src="/authmin/js/jquery-ui.custom.js"></script>
