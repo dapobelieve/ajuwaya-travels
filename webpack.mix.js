@@ -1,8 +1,8 @@
 let mix = require('laravel-mix');
 
-module.exports = {
-  mode: 'production'
-}
+// module.exports = {
+//   mode: 'production'
+// }
 
 mix.js(
     ['resources/assets/js/app.js',

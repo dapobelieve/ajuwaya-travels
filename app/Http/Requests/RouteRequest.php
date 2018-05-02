@@ -24,12 +24,23 @@ class RouteRequest extends FormRequest
     public function rules()
     {
         return [
-            'location' => 'required',
+            'state' => 'required',
+            'take_off' => 'required',
             'camp'     => 'required',
             'price'    => 'required',
             'seater'   => 'required',
-            'ref'      => 'required',
+            'ref'      => 'required|unique:routes',
             'date'     => 'required'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'price.required' => 'Enter a price',
+            'seater.required' => 'Select a bus type',
+            'camp.required' =>   'Select Orientation Camp',
+            'take_off.required' => 'Enter a location in the selected state',
         ];
     }
 }

@@ -21,7 +21,7 @@ class RouteController extends Controller
      */
     public function index()
     {
-        $routes = Route::with('camp', 'location')->latest()->get();
+        $routes = Route::with('camp', 'location')->latest()->paginate(10);
         return view('admin.route.list')->with('routes', $routes);
     }
 
@@ -59,6 +59,8 @@ class RouteController extends Controller
             'takeoff'     => $request->date.':00',
             'ref'         => $request->ref,
         ]);
+
+        return redirect()->route('routes.index')->with('sms', 'Route Added Successfully.');
     }
 
     /**
@@ -80,7 +82,12 @@ class RouteController extends Controller
      */
     public function edit($id)
     {
-        //
+        $locs  = Location::all();
+        $camps = Camp::orderBy('name', 'asc')->get();
+        $data  = Route::findOrFail($id);
+        return view('admin.route.edit')->with('route', $data)
+                                        ->with('locations', $locs)
+                                        ->with('camps', $camps);
     }
 
     /**
@@ -92,7 +99,7 @@ class RouteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        dd($request);
     }
 
     /**

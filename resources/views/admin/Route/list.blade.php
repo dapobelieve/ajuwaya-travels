@@ -1,15 +1,17 @@
 @extends('admin.index')
 @section('big-name')
-    Create New Route
+    All Routes
 @stop
 
 @section('admin-content')
 <div class="row">
     <div class="col-xs-12">
-        {{-- <div class="alert alert-info">
-           t Welcome in the <strong>Unicorn Admin Theme</strong>. Don't forget to check all the pages!
+        @if(Session::has('sms'))
+        <div class="alert alert-info">
+           {{ Session::get('sms') }}
             <a href="#" data-dismiss="alert" class="close">×</a>
-        </div> --}}
+        </div>
+        @endif
         <span class="heady">
             <div class="search">
                 <form action="">
@@ -56,9 +58,17 @@
                                 <div class="btn-group">
                                     <button data-toggle="dropdown" class="btn btn-xs btn-red dropdown-toggle">Options <span class="caret"></span></button>
                                     <ul class="dropdown-menu ">
-                                        <li><a href="#">Edit</a></li>
-                                        <li><a href="#">View Bookings</a></li>
-                                        <li class="divider"></li>
+                                        <li>
+                                            <form style=" display: inline; padding-left: 2.3rem" 
+                                                action="{{ route('routes.edit', $route->id) }}">
+                                            <input type="hidden" name="_method" value="PUT">
+                                            {{ csrf_field() }}
+
+                                            <button class="btn btn-xs btn-success">Edit</button>
+                                            </form>
+                                        </li>
+                                        <li><a href="#" style="color: #1824bb"> Bookings</a></li>
+                                        {{-- <li class="divider"></li> --}}
                                         <li>
                                             <form style=" display: inline; padding-left: 2.3rem" action="#"
                                                 onsubmit="return confirm('Are you sure?');">
@@ -78,7 +88,8 @@
                         </tr>
                         @endforelse
                     </tbody>
-                </table>                            
+                </table>  
+                {{ $routes->links() }}                          
             </div>
         </div>
         
