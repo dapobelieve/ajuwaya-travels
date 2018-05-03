@@ -27,7 +27,7 @@
             <div class="search">
                 <form action="">
                     <label for="search"> Enter Booking Ref:</label>
-                    <input type="text" disabled placeholder="Search here..."/>
+                    <input type="text" placeholder="Search here..."/>
                     <button type="submit" class="tip-right" title="Search"><i class="fa fa-search"></i></button>
                 </form>
             </div>
@@ -48,7 +48,7 @@
                     <thead>
                         <tr>
                             <th><i class="fa fa-resize-vertical"></i></th>
-                            <th>Column name</th>
+                            {{-- <th>Column name</th> --}}
                             <th>From</th>
                             <th>To</th>
                             <th> <strong>Bus Type</strong> </th>
@@ -60,7 +60,7 @@
                         @forelse($routes as $route)
                         <tr>
                             <td><input type="checkbox" class="checkbox_delete" name="entries_to_delete[]" value="{{ $route->id }}" /></td>
-                            <td>{{ $route->id }}</td>
+                            {{-- <td>{{ $route->id }}</td> --}}
                             <td>{{ $route->location->state }}</td>
                             <td>{{ $route->camp->toUp() }}</td>
                             <td>{{ $route->bus_type }}</td>

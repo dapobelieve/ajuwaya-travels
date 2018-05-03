@@ -37,7 +37,7 @@
                         <label class="col-sm-3 col-md-3 col-lg-2 control-label">Select State:</label>
                         <div class="col-sm-9 col-md-9 col-lg-10">
                             <select required name="state" id="sel2">
-                                <option value=""></option>
+                                <option selected value="{{ $route->location->id }}">{{ $route->location->state }}</option>
                                 @foreach($locations as $location)
                                     <option value="{{ $location->id }}">{{ ucwords($location->state) }}</option>
                                 @endforeach
@@ -54,7 +54,7 @@
                         <label class="col-sm-3 col-md-3 col-lg-2 control-label">Destination:</label>
                         <div class="col-sm-9 col-md-9 col-lg-10">
                             <select required name="camp" id="sel1">
-                                <option value=""></option>
+                                <option selected value="{{ $route->camp->id }}">{{ $route->camp->name }}</option>
                                 @foreach($camps as $location)
                                     <option value="{{ $location->id }}">{{ ucwords($location->name) }}</option>
                                 @endforeach

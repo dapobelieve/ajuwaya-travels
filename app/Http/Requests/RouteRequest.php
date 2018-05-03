@@ -29,10 +29,6 @@ class RouteRequest extends FormRequest
             'camp'     => 'required',
             'price'    => 'required',
             'seater'   => 'required',
-            // 'ref'      => [
-            //     'required',
-            //     Rule::unique('routes')->ignore(Auth::user()->id),
-            // ],
             'date'     => 'required'
         ];
     }
