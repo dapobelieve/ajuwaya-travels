@@ -40,6 +40,29 @@ class RouteController extends Controller
                         ->with('ref', $routeRef)
                         ->with('camps', $camps);
     }
+    /**
+     * Mass delete records
+     * @param $request containing all ids 
+     */
+
+    public function deleteAll(Request $request)
+    {
+        $this->validate($request, [
+            'ids' => 'required'
+        ],
+        [
+            'ids.required' => 'No record selected',
+        ]);
+
+
+        $routes = explode(',', $request->ids);
+        foreach($routes as $route_id){
+            $route = Route::findOrFail($route_id);
+            $route->delete();
+        }
+
+        return redirect()->route('routes.index')->with('sms', 'Route Deleted Successfully.');
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -97,9 +120,19 @@ class RouteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(RouteRequest $request, $id)
     {
-        dd($request);
+        $route = Route::findOrFail($id);
+        $route->update([
+            'location_id' => $request->state,
+            'camp_id'     => $request->camp,
+            'take_off'    => $request->location,
+            'price'       => $request->price,
+            'bus_type'    => $request->seater,
+            'takeoff'     => $request->date.':00',
+        ]);
+
+        return redirect()->route('routes.index')->with('sms', 'Route Edited Successfully.');
     }
 
     /**

@@ -76,7 +76,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form-group" {{ $errors->has('seater') ? ' has-error' : '' }}>
+                    <div class="form-group" {{ $errors->has('ref') ? ' has-error' : '' }}>
                         <label class="col-sm-3 col-md-3 col-lg-2 control-label">Ref Code:</label>
                         <div class="col-sm-9 col-md-9 col-lg-10">
                             <input type="text" name="ref" value="{{ $ref }}" readonly class="form-control input-sm" />

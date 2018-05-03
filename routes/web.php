@@ -36,6 +36,10 @@ Route::get('/book/{route}', 'Booking\BookingController@index')->name('book.start
 Route::get('/redirect/{service}','Social\SocialAuthController@redirect');
 Route::get('/{service}/callback','Social\SocialAuthController@callback');
 
+
+
+
+
 Route::get('/route/{route}', 'Route\RouteController@show')->name('route.details');
 
 
@@ -49,7 +53,7 @@ Route::get('/route/{route}', 'Route\RouteController@show')->name('route.details'
 Route::get('admin', 'Admin\RouteController@index')->name('index-routes');
 
 Route::group(['prefix' => 'admin'], function () {
-
+    Route::delete('/route/mass_delete', 'Admin\RouteController@deleteAll')->name('delete.multiple');
     Route::resource('routes', 'Admin\RouteController');
     
 });

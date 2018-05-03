@@ -47,7 +47,7 @@
                     <div class="form-group {{ $errors->has('take_off') ? ' has-error' : '' }}">
                         <label class="col-sm-3 col-md-3 col-lg-2 control-label">Location:</label>
                         <div class="col-sm-9 col-md-9 col-lg-10">
-                            <input name="take_off" value="{{ $route->take_off }}" type="text" placeholder="Take off point in selected state" class="form-control input-sm" />
+                            <input name="take_off" value="{{ Request::old('take_off') ?: $route->take_off }}" type="text" placeholder="Take off point in selected state" class="form-control input-sm" />
                         </div>
                     </div>
                     <div class="form-group {{ $errors->has('camp') ? ' has-error' : '' }}">
@@ -64,23 +64,22 @@
                     <div class="form-group {{ $errors->has('price') ? ' has-error' : '' }}">
                         <label class="col-sm-3 col-md-3 col-lg-2 control-label">Price:</label>
                         <div class="col-sm-9 col-md-9 col-lg-10">
-                            <input name="price" value="{{ Request::old('date') ?: $route->price }}" type="text" onkeydown="return editInput(event)" placeholder="Transport Fare" class="form-control input-sm" />
+                            <input name="price" value="{{ Request::old('price') ?: $route->price }}" type="text" onkeydown="return editInput(event)" placeholder="Transport Fare" class="form-control input-sm" />
                         </div>
                     </div>
                     <div class="form-group {{ $errors->has('seater') ? ' has-error' : '' }}">
                         <label class="col-sm-3 col-md-3 col-lg-2 control-label">Bus Seater:</label>
                         <div class="col-sm-9 col-md-9 col-lg-10">
                             <select name="seater" id="sel1">
-                                <option value="">X Seater Bus</option>
                                 <option value="15">15</option>
                                 <option value="35">35</option>
                             </select>
                         </div>
                     </div>
-                    <div class="form-group" {{ $errors->has('seater') ? ' has-error' : '' }}>
+                    <div class="form-group" {{ $errors->has('ref') ? ' has-error' : '' }}>
                         <label class="col-sm-3 col-md-3 col-lg-2 control-label">Ref Code:</label>
                         <div class="col-sm-9 col-md-9 col-lg-10">
-                            <input type="text" name="ref" value="{{ Request::old('date') ?: $route->ref }}" readonly class="form-control input-sm" />
+                            <input type="text" name="ref" value="{{ $route->ref }}" readonly class="form-control input-sm" />
                         </div>
                     </div>
                     <div class="form-group {{ $errors->has('date') ? ' has-error' : '' }}">

@@ -12,6 +12,17 @@
             <a href="#" data-dismiss="alert" class="close">×</a>
         </div>
         @endif
+        @if(count($errors) > 0)
+        <div class="alert alert-danger">
+            <strong>Error Alert</strong>. 
+            <a href="#" data-dismiss="alert" class="close">×</a>
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li> {{ $error }} </li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
         <span class="heady">
             <div class="search">
                 <form action="">
@@ -28,7 +39,7 @@
         <div class="widget-box">
             <div class="widget-title">
                 <span class="icon with-checkbox">
-                    <input type="checkbox" id="title-checkbox" name="title-checkbox" />
+                    <input type="checkbox" class="checkbox_all" id="title-checkbox" name="title-checkbox" />
                 </span>
                 <h5>Active Routes</h5>
             </div>
@@ -48,7 +59,7 @@
                     <tbody>
                         @forelse($routes as $route)
                         <tr>
-                            <td><input type="checkbox" /></td>
+                            <td><input type="checkbox" class="checkbox_delete" name="entries_to_delete[]" value="{{ $route->id }}" /></td>
                             <td>{{ $route->id }}</td>
                             <td>{{ $route->location->state }}</td>
                             <td>{{ $route->camp->toUp() }}</td>
@@ -89,7 +100,17 @@
                         @endforelse
                     </tbody>
                 </table>  
-                {{ $routes->links() }}                          
+                <div class="bottom">
+                    <div class="item">{{ $routes->links() }}</div>
+                    <div class="item">
+                        <form onsubmit="confirm('Are you sure you want to delete those records?')" action="{{ route('delete.multiple') }}" method="post">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" required name="ids" id="ids" value="">
+                            {{ csrf_field() }}
+                            <input type="submit" value="Delete" class="btn btn-danger">
+                        </form>
+                    </div>
+                </div>                          
             </div>
         </div>
         
@@ -100,7 +121,29 @@
 
 
 @section('admin-scripts')
+    <script>
+        $('.checkbox_all').click(function () {
+            $('input.checkbox_delete').prop('checked', this.checked);
+            getIds();
+        });
 
+        $('.checkbox_delete').change(function () {
+            getIds();
+        })
+
+        function getIds()
+        {
+            var ids = [];
+            $('.checkbox_delete').each(function () {
+                if($(this).is(":checked")) {
+                    ids.push($(this).val());
+                }
+            });
+
+            $('#ids').val(ids.join());
+
+        }
+    </script>
 @stop
 
 
