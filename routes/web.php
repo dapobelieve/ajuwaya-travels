@@ -1,6 +1,6 @@
 <?php
 
-// Route::get('/')
+// Route::get('/mail')
 
 
 
@@ -55,6 +55,7 @@ Route::get('admin', 'Admin\RouteController@index')->name('index-routes');
 Route::group(['prefix' => 'admin'], function () {
     Route::delete('/route/mass_delete', 'Admin\RouteController@deleteAll')->name('delete.multiple');
     Route::resource('routes', 'Admin\RouteController');
+    Route::get('/route/{route}', 'Admin\RouteController@getBookings')->name('route.booking');
     
 });
 

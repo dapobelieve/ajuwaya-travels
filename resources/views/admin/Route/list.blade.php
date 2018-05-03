@@ -49,6 +49,7 @@
                         <tr>
                             <th><i class="fa fa-resize-vertical"></i></th>
                             {{-- <th>Column name</th> --}}
+                            <th>#</th>
                             <th>From</th>
                             <th>To</th>
                             <th> <strong>Bus Type</strong> </th>
@@ -60,7 +61,7 @@
                         @forelse($routes as $route)
                         <tr>
                             <td><input type="checkbox" class="checkbox_delete" name="entries_to_delete[]" value="{{ $route->id }}" /></td>
-                            {{-- <td>{{ $route->id }}</td> --}}
+                            <td>{{ $loop->iteration }}</td>
                             <td>{{ $route->location->state }}</td>
                             <td>{{ $route->camp->toUp() }}</td>
                             <td>{{ $route->bus_type }}</td>
@@ -78,7 +79,12 @@
                                             <button class="btn btn-xs btn-success">Edit</button>
                                             </form>
                                         </li>
-                                        <li><a href="#" style="color: #1824bb"> Bookings</a></li>
+                                        <li>
+                                            <form style=" display: inline; padding-left: 2.3rem" 
+                                                action="{{ route('route.booking', $route->ref) }}" method="get">
+                                            <button class="btn btn-xs btn-info">Bookings</button>
+                                            </form>
+                                        </li>
                                         {{-- <li class="divider"></li> --}}
                                         <li>
                                             <form style=" display: inline; padding-left: 2.3rem" action="#"

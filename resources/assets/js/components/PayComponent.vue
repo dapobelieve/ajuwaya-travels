@@ -17,7 +17,7 @@
               <div class="container">
                 <div class="row">
                   <div class="col-sm-12 center">
-                      this is the Payment or summary component
+                      You would be redirected to the payment gateway.
                     <form @submit.prevent="payWithPaystack" action="">
                     <!-- <form @submit.prevent="payNow(payObj.reference)" action=""> -->
                           <button type="submit" class="btn-success center btn btn-lg">Pay &#x20A6 {{ payObj.format }} </button>

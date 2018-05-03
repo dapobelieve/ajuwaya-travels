@@ -145,4 +145,12 @@ class RouteController extends Controller
     {
         //
     }
+
+    public function getBookings(Route $route)
+    {
+        $bookings = $route->booking()->get() ;
+
+        return view('admin.route.bookings')->with('route', $route)
+                                        ->with('bookings', $bookings);
+    }
 }

@@ -49486,7 +49486,7 @@ var render = function() {
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-sm-12 center" }, [
               _vm._v(
-                "\n                  this is the Payment or summary component\n                "
+                "\n                  You would be redirected to the payment gateway.\n                "
               ),
               _c(
                 "form",
