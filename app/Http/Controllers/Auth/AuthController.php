@@ -28,8 +28,11 @@ class AuthController extends Controller
         return view('auth.register');
     }
 
-    public function getLogin()
+    public function getLogin(Request $request)
     {
+        $preUrl = \Session::get('_previous');
+        $request->session()->put('urler', $preUrl);
+
         return view('auth.login');
     }
 
@@ -73,13 +76,6 @@ class AuthController extends Controller
             'password' => 'required',
         ]);
 
-        // //do the double login here
-        // $loginType = filter_var($request->input('phone1'), FILTER_VALIDATE_EMAIL) ? 'email' : 'phone';
-
-        // $request->merge([
-        //     $loginType => $request->input('phone1'),
-        // ]);
-    
         if(!Auth::attempt(
             [
                 'email' => $request->input('email'),
@@ -88,8 +84,8 @@ class AuthController extends Controller
             
             return redirect()->back()->with('authMsg','Could not sign you in. Invalid Details');
         }
-
-        return redirect()->intended('/');
+        // dd("what is this e");
+        return redirect($request->session()->get('urler')['url']);
     }
 
     public function getSignout()

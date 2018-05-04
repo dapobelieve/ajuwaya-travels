@@ -32,7 +32,7 @@ class BookingDetails extends Mailable
      */
     public function build()
     {
-        return $this->from('info@ajuwayatravel.com','AjuwayaTravel')
+        return $this->from('bookings@ajuwayatravel.com','AjuwayaTravel')
                     ->subject('Booking Details')
                     ->view('Mail.Booking.index');
     }

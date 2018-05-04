@@ -59,9 +59,7 @@
         },
         methods: {
             payNow (response) {
-                // setTimeout(function () {
-                //     alert('Processing your Payment. Please wait...');
-                // }, 1000);
+                alert('Processing your Payment. This would take few seconds, Please wait...');
                 
 
                 axios.post('api/payment', {

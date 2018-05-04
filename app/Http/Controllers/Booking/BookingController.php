@@ -78,18 +78,16 @@ class BookingController extends Controller
     {
         $this->validate($request, [
             'name'  => 'required|string',
-            'phone' => 'required|unique:bookings|digits:11',
-            'email' => 'required|unique:bookings|email',
+            'phone' => 'required|digits:11',
+            'email' => 'required|email',
             // 'seat'  => 'required|array',
             'sex'   => 'required',
             'userId' => 'required',
         ],[
             'name.required'   => 'Please provide your full name',
             'phone.digits'    => 'Your phone number must be 11 digits',
-            'phone.unique'    => 'That phone number has already been used',
             'phone.required'  => 'Enter your phone number',
             'email.required'  => 'The Email field is required',
-            'email.unique'    => 'That email address has already been taken',
             // 'seat.required'   => 'Please select your seat number(s)',
             'sex.required'   => 'Please select your Gender'
         ]);
@@ -120,22 +118,18 @@ class BookingController extends Controller
             'phone' => [
                 'required',
                 'digits:11',
-                Rule::unique('bookings')->ignore($request->bkId),
             ],
             'email' => [
                 'required',
                 'email',
-                Rule::unique('bookings')->ignore($request->bkId)
             ],
             'seat'  => 'required|array',
             'sex'   => 'required',
             ],[
                 'name.required'   => 'Please provide your full name',
                 'phone.digits'    => 'Your phone number must be 11 digits',
-                'phone.unique'    => 'That phone number has already been used',
                 'phone.required'  => 'Enter your phone number',
                 'email.required'  => 'The Email field is required',
-                'email.unique'    => 'That email address has already been taken',
                 'seat.required'   => 'Please select your seat number(s)',
                 'sex.required'   => 'Please select your Gender'
             ]);

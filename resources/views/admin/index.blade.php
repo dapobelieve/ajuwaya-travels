@@ -43,10 +43,10 @@
                         @yield('admin-content')                  
                     </div>
                 {{-- </div> --}}
-                <div class="row">
-                    <div id="footer" class="col-xs-12">
-                        2017 &copy;  Brought to you by <a href="http://facebook.com/dapobelieve">Believe</a>
-                    </div>
+            </div>
+            <div class="row">
+                <div id="footer" class="col-xs-12">
+                    2018 &copy;  Brought to you by <a href="https://facebook.com/dapobelieve">Believe</a>
                 </div>
             </div>
 

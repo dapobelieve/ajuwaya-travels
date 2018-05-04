@@ -42,12 +42,12 @@
                   </div>
                 </div>                  
                 <div class="checkbox">
-                  <input type="checkbox" id="remember" name="rememberme" value="forever" style="float: left;">
+                  <input type="checkbox" name="remember" value="" style="float: left;">
                   <label for="remember">Remember me</label>
                 </div>
                 <button class="btn btn-common log-btn">Submit</button>
                 {{ csrf_field() }}
-                    <a href="/redirect/google" style="text-transform: none; border-radius: 2px" class="btn btn-xs  btn-social btn-google">
+                    <a href="/redirect/google" style="text-transform: none; border-radius: 2px" class="btn btn-xs center  btn-social btn-google">
                         <span class="fa fa-google"></span> Sign up with Google
                     </a>
                     {{-- <a href="/redirect/facebook" style="text-transform: none; border-radius: 2px" class="btn btn-xs  btn-social btn-facebook">
@@ -56,7 +56,9 @@
               </form>
               
               <ul class="form-links">
-                <li class="pull-left"><a href="{{ route('auth.register') }}">Create Account</a></li>
+                <br>
+                <li style="text-align: center; padding-left: 25%">
+                    <a href="{{ route('auth.register') }}" style="color: #fff" class=" center btn btn-sm btn-primary">Create Account</a></li>
                 <li class="pull-right"><a href="#">{{-- Lost your password? --}}</a></li>
               </ul>
             </div>

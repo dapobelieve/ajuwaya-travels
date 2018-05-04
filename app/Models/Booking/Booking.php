@@ -6,6 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Booking extends Model
 {
+    protected $casts = [
+        'pay_status' => 'boolean',
+    ];
+
+    protected $appends = ['payMode'];
+
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -30,7 +36,13 @@ class Booking extends Model
         'amount',
     ];
 
-    // public function booked()
+    public function getPay()
+    {
+        if($this->pay_status == 1)
+            return 'Paid';
+        else
+            return 'Not Paid';
+    }
 
     public function getRouteKeyName()
     {
