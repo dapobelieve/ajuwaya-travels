@@ -55,7 +55,9 @@
                                 <th>Phone</th>
                                 <th>Pay Status</th>
                                 <th>Seat Number(s)</th>
+                                <th>Gender</th>
                                 <th>Date</th>
+                                <th>Time</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -65,10 +67,11 @@
                                 <td>{{ $loop->index + 1 }}</td>
                                 <td>{{ $route->email }}</td>
                                 <td>{{ $route->phone }}</td>
-                                <td>{{ $route->pay_status }}</td>
+                                <td>{{ $route->getPay() }}</td>
                                 <td>{{ $route->seat }}</td>
                                 <td>{{ $route->gender }}</td>
-                                <td>{{ $route->created_at->format('D, M j  @   g:i A') }}</td>
+                                <td>{{ $route->created_at->format('F, M j ') }}</td>
+                                <td>{{ $route->created_at->format('g:i A') }}</td>
                                 {{-- <td>
                                     <div class="btn-group">
                                         <button data-toggle="dropdown" class="btn btn-xs btn-red dropdown-toggle">Options <span class="caret"></span></button>

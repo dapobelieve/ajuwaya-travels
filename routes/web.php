@@ -1,9 +1,5 @@
 <?php
 
-// Route::get('/mail')
-
-
-
 Route::get('/','HomeController@index' )->name('home');
 
 

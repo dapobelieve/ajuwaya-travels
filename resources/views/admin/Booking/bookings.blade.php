@@ -46,6 +46,7 @@
                                 <th>Phone</th>
                                 <th>Pay Status</th>
                                 <th>Seat Number(s)</th>
+                                <th>Amount Paid</th>
                                 <th>Gender</th>
                                 <th>Date</th>
                             </tr>
@@ -58,6 +59,7 @@
                                 <td>{{ $booking->phone }}</td>
                                 <td>{{ $booking->getPay() }}</td>
                                 <td>{{ $booking->seat }}</td>
+                                <td>&#x20A6 {{  number_format($booking->amount) }}</td>
                                 <td>{{ $booking->gender }}</td>
                                 <td>{{ $booking->created_at->format('D, M j  @   g:i A') }}</td>
                             </tr>

@@ -26,8 +26,8 @@
         <span class="heady">
             <div class="search">
                 <form action="">
-                    <label for="search"> Enter Booking Ref:</label>
-                    <input type="text" placeholder="Search here..."/>
+                    <label for="search"> Enter Route Ref Code:</label>
+                    <input type="text" placeholder="e.g AJT-1u9gPdo4e"/>
                     <button type="submit" class="tip-right" title="Search"><i class="fa fa-search"></i></button>
                 </form>
             </div>
