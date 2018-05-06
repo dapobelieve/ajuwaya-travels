@@ -203,6 +203,21 @@
         visibility: hidden;
         width: 0; }
 
+        .nice {
+            background-color: #08c0aa;
+            border: 0;
+            border-radius: 52px;
+            color: #ffffff;
+            display: inline-block;
+            font-size: 70px;
+            font-weight: bold;
+            line-height: 52px;
+            outline: none;
+            text-align: center;
+            text-decoration: none;
+            width: 300px;
+        }
+
       .powered-by a {
         text-decoration: none; }
 
@@ -304,7 +319,7 @@
                                 <table border="0" cellpadding="0" cellspacing="0">
                                   <tbody>
                                     <tr>
-                                      <td> <a href="{{ route('email.token', ['token'=> $user->token->token]) }}" target="_blank">Confirm</a> </td>
+                                      <td> <a class="btn nice btn-default" href="{{ route('email.token', ['token'=> $user->token->token]) }}" target="_blank">Confirm</a> </td>
                                     </tr>
                                   </tbody>
                                 </table>

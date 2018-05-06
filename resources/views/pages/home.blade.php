@@ -65,9 +65,62 @@ Welcome to AjuwayaTravels
     <!-- end intro section -->
     <section id="categories-homepage">
         <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h3 class="center section-title">Transportaion in Easy Steps</h3>
+            </div>          
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="category-box border-1 wow fadeInUpQuick" data-wow-delay="0.3s">
+                <div class="icon">
+                  <a href="category.html"><i class="lnr lnr-magnifier color-1"></i></a>
+                </div>
+                <div class="category-header">  
+                  <a href="category.html"><h4>Search</h4></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="category-box border-2 wow fadeInUpQuick" data-wow-delay="0.6s">
+                <div class="icon">
+                  <a href="category.html"><i class="lnr lnr-select color-2"></i></a>
+                </div>
+                <div class="category-header">  
+                  <a href="category.html"><h4>Book</h4></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="category-box border-3 wow fadeInUpQuick" data-wow-delay="0.9s">
+                <div class="icon">
+                  <a href="category.html"><i class="lnr lnr-cloud-upload color-3"></i></a>
+                </div>
+                <div class="category-header">  
+                  <a href="category.html"><h4>Pay</h4></a>
+                </div>
+              </div>
+            </div>            
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="category-box border-4 wow fadeInUpQuick" data-wow-delay="1.2s">
+                <div class="icon">
+                  <a href="category.html"><i class="lnr lnr-bus color-4"></i></a>
+                </div>
+                <div class="category-header">  
+                  <a href="category.html"><h4>...</h4></a>
+                </div>
+                {{--  --}}
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+
+
+    <section id="categories-homepage">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="section-title">Latest Routes</h3>
+                    <h3 class="center section-title">Latest Routes</h3>
                 </div>
                 @foreach($routes as $route)
                 <div class="adds-wrapper results">

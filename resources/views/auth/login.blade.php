@@ -42,7 +42,7 @@
                   </div>
                 </div>                  
                 <div class="checkbox">
-                  <input type="checkbox" name="remember" value="" style="float: left;">
+                  <input type="checkbox" id="remember" name="remember" value="" style="float: left;">
                   <label for="remember">Remember me</label>
                 </div>
                 <button class="btn btn-common log-btn">Submit</button>

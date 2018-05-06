@@ -10,7 +10,7 @@ class Booking extends Model
         'pay_status' => 'boolean',
     ];
 
-    protected $appends = ['payMode'];
+    // protected $appends = ['payMode'];
 
     public function user()
     {

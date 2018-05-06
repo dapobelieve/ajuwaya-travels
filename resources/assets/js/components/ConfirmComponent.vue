@@ -48,7 +48,7 @@
                                     <!-- <p>Select Seat Number</p> -->
                                     <!-- {{ errors }} -->
                                     <h5 class="smalld">Select Seat Number</h5>
-                                    <small class="smalld">*disabled buttons are seats that have been booked*</small>
+                                    <small style="color: red" class="smalld">*disabled buttons are seats that have been booked*</small>
                                     <span v-if="errors.seat"  class="alata smalld">* {{ errors.seat[0] }} </span>
                                     <div v-if="route.busType === 15" class="calculator v-15">
                                         <input v-model="book.seat" readonly type="text">
@@ -129,7 +129,7 @@
                             </div>                     
                         </div>
                         <div class=" csd col-sm-8 col-md-offset-2">
-                            <button type="submit" class=" btn btn-lg btn-success" >Confirm</button>
+                            <button type="submit" class=" btn btn-common " >Confirm Details</button>
                         </div>
                     </form>
                 </div>

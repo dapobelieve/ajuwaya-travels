@@ -8,7 +8,6 @@ use App\Models\Booking\Route;
 use App\Models\Booking\Booking;
 use App\Http\Controllers\Funcs\Hasher;
 
-use Auth;
 
 use App\Http\Controllers\Controller;
 
@@ -62,10 +61,14 @@ class BookingController extends Controller
             
             $seats = flater($ids, $flatten = []);
 
+
             // return details of a route and seats thats been booked
             return response()->json([
                 'route' => $route,
                 'seats' => $seats,
+                'camp' => $route->camp->name,
+                'location' => $route->location->state,
+                'price'   => number_format($route->price),
             ]);
         }
         else{

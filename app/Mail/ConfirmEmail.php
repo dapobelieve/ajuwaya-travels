@@ -32,8 +32,8 @@ public $user;
      */
     public function build()
     {
-        return $this->from('no-reply@ajuwayatravels.com')
-                    ->subject('Email Confirmation')
+        return $this->from('info@ajuwayatravels.com','AjuwayaTravel')
+                    ->subject('Sign up confirmation from Ajuwaya travel')
                     ->view('Mail.confirm');
     }
 }

@@ -17,7 +17,7 @@ class HomeController extends Controller
         // dd(config('paystack.secretKey'));
         // get all locations and camps
         $locs = Location::all();
-        $routes = Route::with('camp', 'location')->get(); //eager loading
+        $routes = Route::with('camp', 'location')->latest()->limit(5)->get(); //eager loading
         $camps = Camp::orderBy('name', 'asc')->get();
 
         // dd($routes);
@@ -30,12 +30,6 @@ class HomeController extends Controller
 
     public function results(Request $request)
     {
-        // select all routes where params match
-        // $route = Route::where(
-        //     [
-        //         [],
-        //         []
-        //     ]);
 
         $routes = Route::all();
         return view()->back()->with('routes', $routes);

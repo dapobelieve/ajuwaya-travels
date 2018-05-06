@@ -13,7 +13,7 @@
                 <div class="container">
                     <form @submit="sendData" class="">
                         <div class="row"> 
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                     <h2 class="head">
                                         Fill your Details
                                     </h2>
@@ -44,13 +44,13 @@
                                       <span v-if="errors.phone"  class="alata smalld">* {{ errors.phone[0] }}</span>
                                     </div>
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                     <!-- <p>Select Seat Number</p> -->
                                     <!-- {{ errors }} -->
                                     <h5 class="smalld">Select Seat Number</h5>
                                     <small class="smalld" style="color: red">*disabled buttons are seats that have been booked*</small>
                                     <span v-if="errors.seat"  class="alata smalld">* {{ errors.seat[0] }} </span>
-                                    <div v-if="route.busType === 15" class="calculator v-15">
+                                    <div v-if="route.busType === 15" class="calculator">
                                         <input v-model="book.seat" readonly type="text">
                                         <div class="calculator-buttons">
                                             <img src="/aju/assets/images/icon.svg" alt="">
@@ -79,7 +79,7 @@
                                             <button :disabled="checkSeat(15)" :class="{ 'free' : checkSeat(15) }" @click.prevent="toggleButton" class="calc-button">15</button>
                                         </div>
                                     </div>
-                                    <div v-else-if="route.busType === 35" class="calculator v-15">
+                                    <div v-else-if="route.busType === 35" class="calculator">
                                         <input v-model="book.seat" readonly type="text">
                                         <div class="calculator-buttons">
                                             <img src="/aju/assets/images/icon.svg" alt="">
@@ -126,11 +126,36 @@
                                             <button :disabled="checkSeat(35)" :class="{ 'free' : checkSeat(35) }" @click.prevent="toggleButton" class="calc-button">35</button>
                                         </div>
                                     </div>
+                            </div>
+                            <div class="col-sm-4 col-sm-6 col-xs-12">
+                                  <div style="height: 220px" class="category-box border-3 wow fadeInUpQuick" data-wow-delay="0.9s">
+                                        <div class="icon">
+                                          <a href="category.html"><i class="lnr lnr-cog color-3"></i></a>
+                                        </div>
+                                        <div class="category-header">  
+                                          <a ><h4>Details </h4></a>
+                                        </div>
+                                        <div class="category-content">
+                                          <ul>
+                                            <li>
+                                              <strong><a style="color: #424248">{{ route.from }} → {{ route.to }}</a></strong> 
+                                            </li>
+                                            <li>
+                                              <a style="color: #424248">Price: <strong> &#x20A6 {{ route.price }}</strong></a>
+                                            </li>
+                                            <li>
+                                              <a style="color: #424248">Time: <strong>{{ datey }}</strong> </a>
+                                            </li>
+                                            <li>
+                                              <a style="color: #424248">Takeoff Point: <strong>{{ route.takeoff }}</strong> </a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                  </div>
                             </div>                     
                         </div>
                         <div class=" csd col-sm-8 col-md-offset-2">
                             <button type="submit" class=" btn btn-common" >Submit</button>
-                            <!-- <router-link :to="{name: 'confirmBook',params:{ bookId: 'aRtTds34s9iSk9Njh' } }" type="submit" class=" btn btn-common">submit</router-link> -->
                         </div>
                     </form>
                 </div>
@@ -140,6 +165,8 @@
 </template>
 
 <script>
+
+    import moment from 'moment';
     export default {
         data () {
             return {
@@ -148,6 +175,11 @@
                 route: {
                     busType: '',
                     seats: [],
+                    from:    null,
+                    to:      null,
+                    time:    null,
+                    price:   null,
+                    takeoff: null,
                 },
                 book: {
                     name:  '',
@@ -178,19 +210,26 @@
             {
                 axios.get('api/details/'+ref)
                 .then(response => {
+                    console.log(response.data.route);
+
                     // load some of the b0ok data of this component
                     this.route.busType = response.data.route.bus_type;
 
                     this.route.seats = response.data.seats;
+                    this.route.from = response.data.route.location.state;
+                    this.route.to   = response.data.route.camp.name;
+                    this.route.price   = response.data.price;
+                    this.route.time   = response.data.route.takeoff;
+                    this.route.takeoff   = response.data.route.take_off;
 
                     // set id
                     this.book.rid = response.data.route.id;
-                    // console.log(this.route.seats);
+                    
                     
                 })
                 .catch(function (error) {
-                    console.log(error.data);
-                    alert('Server Error');
+                    console.log(error);
+                    // alert('Server Error');
                 });
             },
             //method to check if a seat has been booked
@@ -218,6 +257,11 @@
                     console.log(error.response.data);
                  });
             } 
+        },
+        computed: {
+            datey () {
+                return moment(this.route.time).format('lll')
+            }
         },
         mounted() {
             // grab the booking ref from the routes meta data
