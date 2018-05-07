@@ -8,6 +8,9 @@ Route::get('details/{route}', 'Booking\BookingController@feed');
 //get booking details
 Route::get('/book-details/{booking}','Booking\BookingController@bookFeed');
 
+// show bookings
+Route::get('/book-view/{booking}', 'Booking\BookingController@confirmDetails');
+
 
 // post users booking
 Route::post('process', 'Booking\BookingController@store');

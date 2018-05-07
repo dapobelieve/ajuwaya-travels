@@ -36,7 +36,7 @@
                                     <div class="form-group">
                                       <label class="control-label" for="textarea">Email</label>
                                       <input type="email" v-model="book.email" class="form-control" placeholder="Your Email" >
-                                      <span v-if="errors.phone"  class="alata smalld">* {{ errors.email[0] }}</span>
+                                      <span v-if="errors.email"  class="alata smalld">* {{ errors.email[0] }}</span>
                                     </div>
                                     <div class="form-group">
                                       <label class="control-label" for="textarea">Phone Number</label>
@@ -210,7 +210,7 @@
             {
                 axios.get('api/details/'+ref)
                 .then(response => {
-                    console.log(response.data.route);
+                    // console.log(response.data.route);
 
                     // load some of the b0ok data of this component
                     this.route.busType = response.data.route.bus_type;
@@ -249,7 +249,7 @@
                  .then (response => {
                     var bkId = response.data;
                     //go to the next route with the booking ref
-                    this.$router.push({ name: 'confirmBook', params: { bookId: bkId }})
+                    this.$router.push({ name: 'viewbook', params: { bookId: bkId }})
                     
                  })
                  .catch(error => {
@@ -265,7 +265,7 @@
         },
         mounted() {
             // grab the booking ref from the routes meta data
-            console.log(this.$route.meta.mdata);
+            // console.log(this.$route.meta.mdata);
             var ref = this.$route.meta.mdata;
             this.book.userId = this.$route.meta.userId;
 

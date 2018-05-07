@@ -83,7 +83,7 @@ class BookingController extends Controller
             'name'  => 'required|string',
             'phone' => 'required|digits:11',
             'email' => 'required|email',
-            // 'seat'  => 'required|array',
+            'seat'  => 'required|array',
             'sex'   => 'required',
             'userId' => 'required',
         ],[
@@ -91,7 +91,7 @@ class BookingController extends Controller
             'phone.digits'    => 'Your phone number must be 11 digits',
             'phone.required'  => 'Enter your phone number',
             'email.required'  => 'The Email field is required',
-            // 'seat.required'   => 'Please select your seat number(s)',
+            'seat.required'   => 'Please select your seat number(s)',
             'sex.required'   => 'Please select your Gender'
         ]);
 
@@ -103,9 +103,8 @@ class BookingController extends Controller
                     'email'    => $request->email,
                     'phone'    => $request->phone,
                     'gender'   => $request->sex,
-                    // 'seat'     => json_encode($request->seat),
-                    // 'seat_num' => count($request->seat),
-                    // 'pay_status' => 0,
+                    'seat'     => json_encode($request->seat),
+                    'seat_num' => count($request->seat),
                     'bk_ref'   => 'bk-'.Hasher::getHashedToken(10),
                 ]);
 
@@ -181,6 +180,18 @@ class BookingController extends Controller
             return response()->json([
                 'details' => $booking->toArray(),
                 'seats'   => $seats,
+            ]);
+
+        }else{
+            return redirect()->route('home');
+        }
+    }
+
+    public function confirmDetails(Request $request, Booking $booking)
+    {
+        if($request->ajax()){
+            return response()->json([
+                'details' => $booking,
             ]);
 
         }else{

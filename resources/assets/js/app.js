@@ -21,6 +21,7 @@ window.Vue.use(VueRouter);
 import BookComponent    from './components/BookComponent.vue';
 import ConfirmComponent from './components/ConfirmComponent.vue';
 import PayComponent from './components/PayComponent.vue';
+import ViewComponent from './components/ViewComponent.vue';
 
 Vue.component('booker',BookComponent);
 
@@ -40,6 +41,11 @@ const routes = [
         path: '/confirm/:bookId',
         component: ConfirmComponent,
         name: 'confirmBook',
+    },
+    {
+        path: '/details/:bookId',
+        component: ViewComponent,
+        name: 'viewbook',
     },
     {
         path: 'payment/:bookRef',

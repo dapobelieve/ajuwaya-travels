@@ -17791,6 +17791,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_ConfirmComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_ConfirmComponent_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_PayComponent_vue__ = __webpack_require__(178);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_PayComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_PayComponent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_ViewComponent_vue__ = __webpack_require__(183);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_ViewComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_ViewComponent_vue__);
 
 var model = window.ajt_model;
 var userId = window.currUser;
@@ -17815,6 +17817,7 @@ window.Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 
 
 
+
 Vue.component('booker', __WEBPACK_IMPORTED_MODULE_2__components_BookComponent_vue___default.a);
 
 var routes = [{
@@ -17829,6 +17832,10 @@ var routes = [{
     path: '/confirm/:bookId',
     component: __WEBPACK_IMPORTED_MODULE_3__components_ConfirmComponent_vue___default.a,
     name: 'confirmBook'
+}, {
+    path: '/details/:bookId',
+    component: __WEBPACK_IMPORTED_MODULE_5__components_ViewComponent_vue___default.a,
+    name: 'viewbook'
 }, {
     path: 'payment/:bookRef',
     component: __WEBPACK_IMPORTED_MODULE_4__components_PayComponent_vue___default.a,
@@ -62848,7 +62855,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             axios.get('api/details/' + ref).then(function (response) {
-                console.log(response.data.route);
+                // console.log(response.data.route);
 
                 // load some of the b0ok data of this component
                 _this.route.busType = response.data.route.bus_type;
@@ -62885,7 +62892,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             axios.post('/api/process', data).then(function (response) {
                 var bkId = response.data;
                 //go to the next route with the booking ref
-                _this2.$router.push({ name: 'confirmBook', params: { bookId: bkId } });
+                _this2.$router.push({ name: 'viewbook', params: { bookId: bkId } });
             }).catch(function (error) {
                 _this2.errors = error.response.data.errors;
                 console.log(error.response.data);
@@ -62899,7 +62906,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     mounted: function mounted() {
         // grab the booking ref from the routes meta data
-        console.log(this.$route.meta.mdata);
+        // console.log(this.$route.meta.mdata);
         var ref = this.$route.meta.mdata;
         this.book.userId = this.$route.meta.userId;
 
@@ -63346,7 +63353,7 @@ var render = function() {
                     }
                   }),
                   _vm._v(" "),
-                  _vm.errors.phone
+                  _vm.errors.email
                     ? _c("span", { staticClass: "alata smalld" }, [
                         _vm._v("* " + _vm._s(_vm.errors.email[0]))
                       ])
@@ -66296,6 +66303,517 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-641b45ac", module.exports)
+  }
+}
+
+/***/ }),
+/* 183 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(184)
+}
+var normalizeComponent = __webpack_require__(6)
+/* script */
+var __vue_script__ = __webpack_require__(186)
+/* template */
+var __vue_template__ = __webpack_require__(187)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\ViewComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-ea655c1e", Component.options)
+  } else {
+    hotAPI.reload("data-v-ea655c1e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 184 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(185);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(5)("6cdf8974", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-ea655c1e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ViewComponent.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-ea655c1e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ViewComponent.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 185 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(4)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n.csd {\n    text-align: center;\n    padding-top: 2rem;\n    /*display: inherit;*/\n}\n.* {\n    box-sizing: border-box;\n}\n.details {\n    font-weight: 600;\n}\n.iselect {\n    background: #19b507fa !important;\n    color: #fff !important;\n    border: none;\n    border-radius: 5px;\n}\n.calculator {\n    background-color: #f6f6f6;\n    padding-bottom: 2rem;\n    padding: 0.4rem;\n    max-width: 300px;\n    margin: 0 auto;\n    /*border: 0.1rem light #111;*/\n    border-radius: 5px;\n    box-shadow: 0 1px 5px rgba(204, 104, 204, 1.6);\n}\n.alata {\n    color: red;\n}\n.calculator input {\n    background: none;\n    border: none;\n    box-shadow: none;\n    width: 100%;\n    /*border-bottom: 0.1rem solid #111;*/\n    text-align: center;\n    font-size: 2rem;\n}\n.free {\n    cursor: none;\n    background: #cc0000fa !important;\n    box-shadow: none !important;\n}\n\n/*css grid happens here*/\n.calculator-buttons {\n    padding: 1.6rem;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr 1fr;\n    grid-template-rows: repeat(5, 1fr);\n    grid-gap: 1rem;\n}\n.s1 {\n    grid-column: 3 / 4;\n}\n.smalld {\n    text-align: center;\n    display: block;\n}\n.head {\n    color: #000;\n}\n.calc-button {\n    background: #5dc1a2;\n    border: none;\n    padding: 1.5rem;\n    color: #fff;\n    border-radius: 5px;\n    font-size: 1.4rem;\n    cursor: pointer;\n    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 186 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_moment__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            activeNav: false,
+            ref: '',
+            route: {
+                busType: '',
+                seats: [],
+                from: null,
+                to: null,
+                time: null,
+                price: null,
+                takeoff: null
+            },
+            book: {
+                name: null,
+                email: null,
+                phone: null,
+                sex: null,
+                seat: [],
+                rid: null
+            }
+        };
+    },
+
+    methods: {
+        fetchRoute: function fetchRoute(ref) {
+            var _this = this;
+
+            axios.get('api/details/' + ref).then(function (response) {
+                console.log(response.data.route);
+
+                // load some of the b0ok data of this component
+                _this.route.busType = response.data.route.bus_type;
+
+                _this.route.seats = response.data.seats;
+                _this.route.from = response.data.route.location.state;
+                _this.route.to = response.data.route.camp.name;
+                _this.route.price = response.data.price;
+                _this.route.time = response.data.route.takeoff;
+                _this.route.takeoff = response.data.route.take_off;
+
+                // set id
+                _this.book.rid = response.data.route.id;
+            }).catch(function (error) {
+                console.log(error);
+                // alert('Server Error');
+            });
+        }
+    },
+    computed: {
+        datey: function datey() {
+            return __WEBPACK_IMPORTED_MODULE_0_moment___default()(this.route.time).format('lll');
+        }
+    },
+    beforeRouteEnter: function beforeRouteEnter(to, from, next) {
+        var ref = to.params.bookId;
+        console.log(ref);
+        axios.get('api/book-view/' + ref).then(function (response) {
+            console.log(response.data);
+
+            next(function (vm) {
+                vm.book.name = response.data.details.name;
+                vm.book.email = response.data.details.email;
+                vm.book.sex = response.data.details.gender;
+                vm.book.phone = response.data.details.phone;
+                vm.book.bkRef = to.params.bookId;
+                vm.book.bkId = response.data.details.id;
+                // route details
+            });
+        }).catch(function (error) {
+            console.log(error);
+            // alert('Server Error');
+        });
+        // next();
+    },
+    mounted: function mounted() {}
+});
+
+/***/ }),
+/* 187 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("section", [
+    _c("div", { staticClass: "tabs tabs-style-bar" }, [
+      _c("nav", [
+        _c("ul", [
+          _c("li", { class: { "tab-current": _vm.activeNav } }, [_vm._m(0)]),
+          _vm._v(" "),
+          _vm._m(1),
+          _vm._v(" "),
+          _vm._m(2)
+        ])
+      ]),
+      _vm._v(" "),
+      _c("section", { attrs: { id: "content" } }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-sm-6 col-sm-6 col-xs-12" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "category-box border-6 wow fadeInUpQuick",
+                  attrs: { "data-wow-delay": "1.8s" }
+                },
+                [
+                  _vm._m(3),
+                  _vm._v(" "),
+                  _vm._m(4),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "category-content" }, [
+                    _c("ul", [
+                      _c("li", [
+                        _c("a", [
+                          _vm._v(" Name: "),
+                          _c("span", { staticClass: "details" }, [
+                            _vm._v(_vm._s(_vm.book.name))
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("a", { attrs: { href: "" } }, [
+                          _vm._v(" Email: "),
+                          _c("span", { staticClass: "details" }, [
+                            _vm._v(_vm._s(_vm.book.email))
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("a", { attrs: { href: "" } }, [
+                          _vm._v("Sex:   "),
+                          _c("span", { staticClass: "details" }, [
+                            _vm._v(_vm._s(_vm.book.sex))
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("a", { attrs: { href: "" } }, [
+                          _vm._v("Phone Number: "),
+                          _c("span", { staticClass: "details" }, [
+                            _vm._v(_vm._s(_vm.book.phone))
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("a", { attrs: { href: "" } }, [
+                          _vm._v("Selected Seat(s): "),
+                          _c("span", { staticClass: "details" }, [
+                            _vm._v(_vm._s(_vm.book.seat))
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("a", { attrs: { href: "" } }, [
+                          _vm._v("Price: "),
+                          _c("span", { staticClass: "details" }, [
+                            _vm._v(_vm._s(_vm.book.seat))
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("li")
+                    ])
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-6 col-sm-6 col-xs-12" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "category-box border-3 wow fadeInUpQuick",
+                  staticStyle: { height: "220px" },
+                  attrs: { "data-wow-delay": "0.9s" }
+                },
+                [
+                  _vm._m(5),
+                  _vm._v(" "),
+                  _vm._m(6),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "category-content" }, [
+                    _c("ul", [
+                      _c("li", [
+                        _c("strong", [
+                          _c("a", { staticStyle: { color: "#424248" } }, [
+                            _vm._v(
+                              _vm._s(_vm.route.from) +
+                                " → " +
+                                _vm._s(_vm.route.to)
+                            )
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("a", { staticStyle: { color: "#424248" } }, [
+                          _vm._v("Price: "),
+                          _c("strong", [
+                            _vm._v(" ₦ " + _vm._s(_vm.route.price))
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("a", { staticStyle: { color: "#424248" } }, [
+                          _vm._v("Time: "),
+                          _c("strong", [_vm._v(_vm._s(_vm.datey))])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("a", { staticStyle: { color: "#424248" } }, [
+                          _vm._v("Takeoff Point: "),
+                          _c("strong", [_vm._v(_vm._s(_vm.route.takeoff))])
+                        ])
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _vm._m(7)
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "icon icon-upload" }, [
+      _c("span", [_vm._v("Submit Details")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { staticClass: "icon icon-config" }, [
+        _c("span", [_vm._v("Confirm Details")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { staticClass: "icon icon-plug" }, [
+        _c("span", [_vm._v("Payment")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "icon" }, [
+      _c("a", [_c("i", { staticClass: "lnr lnr-pencil color-2" })])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "category-header" }, [
+      _c("a", [_c("h4", [_vm._v("Confirm Your Details")])])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "icon" }, [
+      _c("a", [_c("i", { staticClass: "lnr lnr-cog color-3" })])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "category-header" }, [
+      _c("a", [_c("h4", [_vm._v("Details ")])])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: " csd col-sm-8 col-md-offset-2" }, [
+      _c(
+        "button",
+        { staticClass: " btn btn-common", attrs: { type: "submit" } },
+        [_vm._v("Submit")]
+      )
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-ea655c1e", module.exports)
   }
 }
 
