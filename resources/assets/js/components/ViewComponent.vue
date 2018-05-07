@@ -40,7 +40,7 @@
                                       <a href="">Selected Seat(s): <span class="details">{{ book.seat }}</span></a>
                                     </li>
                                     <li>
-                                      <a href="">Price: <span class="details">{{ book.seat }}</span></a>
+                                      <a href="">Price: <span class="details"> &#x20A6 {{ book.price }}</span></a>
                                     </li>
                                     <li>
                                       
@@ -76,8 +76,11 @@
                               </div>
                         </div>                     
                     </div>
-                    <div class=" csd col-sm-8 col-md-offset-2">
-                        <button type="submit" class=" btn btn-common" >Submit</button>
+                    <div class=" csd col-sm-6 col-md-offset-2">
+                        <button type="submit" class=" btn btn-common" >Edit</button>
+                    </div>
+                    <div class=" csd col-sm-6 col-md-offset-2">
+                        <button type="submit" class=" btn btn-primary" >Pay Now</button>
                     </div>
                 </div>
             </section>
@@ -107,8 +110,10 @@
                     email: null,
                     phone: null,
                     sex:   null,
+                    price:   null,
                     seat:  [],
-                    rid:  null
+                    rid:  null,
+                    seats: null
                 },
             }
         },
@@ -143,14 +148,13 @@
         computed: {
             datey () {
                 return moment(this.route.time).format('lll')
-            }
+            },
         },
         beforeRouteEnter (to, from, next){
             var ref = to.params.bookId;
-            console.log(ref);
+
             axios.get('api/book-view/' +ref)
             .then(response => {
-                console.log(response.data);
 
                 next(vm => {
                     vm.book.name   = response.data.details.name;
@@ -159,7 +163,16 @@
                     vm.book.phone  = response.data.details.phone;
                     vm.book.bkRef  = to.params.bookId;
                     vm.book.bkId   = response.data.details.id;
+                    vm.book.seat  = response.data.details.seat;
+                    vm.book.price  = response.data.tprice;
                     // route details
+
+                    // this.route.seats = response.data.seats;
+                    vm.route.from = response.data.route.location.state;
+                    vm.route.to   = response.data.route.camp.name;
+                    vm.route.price   = response.data.price;
+                    vm.route.time   = response.data.route.takeoff;
+                    vm.route.takeoff   = response.data.route.take_off;
                 });
             })
             .catch(function (error) {
@@ -185,6 +198,8 @@
     }
     .details {
         font-weight: 600;
+        color: #000;
+        /*font-size: 20px*/
     }
 
     .iselect {

@@ -189,9 +189,16 @@ class BookingController extends Controller
 
     public function confirmDetails(Request $request, Booking $booking)
     {
+        $route = $booking->route;
+
         if($request->ajax()){
             return response()->json([
-                'details' => $booking,
+                'details'  => $booking,
+                'route'    => $route,
+                'camp'     => $route->camp,
+                'location' => $route->location,
+                'price'    => number_format($route->price),
+                'tprice'    => number_format($route->price * $booking->seat_num),
             ]);
 
         }else{
