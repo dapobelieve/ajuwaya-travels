@@ -3,8 +3,8 @@
         <div class="tabs tabs-style-bar">
             <nav>
                 <ul>
-                    <li :class="{'tab-current': activeNav}" ><a class="icon icon-upload"  ><span>Submit Details</span></a></li>
-                    <li><a class="icon icon-config"><span>Confirm Details</span></a></li>
+                    <li  ><a class="icon icon-upload"  ><span>Submit Details</span></a></li>
+                    <li :class="{'tab-current': activeNav}" ><a class="icon icon-config"><span>Confirm Details</span></a></li>
                     <li><a class="icon icon-plug"><span>Payment</span></a></li>
                     <!-- <li><a class="icon icon-upload"><span>Upload</span></a></li> -->
                 </ul>
@@ -55,7 +55,7 @@
                                       <a ><i class="lnr lnr-cog color-3"></i></a>
                                     </div>
                                     <div class="category-header">  
-                                      <a ><h4>Details </h4></a>
+                                      <a ><h4>Route Details </h4></a>
                                     </div>
                                     <div class="category-content">
                                       <ul>
@@ -76,11 +76,13 @@
                               </div>
                         </div>                     
                     </div>
-                    <div class=" csd col-sm-6 col-md-offset-2">
-                        <button type="submit" class=" btn btn-common" >Edit</button>
-                    </div>
-                    <div class=" csd col-sm-6 col-md-offset-2">
-                        <button type="submit" class=" btn btn-primary" >Pay Now</button>
+                    <div class="row act-buttons">
+                        <div class="col-md-6">
+                            <button type="submit" @click.prevent="editBook()" class=" btn btn-common pull-right" >Edit</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button @click.prevent="payNow()" type="submit" class=" btn btn-primary" >Pay Now</button>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -94,7 +96,7 @@
     export default {
         data () {
             return {
-                activeNav: false,
+                activeNav: true,
                 ref: '',
                 route: {
                     busType: '',
@@ -112,38 +114,18 @@
                     sex:   null,
                     price:   null,
                     seat:  [],
-                    rid:  null,
-                    seats: null
+                    seats: null,
+                    bkRef: null
                 },
             }
         },
         methods: {
-            fetchRoute (ref)
-            {
-                axios.get('api/details/'+ref)
-                .then(response => {
-                    console.log(response.data.route);
-
-                    // load some of the b0ok data of this component
-                    this.route.busType = response.data.route.bus_type;
-
-                    this.route.seats = response.data.seats;
-                    this.route.from = response.data.route.location.state;
-                    this.route.to   = response.data.route.camp.name;
-                    this.route.price   = response.data.price;
-                    this.route.time   = response.data.route.takeoff;
-                    this.route.takeoff   = response.data.route.take_off;
-
-                    // set id
-                    this.book.rid = response.data.route.id;
-                    
-                    
-                })
-                .catch(function (error) {
-                    console.log(error);
-                    // alert('Server Error');
-                });
+            editBook () {
+                this.$router.push({ name: 'confirmBook', params: { bookId: this.book.bkRef }})
             },
+            payNow () {
+                this.$router.push({ name: 'payNow', params: { bookRef: this.book.bkRef }})
+            }
         },
         computed: {
             datey () {
@@ -181,8 +163,6 @@
             });
             // next();
         },
-        mounted() {
-        }
     }
 </script>
 
@@ -195,6 +175,12 @@
     }
     .* {
         box-sizing: border-box;
+    }
+    .act-buttons {
+        margin-top: 12px;
+    }
+    .edit-button {
+        margin-right: 2px !important;
     }
     .details {
         font-weight: 600;

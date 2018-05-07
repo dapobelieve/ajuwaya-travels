@@ -15,7 +15,7 @@
                         <div class="row">
                             <div class="col-sm-6">
                                     <h2 class="">
-                                        Confirm your Details
+                                        Edit
                                     </h2>
                                     <br>
                                     <br>
@@ -129,7 +129,7 @@
                             </div>                     
                         </div>
                         <div class=" csd col-sm-8 col-md-offset-2">
-                            <button type="submit" class=" btn btn-common " >Confirm Details</button>
+                            <button type="submit" class=" btn btn-common " >Save</button>
                         </div>
                     </form>
                 </div>
@@ -193,7 +193,7 @@
                     //go to the next route with the booking ref
                     alert('Update Successful');
 
-                    this.$router.push({ name: 'payNow', params: { bRef: bref } })
+                    this.$router.push({ name: 'viewbook', params: { bRef: bref } })
                     
                  })
                  .catch(error => {
@@ -206,7 +206,7 @@
             // console.log(to.params.bookId);
             let bookRef = to.params.bookId;
 
-            axios.get('api/book-details/' +bookRef)
+            axios.get('api/book-details/'+bookRef)
             .then(response => {
                 // this.book = response.data.details;
                 // console.log();

@@ -170,7 +170,7 @@
     export default {
         data () {
             return {
-                activeNav: false,
+                activeNav: true,
                 ref: '',
                 route: {
                     busType: '',
