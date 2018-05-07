@@ -48,7 +48,7 @@ Route::get('/route/{route}', 'Route\RouteController@show')->name('route.details'
 // load the routes page as the first
 Route::get('admin', 'Admin\RouteController@index')->name('index-routes');
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::delete('/route/mass_delete', 'Admin\RouteController@deleteAll')->name('delete.multiple');
 
     Route::resource('routes', 'Admin\RouteController');

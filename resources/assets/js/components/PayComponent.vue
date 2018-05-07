@@ -20,7 +20,7 @@
                       You would be redirected to the payment gateway.
                     <form @submit.prevent="payWithPaystack" action="">
                     <!-- <form @submit.prevent="payNow(payObj.reference)" action=""> -->
-                          <button type="submit" class="btn-success center btn btn-lg">Pay &#x20A6 {{ payObj.format }} </button>
+                          <button type="submit" :disabled=button.enable class="btn-success center btn btn-lg">{{ payBtn }} </button>
                       </form>
                       
                   </div>
@@ -38,6 +38,10 @@
             return {
                 activeNav: true,
                 bookRef: '',
+                button: {
+                    enable: false,
+
+                },
                 payObj: {
                     email:     '',
                     amount:    null,
@@ -55,6 +59,13 @@
                       resolve()
                   })
               })
+            },
+            payBtn () {
+                if(this.button.enable){
+                    return 'Please wait...'
+                }else{
+                    return `Pay ${this. payObj.format}`;
+                }
             }
         },
         methods: {
@@ -95,6 +106,7 @@
               }
             },
             payWithPaystack() {
+                this.button.enable = true;
                   this.scriptLoaded.then(() => {
                       const paystackOptions = {
                           key: this.payObj.psKey,
@@ -103,8 +115,6 @@
                           ref: this.payObj.reference,
                           callback: (response) => {
                               this.payNow(response.trxref)
-                              // console.log(response.trxref);
-                              // alert(response)
                           },
                           onClose: () => {
                               this.close()

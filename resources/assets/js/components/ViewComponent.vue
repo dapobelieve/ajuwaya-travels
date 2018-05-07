@@ -78,7 +78,7 @@
                     </div>
                     <div class="editpay">
                         <div class="edit items pull-right">
-                            <button type="submit" @click.prevent="editBook()" class=" btn btn-common " >Edit</button>
+                            <button style="background: #888" type="submit" @click.prevent="editBook()" class=" btn btn-common " >Edit</button>
                         </div>
                         <div class="pay items">
                             <button @click.prevent="payNow()" type="submit" class=" btn btn-common" >Pay Now</button>
@@ -236,15 +236,15 @@
 
     .editpay {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-column-gap: 1.5rem;
     }
 
     .edit {
-        grid-column: 3 ;
+        grid-column: 6 ;
     }
     .pay {
-        grid-column: 4;
+        grid-column: 7;
     }
 
     .s1 {
