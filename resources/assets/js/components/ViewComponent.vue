@@ -76,12 +76,12 @@
                               </div>
                         </div>                     
                     </div>
-                    <div class="row act-buttons">
-                        <div class="col-md-6">
-                            <button type="submit" @click.prevent="editBook()" class=" btn btn-common pull-right" >Edit</button>
+                    <div class="editpay">
+                        <div class="edit items pull-right">
+                            <button type="submit" @click.prevent="editBook()" class=" btn btn-common " >Edit</button>
                         </div>
-                        <div class="col-md-6">
-                            <button @click.prevent="payNow()" type="submit" class=" btn btn-primary" >Pay Now</button>
+                        <div class="pay items">
+                            <button @click.prevent="payNow()" type="submit" class=" btn btn-common" >Pay Now</button>
                         </div>
                     </div>
                 </div>
@@ -232,6 +232,19 @@
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: repeat(5, 1fr);
         grid-gap: 1rem; 
+    }
+
+    .editpay {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-column-gap: 1.5rem;
+    }
+
+    .edit {
+        grid-column: 3 ;
+    }
+    .pay {
+        grid-column: 4;
     }
 
     .s1 {
