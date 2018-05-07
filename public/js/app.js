@@ -66532,7 +66532,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.$router.push({ name: 'confirmBook', params: { bookId: this.book.bkRef } });
         },
         payNow: function payNow() {
-            this.$router.push({ name: 'payNow', params: { bookRef: this.book.bkRef } });
+            this.$router.push({ name: 'payNow', params: { bRef: this.book.bkRef } });
         }
     },
     computed: {

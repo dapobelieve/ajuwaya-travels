@@ -124,7 +124,7 @@
                 this.$router.push({ name: 'confirmBook', params: { bookId: this.book.bkRef }})
             },
             payNow () {
-                this.$router.push({ name: 'payNow', params: { bookRef: this.book.bkRef }})
+                this.$router.push({ name: 'payNow', params: { bRef: this.book.bkRef }})
             }
         },
         computed: {
