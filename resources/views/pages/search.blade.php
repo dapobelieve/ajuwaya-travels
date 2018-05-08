@@ -18,7 +18,7 @@ Welcome to AjuwayaTravels
                 <div class="col-md-12">
                     <h3 class="section-title">Search Results</h3>
                 </div>
-                @foreach($routes as $route)
+                @forelse($routes as $route)
                 <div class="adds-wrapper results">
                     <div class="item-list">
                         <div class="col-sm-8 add-desc-box">
@@ -58,7 +58,11 @@ Welcome to AjuwayaTravels
                         </div>
                     </div>
                 </div>
-                @endforeach
+                @empty
+                <div class="adds-wrapper results">
+                    No Results Found.
+                </div>
+                @endforelse
             </div>
             <br>
             <br>
