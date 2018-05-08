@@ -39,7 +39,12 @@ Route::get('/{service}/callback','Social\SocialAuthController@callback');
 Route::get('/route/{route}', 'Route\RouteController@show')->name('route.details');
 
 
+// forgot password
+Route::get('/forgot', 'Forgot\ForgotController@index')->name('forgot.index');
+Route::post('/forgot', 'Forgot\ForgotController@process')->name('forgot.index');
 
+// reset
+Route::get('reset/{mail}/{code}','Forgot\ForgotController@reset');
 
 
 

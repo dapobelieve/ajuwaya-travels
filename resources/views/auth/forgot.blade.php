@@ -16,7 +16,7 @@
         <div class="row">         
           <div class="col-md-12">
             <div class="breadcrumb-wrapper">
-              <h2 class="page-title">Join Us</h2>
+              <h2 class="page-title">Reset Password</h2>
             </div>
           </div>
         </div>
@@ -31,39 +31,25 @@
           <div class="col-sm-6 col-sm-offset-4 col-md-4 col-md-offset-4">
             <div class="page-login-form box">
               <h3>
-                Login
+                Request Password Reset
               </h3>
-              <form method="post" action="{{ route('auth.login') }}" role="form" class="login-form">
+              @if(Session::has('message'))
+                <span>
+                    {{ Session::get('message') }}
+                </span>
+              @endif
+              <form method="post" action="#" role="form" class="login-form">
                 <div class="form-group">
                   <div class="input-icon">
                     <i class="icon fa fa-user"></i>
-                    <input type="text" value="{{ Request::old('email') ?: ''}}" id="sender-email" class="form-control" name="email" placeholder="Email Address">
+                    <input type="text" required  id="sender-email" class="form-control" name="email" placeholder="Enter your Email Address">
                   </div>
                 </div> 
-                <div class="form-group">
-                  <div class="input-icon">
-                    <i class="icon fa fa-unlock-alt"></i>
-                    <input type="password" name="password" class="form-control" placeholder="Password">
-                  </div>
-                </div>                  
-                <div class="checkbox">
-                  <input type="checkbox" id="remember" name="remember" value="" style="float: left;">
-                  <label for="remember">Remember me</label>
-                </div>
-                <button class="btn btn-common log-btn">Sign in</button>
+                <button class="btn btn-common log-btn">Request reset</button>
                 {{ csrf_field() }}
-                    <a href="/redirect/google" class="btn log-btn btn-google">
-                        <span class="fa fa-google"></span> Sign in with Google
-                    </a>
-                    <a href="{{ route('auth.register') }}" class="btn btn-common log-btn btn-google">
-                        Create Account
-                    </a>
                     <span class="forgot">
-                        <a href="{{ route('forgot.index') }}">Forgot Password?</a>
+                        <a href="{{ route('auth.login') }}">Login</a>
                     </span>
-                    {{-- <a href="/redirect/facebook" style="text-transform: none; border-radius: 2px" class="btn btn-xs  btn-social btn-facebook">
-                        <span class="fa fa-facebook"></span> Sign up with Facebook
-                    </a>  --}}   
               </form>
               
               {{--  --}}

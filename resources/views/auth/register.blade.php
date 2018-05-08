@@ -78,7 +78,7 @@
                 </div> --}}
                 <button class="btn btn-common log-btn type="submit ">Register</button>
                 {{ csrf_field() }}
-                <a href="/redirect/google" style="text-transform: none; border-radius: 2px" class="btn btn-xs  btn-social btn-google">
+                <a href="/redirect/google" class="btn log-btn btn-google">
                     <span class="fa fa-google"></span> Sign up with Google
                 </a>
                 {{-- <a href="/redirect/facebook" style="text-transform: none; border-radius: 2px" class="btn btn-xs  btn-social btn-facebook">

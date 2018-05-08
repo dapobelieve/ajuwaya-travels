@@ -64,7 +64,7 @@
                 if(this.button.enable){
                     return 'Please wait...'
                 }else{
-                    return `Pay ${this. payObj.format}`;
+                    return `Pay NGN ${this. payObj.format}`;
                 }
             }
         },
@@ -77,8 +77,7 @@
                     ref: response
                 })
                 .then(response => {
-                     alert('Processing your Payment. Please wait...');
-                    window.location = "http://localhost:8000/success";
+                    window.location = window.url+"success";
                     // console.log(response.data);
                 })
                 .catch(error => {

@@ -144,7 +144,10 @@
                                               <a style="color: #424248">Price: <strong> &#x20A6 {{ route.price }}</strong></a>
                                             </li>
                                             <li>
-                                              <a style="color: #424248">Time: <strong>{{ datey }}</strong> </a>
+                                              <a style="color: #424248">Date: <strong>{{ datey }}</strong> </a>
+                                            </li>
+                                            <li>
+                                              <a style="color: #424248">Time: <strong>{{ timey }}</strong> </a>
                                             </li>
                                             <li>
                                               <a style="color: #424248">Takeoff Point: <strong>{{ route.takeoff }}</strong> </a>
@@ -260,7 +263,10 @@
         },
         computed: {
             datey () {
-                return moment(this.route.time).format('lll')
+                return moment(this.route.time).format('MMMM Do YYYY');
+            },
+            timey () {
+                return moment(this.route.time).format('h:mm a ');
             }
         },
         mounted() {
