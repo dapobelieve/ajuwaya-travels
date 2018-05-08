@@ -30,10 +30,13 @@ class HomeController extends Controller
 
     public function results(Request $request)
     {
-        dd($request);
+        $routes = Route::where([
+            ['location_id', $request->location],
+            ['camp_id',     $request->camp]
+        ])->get();
 
-        $routes = Route::where();
-        return view()->back()->with('routes', $routes);
+        // dd($routes);
+        return view('pages.search')->with('routes', $routes);
     }
 
 
