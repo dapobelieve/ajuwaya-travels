@@ -31,25 +31,36 @@
           <div class="col-sm-6 col-sm-offset-4 col-md-4 col-md-offset-4">
             <div class="page-login-form box">
               <h3>
-                Request Password Reset
+                Reset Password 
               </h3>
-              @if(Session::has('message'))
-                <span>
-                    {{ Session::get('message') }}
-                </span>
-              @endif
-              <form method="post" action="{{ route('forgot.process') }}" role="form" class="login-form">
+                @if(count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+              <form method="post" action="{{ route('pass.reset') }}" role="form" class="login-form">
                 <div class="form-group">
                   <div class="input-icon">
                     <i class="icon fa fa-user"></i>
-                    <input type="text" required  id="sender-email" class="form-control" name="email" placeholder="Enter your Email Address">
+                    <input type="password" required  id="sender-email" class="form-control" name="password" placeholder="Enter your New Password">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-icon">
+                    <i class="icon fa fa-user"></i>
+                    <input type="password" required  id="sender-email" class="form-control" name="password_confirmation" placeholder="Confirm Password">
                   </div>
                 </div> 
                 <button class="btn btn-common log-btn">Request reset</button>
                 {{ csrf_field() }}
-                    <span class="forgot">
+                <input type="hidden" name="usermail" value="{{ $email }}">
+                    {{-- <span class="forgot">
                         <a href="{{ route('auth.login') }}">Login</a>
-                    </span>
+                    </span> --}}
               </form>
               
               {{--  --}}
@@ -61,21 +72,4 @@
     <!-- Content section End -->
 
 @stop
-@section('scripts')
-<script type="text/javascript" src="/aju/assets/js/sweetalert.min.js"></script>
-<script type="text/javascript">
-     @if(Session::has('authMsg'))
-      swal({
-      title: "Alert",
-      text: "{{ Session::get('authMsg')}}",
-      type: 'info'
-    })
-    @elseif(Session::has('success'))
-      swal({
-        title: "{{Session::get('title')}}",
-        text:  "{{Session::get('success')}}",
-        type: 'info'
-      })
-    @endif
-</script>
-@stop
+

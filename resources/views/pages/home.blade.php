@@ -117,7 +117,7 @@ Welcome to AjuwayaTravels
 
 
     <section id="categories-homepage">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <h3 class="center section-title">Latest Routes</h3>

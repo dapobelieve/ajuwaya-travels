@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-md-12">
               <div class="site-info pull-left">
-                <p>All copyrights reserved @ 2018 - Designed by <a href="#">DapoBelieve</a></p>
+                <p>Designed by <a href="https://facebook.com/dapobelieve">DapoBelieve</a></p>
               </div>                        
               <div class="bottom-social-icons social-icon pull-right">  
                 <a class="facebook" target="_blank" href="#"><i class="fab fa-facebook-f"></i></a> 

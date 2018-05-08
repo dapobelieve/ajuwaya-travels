@@ -30,8 +30,9 @@ class HomeController extends Controller
 
     public function results(Request $request)
     {
+        dd($request);
 
-        $routes = Route::all();
+        $routes = Route::where();
         return view()->back()->with('routes', $routes);
     }
 

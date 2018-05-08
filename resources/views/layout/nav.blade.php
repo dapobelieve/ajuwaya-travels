@@ -21,6 +21,7 @@
               @if(!Auth::check())
                 <li><a href="{{ route('auth.login') }}"><i class="lnr lnr-enter"></i> Log in</a></li>
             @else
+                <li><a href="{{ route('profile.bookings') }}"><i></i> Profile</a></li>
                 <li><a href="{{ route('auth.signout') }}"><i class="lnr lnr-enter"></i> Log out</a></li>
             @endif
             </ul>
