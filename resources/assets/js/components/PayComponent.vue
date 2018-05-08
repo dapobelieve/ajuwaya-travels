@@ -77,7 +77,7 @@
                     ref: response
                 })
                 .then(response => {
-                    window.location = window.url+"success";
+                    window.location = window.url+"success/"+bookRef;
                     // console.log(response.data);
                 })
                 .catch(error => {

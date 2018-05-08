@@ -9,8 +9,6 @@ window.Vue = require('vue');
 
 import axios from 'axios';
 
-// axios.defaults.baseURL = 'http://192.168.43.204/'; use when connected to phone
-
 axios.defaults.baseURL = window.url;
 
 import VueRouter from 'vue-router';
