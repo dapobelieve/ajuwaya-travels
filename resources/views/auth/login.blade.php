@@ -53,9 +53,9 @@
                 <button class="btn btn-common log-btn">Sign in</button>
                 {{ csrf_field() }}
                     <a href="/redirect/google" class="btn log-btn btn-google">
-                        <span class="fa fa-google"></span> Sign in with Google
+                        Sign in with Google
                     </a>
-                    <a href="{{ route('auth.register') }}" class="btn btn-common log-btn btn-google">
+                    <a href="{{ route('auth.register') }}" class="btn btn-success log-btn">
                         Create Account
                     </a>
                     <span class="forgot">

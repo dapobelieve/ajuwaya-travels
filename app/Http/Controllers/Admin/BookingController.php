@@ -11,7 +11,7 @@ class BookingController extends Controller
 {
     public function index()
     {
-        $bookings = Booking::get();
+        $bookings = Booking::latest()->get();
         // dd($bookings);
         return view('admin.booking.bookings')->with('bookings', $bookings);
     }

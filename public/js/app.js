@@ -17804,8 +17804,6 @@ window.Vue = __webpack_require__(162);
 
 
 
-// axios.defaults.baseURL = 'http://192.168.43.204/'; use when connected to phone
-
 __WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.baseURL = window.url;
 
 
@@ -66150,7 +66148,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             axios.post('api/payment', {
                 ref: response
             }).then(function (response) {
-                window.location = window.url + "success";
+                window.location = window.url + "success/" + bookRef;
                 // console.log(response.data);
             }).catch(function (error) {
                 alert(error.data);

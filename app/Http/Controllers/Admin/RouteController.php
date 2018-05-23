@@ -21,7 +21,7 @@ class RouteController extends Controller
      */
     public function index()
     {
-        $routes = Route::with('camp', 'location')->latest()->paginate(10);
+        $routes = Route::latest()->with('camp', 'location')->latest()->paginate(10);
         return view('admin.route.list')->with('routes', $routes);
     }
 
