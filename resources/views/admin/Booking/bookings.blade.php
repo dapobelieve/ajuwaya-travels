@@ -2,12 +2,15 @@
 
 @section('big-name')
     <small>Bookings </small>
+
 @stop
 
 @section('admin-style')
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css
-">
-<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css">
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css"/>
+ 
+ 
 
 @stop
 
@@ -38,7 +41,7 @@
                     </span> --}}
                     <h5>Bookings</h5>
                 </div>
-                <div class="dt-responsive table-responsive widget-content nopadding">
+                <div class="table-responsive widget-content nopadding">
                     <table class="data-table table table-bordered table-striped table-hover with-check">
                         <thead>
                             <tr>
@@ -102,37 +105,12 @@
             $('#ids').val(ids.join());
         }
     </script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
-
-    {{-- <script src="/authmin/js/unicorn.tables.js"></script> --}}
-<script>
-    $(document).ready(function(){
-
-        $('.data-table').dataTable({
-            "bJQueryUI": true,
-            "sPaginationType": "full_numbers",
-            buttons: [
-                {
-                    extend: 'copyHtml5',
-                    exportOptions: {
-                     columns: ':contains("Office")'
-                    }
-                },
-                {
-                    extend: 'pdfHtml5',
-                    message: 'PDF created by PDFMake with Buttons for DataTables.'
-                },
-                'excelHtml5',
-                'csvHtml5',
-                'pdfHtml5',
-                'print'
-            ]
-        });
-    });
-</script>
+     
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
+<script src="/authmin/js/unicorn.tables.js"></script>
     
 @stop
 

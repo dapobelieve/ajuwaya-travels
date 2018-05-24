@@ -61,6 +61,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::delete('/route/mass_delete', 'Admin\RouteController@deleteAll')->name('delete.multiple');
 
     Route::resource('routes', 'Admin\RouteController');
+    Route::resource('camps', 'Admin\CampController');
 
     Route::get('/route/{route}', 'Admin\RouteController@getBookings')->name('route.booking');
 

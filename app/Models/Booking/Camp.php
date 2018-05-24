@@ -22,4 +22,9 @@ class Camp extends Model
     {
         return ucwords($this->name[0]);;
     }
+
+    protected $fillable = [
+        'name',
+        'details',
+    ];
 }

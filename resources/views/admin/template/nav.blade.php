@@ -8,6 +8,10 @@
         <li class="{{ Request::is( 'admin/bookings') ? ' active' : ''  }}">
             <a href="{{ route('booking.index') }}"><i class="fa fa-edit"></i> <span>Bookings</span></a>
         </li>
+
+        <li class="{{ Request::is( 'admin/camps') ? ' active' : ''  }}">
+            <a href="{{ route('camps.index') }}"><i class="fa fa-cogs"></i> <span>Camps</span></a>
+        </li>
         {{-- <li>
             <a href="#"><i class="fa fa-cogs"></i> <span>Gallery</span></a>
         </li>
