@@ -87,7 +87,7 @@
                                         </li>
                                         {{-- <li class="divider"></li> --}}
                                         <li>
-                                            <form style=" display: inline; padding-left: 2.3rem" action="#"
+                                            <form method="POST" style=" display: inline; padding-left: 2.3rem" action="#"
                                                 onsubmit="return confirm('Are you sure?');">
                                             <input type="hidden" name="_method" value="DELETE">
                                             {{ csrf_field() }}

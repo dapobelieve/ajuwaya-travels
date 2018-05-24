@@ -25,6 +25,8 @@ class CreateRoutesTable extends Migration
             $table->timestamps();
         });
 
+         
+
 
     }
 

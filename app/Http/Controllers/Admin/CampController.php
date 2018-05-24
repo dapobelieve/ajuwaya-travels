@@ -89,6 +89,9 @@ class CampController extends Controller
      */
     public function destroy($id)
     {
-        dd('$id');
+        $camp = Camp::find($id);
+        $camp->delete();
+        return redirect()->route('camps.index')->with('sms', 'Deleted.');
+        // dd('$id');   
     }
 }

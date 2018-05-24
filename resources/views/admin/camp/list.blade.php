@@ -58,16 +58,7 @@
                                     <button data-toggle="dropdown" class="btn btn-xs btn-red dropdown-toggle">Options <span class="caret"></span></button>
                                     <ul class="dropdown-menu ">
                                         <li>
-                                            <form style=" display: inline; padding-left: 2.3rem" 
-                                                action="{{ route('camps.edit', $camp->id) }}">
-                                            <input type="hidden" name="_method" value="PUT">
-                                            {{ csrf_field() }}
-
-                                            <button class="btn btn-xs btn-success">Edit</button>
-                                            </form>
-                                        </li>
-                                        <li>
-                                            <form style=" display: inline; padding-left: 2.3rem" action="{{ route('camps.destroy', $camp->id) }}"
+                                            <form method="POST" style=" display: inline; padding-left: 2.3rem" action="{{ route('camps.destroy', $camp->id) }}"
                                                 onsubmit="return confirm('Are you sure?');">
                                             <input type="hidden" name="_method" value="DELETE">
                                             {{ csrf_field() }}
@@ -81,7 +72,7 @@
                         </tr>
                         @empty
                         <tr>
-                            No Routes Listed yet.
+                            No Camps Listed yet.
                         </tr>
                         @endforelse
                     </tbody>

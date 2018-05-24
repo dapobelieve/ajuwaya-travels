@@ -143,7 +143,9 @@ class RouteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $route = Route::findOrFail($id);
+        $route->delete();
+        return redirect()->route('routes.index')->with('sms', 'Route Deleted Successfully.');
     }
 
     public function getBookings(Route $route)
