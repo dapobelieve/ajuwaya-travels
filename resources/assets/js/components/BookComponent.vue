@@ -128,7 +128,7 @@
                                     </div>
                             </div>
                             <div class="col-sm-4 col-sm-6 col-xs-12">
-                                  <div style="height: 220px" class="category-box border-3 wow fadeInUpQuick" data-wow-delay="0.9s">
+                                  <div class="category-box border-3 wow fadeInUpQuick" data-wow-delay="0.9s">
                                         <div class="icon">
                                           <a href="category.html"><i class="lnr lnr-cog color-3"></i></a>
                                         </div>
@@ -213,8 +213,7 @@
             {
                 axios.get('api/details/'+ref)
                 .then(response => {
-                    // console.log(response.data.route);
-
+                    console.log(response.data.route);
                     // load some of the b0ok data of this component
                     this.route.busType = response.data.route.bus_type;
 

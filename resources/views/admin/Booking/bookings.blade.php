@@ -65,8 +65,7 @@
                                 <td>{{ $booking->seat }}</td>
                                 <td>&#x20A6 {{  number_format($booking->amount) }}</td>
                                 <td>{{ $booking->gender }}</td>
-                                <td>{{ $booking->created_at->format('D, M j  @   g:i A') }}</td>
-                            </tr>
+                                <td>{{ $booking->created_at->format('Y-m-d | g:i A') }}</td>
                             @empty
                             <tr>
                                 No Bookings for this Route yet.

@@ -76,7 +76,7 @@ class RouteController extends Controller
         Route::firstOrCreate([
             'location_id' => $request->state,
             'camp_id'     => $request->camp,
-            'take_off'    => $request->location,
+            'take_off'    => $request->take_off,
             'price'       => $request->price,
             'bus_type'    => $request->seater,
             'takeoff'     => $request->date.':00',

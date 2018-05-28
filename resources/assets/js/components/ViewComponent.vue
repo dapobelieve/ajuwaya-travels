@@ -50,7 +50,7 @@
                             </div>
                         </div>
                         <div class="col-sm-6 col-sm-6 col-xs-12">
-                              <div style="height: 220px" class="category-box border-3 wow fadeInUpQuick" data-wow-delay="0.9s">
+                              <div class="category-box border-3 wow fadeInUpQuick" data-wow-delay="0.9s">
                                     <div class="icon">
                                       <a ><i class="lnr lnr-cog color-3"></i></a>
                                     </div>
@@ -143,7 +143,6 @@
 
             axios.get('api/book-view/' +ref)
             .then(response => {
-
                 next(vm => {
                     vm.book.name   = response.data.details.name;
                     vm.book.email  = response.data.details.email;

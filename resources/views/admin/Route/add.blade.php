@@ -105,19 +105,15 @@
 
 @section('admin-scripts')
     <script src="/authmin/js/select2.min.js"></script>  
-    <script>
-        $(document).ready(function () {
-            $("#sel1").select2();
-            $("#sel2").select2();
-        })
-    </script>
-    <script>
-        function editInput(e)
-        {
-            var chaCode = (e.which) ? e.which : event.keyCode
-            if(chaCode > 31 && (chaCode < 48 || chaCode > 57))
-                return false
-            // console.log(e.target.value);
-        }
-    </script>
+
+<script>
+    $("#sel1").select2();
+    $("#sel2").select2();
+    function editInput(e)
+    {
+        var chaCode = (e.which) ? e.which : event.keyCode
+        if(chaCode > 31 && (chaCode < 48 || chaCode > 57))
+            return false
+    }
+</script>
 @stop

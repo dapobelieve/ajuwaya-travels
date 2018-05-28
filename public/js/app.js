@@ -62594,7 +62594,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n.csd {\n    text-align: center;\n    padding-top: 2rem;\n    /*display: inherit;*/\n}\n.* {\n    box-sizing: border-box;\n}\n.iselect {\n    background: #19b507fa !important;\n    color: #fff !important;\n    border: none;\n    border-radius: 5px;\n}\n.calculator {\n    background-color: #f6f6f6;\n    padding-bottom: 2rem;\n    padding: 0.4rem;\n    max-width: 300px;\n    margin: 0 auto;\n    /*border: 0.1rem light #111;*/\n    border-radius: 5px;\n    box-shadow: 0 1px 5px rgba(204, 104, 204, 1.6);\n}\n.alata {\n    color: red;\n}\n.calculator input {\n    background: none;\n    border: none;\n    box-shadow: none;\n    width: 100%;\n    /*border-bottom: 0.1rem solid #111;*/\n    text-align: center;\n    font-size: 2rem;\n}\n.free {\n    cursor: none;\n    background: #cc0000fa !important;\n    box-shadow: none !important;\n}\n\n/*css grid happens here*/\n.calculator-buttons {\n    padding: 1.6rem;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr 1fr;\n    grid-template-rows: repeat(5, 1fr);\n    grid-gap: 1rem;\n}\n.s1 {\n    grid-column: 3 / 4;\n}\n.smalld {\n    text-align: center;\n    display: block;\n}\n.head {\n    color: #000;\n}\n.calc-button {\n    background: #5dc1a2;\n    border: none;\n    padding: 1.5rem;\n    color: #fff;\n    border-radius: 5px;\n    font-size: 1.4rem;\n    cursor: pointer;\n    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n.csd {\n    text-align: center;\n    padding-top: 2rem;\n    /*display: inherit;*/\n}\n.* {\n    box-sizing: border-box;\n}\n.iselect {\n    background: #19b507fa !important;\n    color: #fff !important;\n    border: none;\n    border-radius: 5px;\n}\n.calculator {\n    background-color: #f6f6f6;\n    padding-bottom: 2rem;\n    padding: 0.4rem;\n    max-width: 300px;\n    margin: 0 auto;\n    /*border: 0.1rem light #111;*/\n    border-radius: 5px;\n    box-shadow: 0 1px 5px rgba(204, 104, 204, 1.6);\n}\n.alata {\n    color: red;\n}\n.calculator input {\n    background: none;\n    border: none;\n    box-shadow: none;\n    width: 100%;\n    /*border-bottom: 0.1rem solid #111;*/\n    text-align: center;\n    font-size: 2rem;\n}\n.free {\n    cursor: none;\n    background: #cc0000fa !important;\n    box-shadow: none !important;\n}\n\n/*css grid happens here*/\n.calculator-buttons {\n    padding: 1.6rem;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr 1fr;\n    grid-template-rows: repeat(5, 1fr);\n    grid-gap: 1rem;\n}\n.s1 {\n    grid-column: 3 / 4;\n}\n.smalld {\n    text-align: center;\n    display: block;\n}\n.head {\n    color: #000;\n}\n.calc-button {\n    background: #5dc1a2;\n    border: none;\n    padding: 1.5rem;\n    color: #fff;\n    border-radius: 5px;\n    font-size: 1.4rem;\n    cursor: pointer;\n    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);\n}\n", ""]);
 
 // exports
 
@@ -62856,8 +62856,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             axios.get('api/details/' + ref).then(function (response) {
-                // console.log(response.data.route);
-
+                console.log(response.data.route);
                 // load some of the b0ok data of this component
                 _this.route.busType = response.data.route.bus_type;
 
@@ -64326,7 +64325,6 @@ var render = function() {
                   "div",
                   {
                     staticClass: "category-box border-3 wow fadeInUpQuick",
-                    staticStyle: { height: "220px" },
                     attrs: { "data-wow-delay": "0.9s" }
                   },
                   [
@@ -64546,7 +64544,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n.tabs-nav {\n    position: fixed;\n}\n.csd {\n    text-align: center;\n    padding-top: 2rem;\n    /*display: inherit;*/\n}\n.* {\n    box-sizing: border-box;\n}\n.iselect {\n    background: #19b507fa !important;\n    color: #fff !important;\n    border: none;\n    border-radius: 5px;\n}\n.calculator {\n    background-color: #f6f6f6;\n    padding-bottom: 2rem;\n    padding: 0.4rem;\n    max-width: 300px;\n    margin: 0 auto;\n    /*border: 0.1rem light #111;*/\n    border-radius: 5px;\n    box-shadow: 0 1px 5px rgba(204, 104, 204, 1.6);\n}\n.alata {\n    color: red;\n}\n.calculator input {\n    background: none;\n    border: none;\n    box-shadow: none;\n    width: 100%;\n    /*border-bottom: 0.1rem solid #111;*/\n    text-align: center;\n    font-size: 2rem;\n}\n.free {\n    cursor: none;\n    background: #cc0000fa !important;\n    box-shadow: none !important;\n}\n\n/*css grid happens here*/\n.calculator-buttons {\n    padding: 1.6rem;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr 1fr;\n    grid-template-rows: repeat(5, 1fr);\n    grid-gap: 1rem;\n}\n.s1 {\n    grid-column: 3 / 4;\n}\n.smalld {\n    text-align: center;\n    display: block;\n}\n.disabled {\n}\n.calc-button {\n    background: #5dc1a2;\n    border: none;\n    padding: 1.5rem;\n    color: #fff;\n    border-radius: 5px;\n    font-size: 1.4rem;\n    cursor: pointer;\n    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n.tabs-nav {\n    position: fixed;\n}\n.csd {\n    text-align: center;\n    padding-top: 2rem;\n    /*display: inherit;*/\n}\n.* {\n    box-sizing: border-box;\n}\n.iselect {\n    background: #19b507fa !important;\n    color: #fff !important;\n    border: none;\n    border-radius: 5px;\n}\n.calculator {\n    background-color: #f6f6f6;\n    padding-bottom: 2rem;\n    padding: 0.4rem;\n    max-width: 300px;\n    margin: 0 auto;\n    /*border: 0.1rem light #111;*/\n    border-radius: 5px;\n    box-shadow: 0 1px 5px rgba(204, 104, 204, 1.6);\n}\n.alata {\n    color: red;\n}\n.calculator input {\n    background: none;\n    border: none;\n    box-shadow: none;\n    width: 100%;\n    /*border-bottom: 0.1rem solid #111;*/\n    text-align: center;\n    font-size: 2rem;\n}\n.free {\n    cursor: none;\n    background: #cc0000fa !important;\n    box-shadow: none !important;\n}\n\n/*css grid happens here*/\n.calculator-buttons {\n    padding: 1.6rem;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr 1fr;\n    grid-template-rows: repeat(5, 1fr);\n    grid-gap: 1rem;\n}\n.s1 {\n    grid-column: 3 / 4;\n}\n.smalld {\n    text-align: center;\n    display: block;\n}\n.disabled {\n}\n.calc-button {\n    background: #5dc1a2;\n    border: none;\n    padding: 1.5rem;\n    color: #fff;\n    border-radius: 5px;\n    font-size: 1.4rem;\n    cursor: pointer;\n    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);\n}\n", ""]);
 
 // exports
 
@@ -64766,8 +64764,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var bookRef = to.params.bookId;
 
         axios.get('api/book-details/' + bookRef).then(function (response) {
-            // this.book = response.data.details;
-            // console.log();
             // load some defaults
             next(function (vm) {
                 vm.book.name = response.data.details.name;
@@ -66143,13 +66139,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     methods: {
         payNow: function payNow(response) {
+            var _this2 = this;
+
             alert('Processing your Payment. This would take few seconds, Please wait...');
 
             axios.post('api/payment', {
                 ref: response
             }).then(function (response) {
-                window.location = window.url + "success/" + bookRef;
-                // console.log(response.data);
+                // window.location = window.url+"success/"+this.bookRef;
+                console.log(_this2.bookRef);
             }).catch(function (error) {
                 alert(error.data);
             });
@@ -66178,31 +66176,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         },
         payWithPaystack: function payWithPaystack() {
-            var _this2 = this;
+            var _this3 = this;
 
             this.button.enable = true;
             this.scriptLoaded.then(function () {
                 var paystackOptions = {
-                    key: _this2.payObj.psKey,
-                    email: _this2.payObj.email,
-                    amount: _this2.payObj.amount,
-                    ref: _this2.payObj.reference,
+                    key: _this3.payObj.psKey,
+                    email: _this3.payObj.email,
+                    amount: _this3.payObj.amount,
+                    ref: _this3.payObj.reference,
                     callback: function callback(response) {
-                        _this2.payNow(response.trxref);
+                        _this3.payNow(response.trxref);
                     },
                     onClose: function onClose() {
-                        _this2.close();
+                        _this3.close();
                     },
-                    metadata: _this2.metadata,
-                    currency: _this2.currency
+                    metadata: _this3.metadata,
+                    currency: _this3.currency
                 };
 
-                if (_this2.embed) {
+                if (_this3.embed) {
                     paystackOptions.container = 'paystackEmbedContainer';
                 }
 
                 var handler = window.PaystackPop.setup(paystackOptions);
-                if (!_this2.embed) {
+                if (!_this3.embed) {
                     handler.openIframe();
                 }
             });
@@ -66226,7 +66224,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 vm.payObj.reference = response.data.ref;
             });
         }).catch(function (error) {
-            alert('Couldnt get your booking details. Unauthorised Access!');
+            alert('Couldnt load booking details. Unauthorised Access!');
         });
     }
 });
@@ -66412,7 +66410,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n.csd {\n    text-align: center;\n    padding-top: 2rem;\n    /*display: inherit;*/\n}\n.* {\n    box-sizing: border-box;\n}\n.act-buttons {\n    margin-top: 12px;\n}\n.edit-button {\n    margin-right: 2px !important;\n}\n.details {\n    font-weight: 600;\n    color: #000;\n    /*font-size: 20px*/\n}\n.iselect {\n    background: #19b507fa !important;\n    color: #fff !important;\n    border: none;\n    border-radius: 5px;\n}\n.calculator {\n    background-color: #f6f6f6;\n    padding-bottom: 2rem;\n    padding: 0.4rem;\n    max-width: 300px;\n    margin: 0 auto;\n    /*border: 0.1rem light #111;*/\n    border-radius: 5px;\n    box-shadow: 0 1px 5px rgba(204, 104, 204, 1.6);\n}\n.alata {\n    color: red;\n}\n.calculator input {\n    background: none;\n    border: none;\n    box-shadow: none;\n    width: 100%;\n    /*border-bottom: 0.1rem solid #111;*/\n    text-align: center;\n    font-size: 2rem;\n}\n.free {\n    cursor: none;\n    background: #cc0000fa !important;\n    box-shadow: none !important;\n}\n\n/*css grid happens here*/\n.calculator-buttons {\n    padding: 1.6rem;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr 1fr;\n    grid-template-rows: repeat(5, 1fr);\n    grid-gap: 1rem;\n}\n.editpay {\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;\n    grid-column-gap: 1.5rem;\n}\n.edit {\n    grid-column: 6 ;\n}\n.pay {\n    grid-column: 7;\n}\n.s1 {\n    grid-column: 3 / 4;\n}\n.smalld {\n    text-align: center;\n    display: block;\n}\n.head {\n    color: #000;\n}\n.calc-button {\n    background: #5dc1a2;\n    border: none;\n    padding: 1.5rem;\n    color: #fff;\n    border-radius: 5px;\n    font-size: 1.4rem;\n    cursor: pointer;\n    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n.csd {\n    text-align: center;\n    padding-top: 2rem;\n    /*display: inherit;*/\n}\n.* {\n    box-sizing: border-box;\n}\n.act-buttons {\n    margin-top: 12px;\n}\n.edit-button {\n    margin-right: 2px !important;\n}\n.details {\n    font-weight: 600;\n    color: #000;\n    /*font-size: 20px*/\n}\n.iselect {\n    background: #19b507fa !important;\n    color: #fff !important;\n    border: none;\n    border-radius: 5px;\n}\n.calculator {\n    background-color: #f6f6f6;\n    padding-bottom: 2rem;\n    padding: 0.4rem;\n    max-width: 300px;\n    margin: 0 auto;\n    /*border: 0.1rem light #111;*/\n    border-radius: 5px;\n    box-shadow: 0 1px 5px rgba(204, 104, 204, 1.6);\n}\n.alata {\n    color: red;\n}\n.calculator input {\n    background: none;\n    border: none;\n    box-shadow: none;\n    width: 100%;\n    /*border-bottom: 0.1rem solid #111;*/\n    text-align: center;\n    font-size: 2rem;\n}\n.free {\n    cursor: none;\n    background: #cc0000fa !important;\n    box-shadow: none !important;\n}\n\n/*css grid happens here*/\n.calculator-buttons {\n    padding: 1.6rem;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr 1fr;\n    grid-template-rows: repeat(5, 1fr);\n    grid-gap: 1rem;\n}\n.editpay {\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;\n    grid-column-gap: 1.5rem;\n}\n.edit {\n    grid-column: 6 ;\n}\n.pay {\n    grid-column: 7;\n}\n.s1 {\n    grid-column: 3 / 4;\n}\n.smalld {\n    text-align: center;\n    display: block;\n}\n.head {\n    color: #000;\n}\n.calc-button {\n    background: #5dc1a2;\n    border: none;\n    padding: 1.5rem;\n    color: #fff;\n    border-radius: 5px;\n    font-size: 1.4rem;\n    cursor: pointer;\n    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);\n}\n", ""]);
 
 // exports
 
@@ -66570,7 +66568,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var ref = to.params.bookId;
 
         axios.get('api/book-view/' + ref).then(function (response) {
-
             next(function (vm) {
                 vm.book.name = response.data.details.name;
                 vm.book.email = response.data.details.email;
@@ -66700,7 +66697,6 @@ var render = function() {
                 "div",
                 {
                   staticClass: "category-box border-3 wow fadeInUpQuick",
-                  staticStyle: { height: "220px" },
                   attrs: { "data-wow-delay": "0.9s" }
                 },
                 [

@@ -208,8 +208,6 @@
 
             axios.get('api/book-details/'+bookRef)
             .then(response => {
-                // this.book = response.data.details;
-                // console.log();
                 // load some defaults
                 next(vm => {
                     vm.book.name   = response.data.details.name;

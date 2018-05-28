@@ -12,6 +12,13 @@
             <a href="#" data-dismiss="alert" class="close">×</a>
         </div>
         @endif
+        <div class="alert alert-info">
+            <strong>Info</strong>. 
+            {{-- <a href="#" data-dismiss="alert" class="close">×</a> --}}
+            <ul>
+                <li style="list-style: none">Once an <strong>Orientation camp</strong> record is deleted, all <strong>routes</strong> that have that camp would also be deleted.</li>
+            </ul>
+        </div>
         @if(count($errors) > 0)
         <div class="alert alert-danger">
             <strong>Error Alert</strong>. 

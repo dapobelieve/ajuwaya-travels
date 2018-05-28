@@ -77,8 +77,8 @@
                     ref: response
                 })
                 .then(response => {
-                    window.location = window.url+"success/"+bookRef;
-                    // console.log(response.data);
+                    // window.location = window.url+"success/"+this.bookRef;
+                    console.log(this.bookRef);
                 })
                 .catch(error => {
                     alert(error.data)
@@ -155,7 +155,7 @@
                 });
             })
             .catch( error => {
-                alert('Couldnt get your booking details. Unauthorised Access!');                
+                alert('Couldnt load booking details. Unauthorised Access!');                
             });
         }
     }

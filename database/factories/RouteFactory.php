@@ -4,7 +4,7 @@ use Faker\Generator as Faker;
 use App\Http\Controllers\Funcs\Hasher;
 
 $factory->define(App\Models\Booking\Route::class, function (Faker $faker) {
-    $t = mt_rand(1, 8);
+    $t = mt_rand(1, 5);
     $x = mt_rand(1, 36);
 
     return [
