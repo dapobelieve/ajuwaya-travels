@@ -23,14 +23,22 @@
             </ul>
         </div>
         @endif
+        <div class="alert alert-info">
+            <strong>Info</strong>. 
+            {{-- <a href="#" data-dismiss="alert" class="close">×</a> --}}
+            <ul>
+                <li>Routes should <strong>not be DELETED</strong> as they are tied to bookings.</li>
+                <small>they have been ordered according to the latest, and paginated as such.</small>
+            </ul>
+        </div>
         <span class="heady">
-            <div class="search">
+            {{-- <div class="search">
                 <form action="">
                     <label for="search"> Enter Route Ref Code:</label>
                     <input type="text" placeholder="e.g AJT-1u9gPdo4e"/>
                     <button type="submit" class="tip-right" title="Search"><i class="fa fa-search"></i></button>
                 </form>
-            </div>
+            </div> --}}
             <div class="form-actions">
                 <a href="{{ route('routes.create') }}" type="submit" class="btn btn-success btn-sm">Add Route</a>
             </div>

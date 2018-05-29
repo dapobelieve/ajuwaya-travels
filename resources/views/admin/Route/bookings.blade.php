@@ -1,6 +1,6 @@
 @extends('admin.index')
 @section('big-name')
-    <small>Bookings for Route {{ $route->ref }}</small>
+    <small style="color: #21b121">Bookings for Route "{{ $route->location->state}} to {{ $route->camp->name }} ({{$route->camp->details}})"</small>
 
 @stop
 
