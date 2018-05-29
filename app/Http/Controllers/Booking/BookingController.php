@@ -205,4 +205,9 @@ class BookingController extends Controller
             return redirect()->route('home');
         }
     }
+
+    public function success(Booking $booking)
+    {
+        dd($booking->with('route')->first());
+    }
 }

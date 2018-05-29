@@ -17,7 +17,7 @@ class ProfileController extends Controller
 
     public function index()
     {
-        $bookings = Auth()->user()->bookings()->with('route')->get();
+        $bookings = Auth()->user()->bookings()->with('route')->latest()->get();
         return view('pages.profile')->with('bookings', $bookings);
     }
 }

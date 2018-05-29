@@ -18,8 +18,8 @@
                 <div class="row">
                   <div class="col-sm-12 center">
                       You would be redirected to the payment gateway.
-                    <form @submit.prevent="payWithPaystack" action="">
-                    <!-- <form @submit.prevent="payNow(payObj.reference)" action=""> -->
+                    <!-- <form @submit.prevent="payWithPaystack" action=""> -->
+                    <form @submit.prevent="payNow(payObj.reference)" action="">
                           <button type="submit" :disabled=button.enable class="btn-success center btn btn-lg">{{ payBtn }} </button>
                       </form>
                       
@@ -77,8 +77,8 @@
                     ref: response
                 })
                 .then(response => {
-                    // window.location = window.url+"success/"+this.bookRef;
-                    console.log(this.bookRef);
+                    window.location = window.url+`success/${this.bookRef}`;
+                    // console.log(this.bookRef);
                 })
                 .catch(error => {
                     alert(error.data)
@@ -141,6 +141,7 @@
         beforeRouteEnter(to, from, next)
         {
             let bookRef = to.params.bRef;
+            // console.log(bookRef);
 
             axios.get('/api/getpay/'+bookRef)
             .then( response => {
@@ -151,6 +152,8 @@
                     vm.payObj.email  = response.data.email;
                     vm.payObj.key    = response.data.psKey;
                     vm.payObj.reference = response.data.ref;
+
+                    vm.bookRef = bookRef;
 
                 });
             })

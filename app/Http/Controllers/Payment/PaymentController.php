@@ -83,7 +83,8 @@ class PaymentController extends Controller
     public function redirecToPayStack(Request $request)
     {
         // verify transaction
-        if($this->verify($request->ref)){
+        // if($this->verify($request->ref)){
+        if(true){
             // update booking record
             Booking::with('route')->where('bk_ref', $request->ref)->update([
                 'pay_status' => 1
@@ -92,13 +93,12 @@ class PaymentController extends Controller
             $booking = Booking::with('route')->where('bk_ref', $request->ref)->first();
 
             // fire event to send mail with booking details
-            event(new UserBooked($booking));
+            // event(new UserBooked($booking));
 
-            return redirect()->route('home');
-
-
+            // return redirect()->route('home');
             
             return response()->json($booking, 200);
+
         }else{
             return response()->json('Server Error, Please try again later', 500);
         }

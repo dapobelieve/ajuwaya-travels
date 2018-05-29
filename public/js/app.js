@@ -66053,7 +66053,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n/*.tabs-nav {\n    position: fixed;\n}*/\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n/*.tabs-nav {\n    position: fixed;\n}*/\n", ""]);
 
 // exports
 
@@ -66146,8 +66146,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             axios.post('api/payment', {
                 ref: response
             }).then(function (response) {
-                // window.location = window.url+"success/"+this.bookRef;
-                console.log(_this2.bookRef);
+                window.location = window.url + ('success/' + _this2.bookRef);
+                // console.log(this.bookRef);
             }).catch(function (error) {
                 alert(error.data);
             });
@@ -66213,6 +66213,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     beforeRouteEnter: function beforeRouteEnter(to, from, next) {
         var bookRef = to.params.bRef;
+        // console.log(bookRef);
 
         axios.get('/api/getpay/' + bookRef).then(function (response) {
             // console.log(response.data);
@@ -66222,6 +66223,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 vm.payObj.email = response.data.email;
                 vm.payObj.key = response.data.psKey;
                 vm.payObj.reference = response.data.ref;
+
+                vm.bookRef = bookRef;
             });
         }).catch(function (error) {
             alert('Couldnt load booking details. Unauthorised Access!');
@@ -66256,6 +66259,7 @@ var render = function() {
               _vm._v(
                 "\n                  You would be redirected to the payment gateway.\n                "
               ),
+              _vm._v(" "),
               _c(
                 "form",
                 {
@@ -66263,7 +66267,7 @@ var render = function() {
                   on: {
                     submit: function($event) {
                       $event.preventDefault()
-                      return _vm.payWithPaystack($event)
+                      _vm.payNow(_vm.payObj.reference)
                     }
                   }
                 },

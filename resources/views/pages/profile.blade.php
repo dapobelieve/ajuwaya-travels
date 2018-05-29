@@ -1,8 +1,5 @@
 @extends('layout.template')
 @section('styles')
-
-    {{-- <link rel="stylesheet" type="text/css" href="/tabstyle/css/normalize.css" /> --}}
-    {{-- <link rel="stylesheet" type="text/css" href="/tabstyle/css/demo.css" /> --}}
     <script src="/tabstyle/js/modernizr.custom.js"></script>
     <style>
         h2 {

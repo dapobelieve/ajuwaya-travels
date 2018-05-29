@@ -7,7 +7,7 @@
 <div class="row">
     <div class="col-xs-12">
         @if(Session::has('sms'))
-        <div class="alert alert-info">
+        <div class="alert alert-success">
            {{ Session::get('sms') }}
             <a href="#" data-dismiss="alert" class="close">×</a>
         </div>

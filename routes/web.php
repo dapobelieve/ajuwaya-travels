@@ -3,9 +3,7 @@
 Route::get('/','HomeController@index' )->name('home');
 
 
-Route::get('/success', function () {
-    return view('pages.success');
-});
+Route::get('/success/{booking}', 'Booking\BookingController@success');
 
 // Register Page
 Route::get('/register','Auth\AuthController@getRegister')->name('auth.register')->middleware('guest');

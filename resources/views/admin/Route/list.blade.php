@@ -53,6 +53,7 @@
                             <th>From</th>
                             <th>To</th>
                             <th> <strong>Bus Type</strong> </th>
+                            <th>ref Code</th>
                             <th>Take Off</th>
                             <th>Action</th>
                         </tr>
@@ -65,6 +66,7 @@
                             <td>{{ $route->location->state }}</td>
                             <td>{{ $route->camp->toUp() }}</td>
                             <td>{{ $route->bus_type }}</td>
+                            <td>{{ $route->ref }}</td>
                             <td>{{ $route->takeoff->format('D, M j  @   g:i A') }}</td>
                             <td>
                                 <div class="btn-group">
@@ -106,7 +108,7 @@
                         @endforelse
                     </tbody>
                 </table>  
-                <div class="bottom">
+                <div class="bottom" style="padding-left: 20px; padding-top: 10px; padding-bottom: 10px;">
                     <div class="item">{{ $routes->links() }}</div>
                     <div class="item">
                         <form onsubmit="confirm('Are you sure you want to delete those records?')" action="{{ route('delete.multiple') }}" method="post">
