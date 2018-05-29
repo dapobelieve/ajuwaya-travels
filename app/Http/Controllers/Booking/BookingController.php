@@ -208,6 +208,7 @@ class BookingController extends Controller
 
     public function success(Booking $booking)
     {
+        return view('pages.success')->with('book', $booking);
         dd($booking->with('route')->first());
     }
 }

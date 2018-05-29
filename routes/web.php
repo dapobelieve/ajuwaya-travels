@@ -1,6 +1,7 @@
 <?php
 
 Route::get('/','HomeController@index' )->name('home');
+Route::get('/all','HomeController@routes' )->name('routes.more');
 
 
 Route::get('/success/{booking}', 'Booking\BookingController@success');

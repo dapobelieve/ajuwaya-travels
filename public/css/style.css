@@ -1,0 +1,43 @@
+.print {
+    border: 2px solid #eee;
+    padding: 6px;
+    margin: 15px;
+    box-shadow: 3px 4px 1px 0px #e8e0e0;
+    border-radius: 5px;
+    /*background-image: url('/aju/assets/img/logo.png');*/
+    /*background-repeat: no-repeat;*/
+}
+.print-img {
+    height: 30px;
+}
+.print-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #3c3030;
+    padding-left: 5px;
+    padding-top: 16px
+    /*text-decoration: underline;*/
+}
+
+.print-content {
+    /*max-width: auto;*/
+    max-width: 1200px;
+    margin: auto;
+    line-height: 3;
+    padding-top: 20px;
+    padding-left: 20px;
+    font-size: 16px
+}
+
+.details {
+    padding-left: 16px;
+    color: #393939
+}
+
+ul a {
+    color: black;
+}
+
+ul a:hover {
+    color: black;
+}

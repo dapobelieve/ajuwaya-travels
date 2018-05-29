@@ -165,7 +165,7 @@ Welcome to AjuwayaTravels
                 @endforeach
             </div>
             <div style="margin-bottom: 20px" class="center view-more">
-                <a style="background-color: #f45" class="btn btn-common" href="#">View More</a>
+                <a style="background-color: #f45" class="btn btn-common" href="{{ route('routes.more') }}">View More</a>
             </div>
         </div>
     </section>

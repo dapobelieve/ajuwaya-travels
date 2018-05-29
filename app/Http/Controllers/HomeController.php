@@ -39,5 +39,12 @@ class HomeController extends Controller
         return view('pages.search')->with('routes', $routes);
     }
 
+    public function routes()
+    {
+        $routes = Route::with('camp', 'location')->latest()->get();
+        return view('pages.routes')->with('routes', $routes);
+        // dd($routes);
+    }
+
 
 }

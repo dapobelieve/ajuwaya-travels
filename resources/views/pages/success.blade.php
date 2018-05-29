@@ -1,10 +1,6 @@
 @extends('layout.template')
 @section('styles')
-
-    {{-- <link rel="stylesheet" type="text/css" href="/tabstyle/css/normalize.css" /> --}}
-    <link rel="stylesheet" type="text/css" href="/tabstyle/css/demo.css" />
-    <link rel="stylesheet" type="text/css" href="/tabstyle/css/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="/tabstyle/css/tabstyles.css" />
+<link rel="stylesheet" href="/css/style.css">
     <script src="/tabstyle/js/modernizr.custom.js"></script>
     <script type="text/javascript" src="/aju/assets/fonts/all.js"></script>
 
@@ -16,29 +12,63 @@ Success | AjuwayaTravel
 
 
 @section('content')
-    
    <section id="content">
       <div class="container">
         <div class="row">
-          <div class="col-md-12">
-           <div class="inner-box posting">
-              <div class="alert alert-success alert-lg" role="alert">
-              <h2 class="postin-title center">✔ Congratulations!<br>
-               Your booking was successful.<br> Check your mail for booking details. </p>
-              <p><a style="color: #fff" href="{{ route('home') }}">Home</a> </p>
-            </div>
-            </div>
-          </div>
+            <div class="col-md-8 col-md-offset-2">
+                <div class="print">
+                    <div class="print-title">
+                     <img class="print-img" src="/aju/assets/img/logo.png" alt=""> Booking Details</div>
+                    <div class="print-content">
+                        <ul>
+                            <li>
+                              <a> Name: <span class="details">{{ strtoupper($book->name)  }}</span> </a>
+                            </li>
+                            <li>
+                              <a > Email: <span class="details">{{ $book->email }}</span> </a>
+                            </li>
+                            <li>
+                              <a > Booking Reference: <span class="details">{{ $book->bk_ref }}</span> </a>
+                            </li>
+                            <li>
+                              <a >Sex:   <span class="details">{{ strtoupper($book->gender) }}</span></a>
+                            </li>
+                            <li>
+                              <a >Phone Number: <span class="details">{{ $book->phone }}</span></a>
+                            </li>
+                            <li>
+                              <a >Selected Seat(s): <span class="details">{{ $book->seat }}</span></a>
+                            </li>
+                            <li>
+                              <a >Amount: <span class="details"> &#x20A6 {{ number_format($book->seat_num * $book->amount) }}</span></a>
+                            </li>
+                            <li>
+                              <a >Location: <span class="details"> {{ $book->route->location->state }}</span></a>
+                            </li>
+                            <li>
+                              <a >Destination: <span class="details"> {{ $book->route->camp->name }}, 
+                                <small>{{ $book->route->camp->details }}</small> </span></a>
+                            </li>
+                            <li>
+                              <a >Take off point: <span class="details"> {{ $book->route->take_off }}</span></a>
+                            </li>
+                            <li>
+                              <a >Bus Type: <span class="details"> {{ $book->route->bus_type }} seater</span></a>
+                            </li>
+                            <li>
+                              <a >Date: <span class="details"> {{ $book->route->takeoff->format('l, M j Y') }} </span></a>
+                            </li>
+                            <li>
+                              <a >Time: <span class="details"> {{ $book->route->takeoff->format('g:i A') }} </span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="text-align: center" class="down">
+                    <button onclick="window.print()"> Print </button>
+                </div>
+            </div>        
         </div>
       </div>
-    </section>
-        
-@stop
-
-@section('scripts')
-<script src="/tabstyle/js/cbpFWTabs.js"></script>
-
-
-
-
+   </section>  
 @stop
