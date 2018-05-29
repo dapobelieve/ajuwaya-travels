@@ -46,6 +46,7 @@
                         <thead>
                             <tr>
                                 <th>#</th>
+                                <th>Booked By</th>
                                 <th>Email</th>
                                 <th>Phone</th>
                                 <th>Pay Status</th>
@@ -59,6 +60,7 @@
                             @forelse($bookings as $booking)
                             <tr>
                                 <td>{{ $loop->index + 1 }}</td>
+                                <td>{{ $booking->user->email }}</td>
                                 <td>{{ $booking->email }}</td>
                                 <td>{{ $booking->phone }}</td>
                                 <td>{{ $booking->getPay() }}</td>

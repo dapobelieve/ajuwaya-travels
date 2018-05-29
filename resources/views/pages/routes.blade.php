@@ -7,7 +7,6 @@ All Routes | AjuwayaTravels
 
 @section('styles')
 <link rel="stylesheet" href="/aju/assets/css/material-kit.css" type="text/css">
-<link rel="stylesheet" href="/aju/assets/css/sweetalert.css" type="text/css">
  <script type="text/javascript" src="/aju/assets/fonts/all.js"></script>
 
 @stop
@@ -72,20 +71,5 @@ All Routes | AjuwayaTravels
 <script type="text/javascript" src="/aju/assets/js/owl.carousel.min.js"></script>
 <script type="text/javascript" src="/aju/assets/js/wow.js"></script>
 <script type="text/javascript" src="/aju/assets/js/main.js"></script>
-<script type="text/javascript" src="/aju/assets/js/sweetalert.min.js"></script>
-<script type="text/javascript">
-     @if(Session::has('authMsg'))
-      swal({
-      title: "Alert",
-      text: "{{ Session::get('authMsg')}}",
-      type: 'warning'
-    })
-    @elseif(Session::has('success'))
-      swal({
-        title: "{{Session::get('title')}}",
-        text:  "{{Session::get('success')}}",
-        type: 'info'
-      })
-    @endif
-</script>
+
 @stop
