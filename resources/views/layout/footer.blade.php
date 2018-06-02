@@ -1,7 +1,7 @@
  <footer>
         <!-- Copyright Start  -->
         <div id="copyright">
-            <div class="container">
+            <div class="container noprint">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="site-info center">

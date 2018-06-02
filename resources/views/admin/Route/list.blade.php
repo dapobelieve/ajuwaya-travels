@@ -1,4 +1,8 @@
 @extends('admin.index')
+
+@section('admin-title', 'Routes')
+
+
 @section('big-name')
     All Routes
 @stop

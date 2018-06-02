@@ -55,6 +55,7 @@ class Route extends Model
         'price',
         'bus_type',
         'takeoff',
+        'active',
         'ref',
     ];
 }

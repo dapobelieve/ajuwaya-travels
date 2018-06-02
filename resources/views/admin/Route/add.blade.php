@@ -60,6 +60,15 @@
                             </select>
                         </div>
                     </div>
+                    <div class="form-group {{ $errors->has('camp') ? ' has-error' : '' }}">
+                        <label class="col-sm-3 col-md-3 col-lg-2 control-label">Status:</label>
+                        <div class="col-sm-9 col-md-9 col-lg-10">
+                            <select class="form-control" name="status">
+                                <option value="1">Active</option>
+                                <option value="0">Inactive</option>
+                            </select>
+                        </div>
+                    </div>
                     <div class="form-group {{ $errors->has('price') ? ' has-error' : '' }}">
                         <label class="col-sm-3 col-md-3 col-lg-2 control-label">Price:</label>
                         <div class="col-sm-9 col-md-9 col-lg-10">

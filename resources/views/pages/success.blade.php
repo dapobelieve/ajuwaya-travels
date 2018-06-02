@@ -3,11 +3,18 @@
 <link rel="stylesheet" href="/css/style.css">
     <script src="/tabstyle/js/modernizr.custom.js"></script>
     <script type="text/javascript" src="/aju/assets/fonts/all.js"></script>
+    <style>
+        @media print {
+            .noprint {
+                display: none;
+            }
+        }
+    </style>
 
 @stop
 
 @section('title')
-Success | AjuwayaTravel
+  Success | AjuwayaTravel
 @stop
 
 
@@ -18,7 +25,8 @@ Success | AjuwayaTravel
             <div class="col-md-8 col-md-offset-2">
                 <div class="print">
                     <div class="print-title">
-                     <img class="print-img" src="/aju/assets/img/logo.png" alt=""> Booking Details</div>
+                     <img class="print-img" src="/aju/assets/img/logo.png" alt=""> 
+                        Booking Details</div>
                     <div class="print-content">
                         <ul>
                             <li>
@@ -40,7 +48,7 @@ Success | AjuwayaTravel
                               <a >Selected Seat(s): <span class="details">{{ $book->seat }}</span></a>
                             </li>
                             <li>
-                              <a >Amount: <span class="details"> &#x20A6 {{ number_format($book->seat_num * $book->amount) }}</span></a>
+                              <a >Amount Paid: <span class="details"> &#x20A6 {{ number_format($book->seat_num * $book->amount) }}</span></a>
                             </li>
                             <li>
                               <a >Location: <span class="details"> {{ $book->route->location->state }}</span></a>
@@ -64,7 +72,7 @@ Success | AjuwayaTravel
                         </ul>
                     </div>
                 </div>
-                <div style="text-align: center" class="down">
+                <div style="text-align: center" class="noprint down">
                     <button onclick="window.print()"> Print </button>
                 </div>
             </div>        

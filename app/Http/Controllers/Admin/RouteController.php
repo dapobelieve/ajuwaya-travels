@@ -78,6 +78,7 @@ class RouteController extends Controller
             'camp_id'     => $request->camp,
             'take_off'    => $request->take_off,
             'price'       => $request->price,
+            'active'      => $request->status,
             'bus_type'    => $request->seater,
             'takeoff'     => $request->date.':00',
             'ref'         => $request->ref,
@@ -123,10 +124,12 @@ class RouteController extends Controller
     public function update(RouteRequest $request, $id)
     {
         $route = Route::findOrFail($id);
+        // dd((int)$request->status);
         $route->update([
             'location_id' => $request->state,
             'camp_id'     => $request->camp,
             'take_off'    => $request->take_off,
+            'active'      => (int) $request->status,
             'price'       => $request->price,
             'bus_type'    => $request->seater,
             'takeoff'     => $request->date.':00',
