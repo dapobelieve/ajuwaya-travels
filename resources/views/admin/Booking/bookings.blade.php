@@ -51,6 +51,7 @@
                                 <th>Booked By</th>
                                 <th>Email</th>
                                 <th>Phone</th>
+                                <th>code</th>
                                 <th>Pay Status</th>
                                 <th>Seat Number(s)</th>
                                 <th>Amount Paid</th>
@@ -65,6 +66,7 @@
                                 <td>{{ $booking->user->email }}</td>
                                 <td>{{ $booking->email }}</td>
                                 <td>{{ $booking->phone }}</td>
+                                <td>{{ $booking->bk_ref }}</td>
                                 <td>{{ $booking->getPay() }}</td>
                                 <td>{{ $booking->seat }}</td>
                                 <td>&#x20A6 {{  number_format($booking->amount * $booking->seat_num) }}</td>

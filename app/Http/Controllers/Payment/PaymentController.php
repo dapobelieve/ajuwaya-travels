@@ -93,7 +93,7 @@ class PaymentController extends Controller
             $booking = Booking::with('route')->where('bk_ref', $request->ref)->first();
 
             // fire event to send mail with booking details
-            event(new UserBooked($booking));
+            // event(new UserBooked($booking));
 
             
             return response()->json($booking, 200);

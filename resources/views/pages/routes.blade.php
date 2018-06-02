@@ -10,15 +10,25 @@ All Routes | AjuwayaTravels
  <script type="text/javascript" src="/aju/assets/fonts/all.js"></script>
 
 @stop
+
+
 @section('content')
+<div class="page-header" style="background: url(/aju/assets/img/banner1.jpg);">
+      <div class="container">
+        <div class="row">         
+          <div class="col-md-12">
+            <div class="breadcrumb-wrapper">
+              <h2 class="page-title">Latest Routes</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <section id="categories-homepage">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12">
-                    <h3 class="center section-title">Latest Routes</h3>
-                </div>
                 @foreach($routes as $route)
-                <div class="adds-wrapper results">
+                <div class="adds-wrapper results" style="margin-bottom: 50px">
                     <div class="item-list">
                         <div class="col-sm-8 add-desc-box">
                           <div class="add-details">

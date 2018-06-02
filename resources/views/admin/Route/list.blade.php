@@ -28,7 +28,9 @@
             {{-- <a href="#" data-dismiss="alert" class="close">×</a> --}}
             <ul>
                 <li>Routes should <strong>not be DELETED</strong> as they are tied to bookings.</li>
-                <small>they have been ordered according to the latest, and paginated as such.</small>
+                <small>They have been ordered according to the latest, and paginated as such. <br>
+                    You should instead change their active status.
+                </small>
             </ul>
         </div>
         <span class="heady">
@@ -49,7 +51,7 @@
                 <span class="icon with-checkbox">
                     <input type="checkbox" class="checkbox_all" id="title-checkbox" name="title-checkbox" />
                 </span>
-                <h5>Active Routes</h5>
+                <h5>Routes</h5>
             </div>
             <div class="widget-content nopadding">
                 <table class="table table-bordered table-striped table-hover with-check">
@@ -62,6 +64,7 @@
                             <th>To</th>
                             <th> <strong>Bus Type</strong> </th>
                             <th>ref Code</th>
+                            <th>Status</th>
                             <th>Take Off</th>
                             <th>Action</th>
                         </tr>
@@ -75,7 +78,8 @@
                             <td>{{ $route->camp->toUp() }}</td>
                             <td>{{ $route->bus_type }}</td>
                             <td>{{ $route->ref }}</td>
-                            <td>{{ $route->takeoff->format('D, M j  @   g:i A') }}</td>
+                            <td><strong>{{ $route->status() }}</strong></td>
+                            <td>{{ $route->takeoff->format('D, M j | g:i A') }}</td>
                             <td>
                                 <div class="btn-group">
                                     <button data-toggle="dropdown" class="btn btn-xs btn-red dropdown-toggle">Options <span class="caret"></span></button>

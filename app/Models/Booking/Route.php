@@ -18,6 +18,11 @@ class Route extends Model
         'updated_at'
     ];
 
+    public function status()
+    {
+        return $this->active == 1 ? 'active' : 'inactive';
+    }
+
     // public function booked()
     // {
     //     return $this->booking()->where('pay_status', 1)->get();
