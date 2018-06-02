@@ -1,6 +1,6 @@
 @extends('layout.template')
 @section('styles')
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/aju/assets/css/style.css">
     <script src="/tabstyle/js/modernizr.custom.js"></script>
     <script type="text/javascript" src="/aju/assets/fonts/all.js"></script>
     <style>

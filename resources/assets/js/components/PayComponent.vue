@@ -18,8 +18,8 @@
                 <div class="row">
                   <div class="col-sm-12 center">
                       You would be redirected to the payment gateway.
-                    <!-- <form @submit.prevent="payWithPaystack" action=""> -->
-                    <form @submit.prevent="payNow(payObj.reference)" action="">
+                    <form @submit.prevent="payWithPaystack" action="">
+                    <!-- <form @submit.prevent="payNow(payObj.reference)" action=""> -->
                           <button type="submit" :disabled=button.enable class="btn-success center btn btn-lg">{{ payBtn }} </button>
                       </form>
                       
@@ -47,8 +47,8 @@
                     amount:    null,
                     format:    '',
                     reference: '',
-                    psKey: 'pk_test_baad97319b760bb836a0c1cb81848264cde2fea6',
-                    bearer: 'DapoMichaels'
+                    psKey: 'pk_test_a3dc74c58861b25082a43f31c87f2e37634d23c3',
+                    bearer: 'Ajuwaya Travel'
                 },
             }
         },

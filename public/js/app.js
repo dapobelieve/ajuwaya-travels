@@ -66113,8 +66113,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 amount: null,
                 format: '',
                 reference: '',
-                psKey: 'pk_test_baad97319b760bb836a0c1cb81848264cde2fea6',
-                bearer: 'DapoMichaels'
+                psKey: 'pk_test_a3dc74c58861b25082a43f31c87f2e37634d23c3',
+                bearer: 'Ajuwaya Travel'
             }
         };
     },
@@ -66259,7 +66259,6 @@ var render = function() {
               _vm._v(
                 "\n                  You would be redirected to the payment gateway.\n                "
               ),
-              _vm._v(" "),
               _c(
                 "form",
                 {
@@ -66267,7 +66266,7 @@ var render = function() {
                   on: {
                     submit: function($event) {
                       $event.preventDefault()
-                      _vm.payNow(_vm.payObj.reference)
+                      return _vm.payWithPaystack($event)
                     }
                   }
                 },
