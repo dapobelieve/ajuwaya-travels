@@ -1,5 +1,7 @@
 @extends('admin.index')
 
+@section('admin-title', 'Bookings')
+
 @section('big-name')
     <small>Bookings </small>
 
@@ -65,7 +67,7 @@
                                 <td>{{ $booking->phone }}</td>
                                 <td>{{ $booking->getPay() }}</td>
                                 <td>{{ $booking->seat }}</td>
-                                <td>&#x20A6 {{  number_format($booking->amount) }}</td>
+                                <td>&#x20A6 {{  number_format($booking->amount * $booking->seat_num) }}</td>
                                 <td>{{ $booking->gender }}</td>
                                 <td>{{ $booking->created_at->format('Y-m-d | g:i A') }}</td>
                             @empty
