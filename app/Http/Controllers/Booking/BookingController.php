@@ -105,8 +105,11 @@ class BookingController extends Controller
                     'gender'   => $request->sex,
                     'seat'     => json_encode($request->seat),
                     'seat_num' => count($request->seat),
+                    'amount'   => $request->price,
                     'bk_ref'   => 'bk-'.Hasher::getHashedToken(10),
                 ]);
+
+        // return response()->json($request);
 
         return $book->bk_ref;
     }

@@ -192,6 +192,7 @@
                     seat:  [],
                     rid:  '',
                     userId: '',
+                    price: null
                 },
                 // route: '',
                 errors: [],
@@ -213,7 +214,7 @@
             {
                 axios.get('api/details/'+ref)
                 .then(response => {
-                    console.log(response.data.route);
+                    // console.log(response.data.route);
                     // load some of the b0ok data of this component
                     this.route.busType = response.data.route.bus_type;
 
@@ -221,6 +222,7 @@
                     this.route.from = response.data.route.location.state;
                     this.route.to   = response.data.route.camp.name;
                     this.route.price   = response.data.price;
+                    this.book.price   = parseInt(response.data.route.price, 10);
                     this.route.time   = response.data.route.takeoff;
                     this.route.takeoff   = response.data.route.take_off;
 
@@ -246,10 +248,11 @@
             sendData (e) {
                  e.preventDefault();
                  var data = this.book;
-                 // console.log(data)
+                 // console.log(data);
                  axios.post('/api/process', data )
                  .then (response => {
                     var bkId = response.data;
+                    // console.log(response.data)
                     //go to the next route with the booking ref
                     this.$router.push({ name: 'viewbook', params: { bookId: bkId }})
                     

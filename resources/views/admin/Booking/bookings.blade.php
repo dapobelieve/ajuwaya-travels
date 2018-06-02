@@ -69,7 +69,7 @@
                                 <td>{{ $booking->bk_ref }}</td>
                                 <td>{{ $booking->getPay() }}</td>
                                 <td>{{ $booking->seat }}</td>
-                                <td>&#x20A6 {{  number_format($booking->amount * $booking->seat_num) }}</td>
+                                <td>&#x20A6 {{ $booking->amount * $booking->seat_num }}</td>
                                 <td>{{ $booking->gender }}</td>
                                 <td>{{ $booking->created_at->format('Y-m-d | g:i A') }}</td>
                             @empty

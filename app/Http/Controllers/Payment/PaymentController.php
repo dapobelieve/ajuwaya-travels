@@ -83,8 +83,8 @@ class PaymentController extends Controller
     public function redirecToPayStack(Request $request)
     {
         // verify transaction
-        // if($this->verify($request->ref)){
-        if(true){
+        if($this->verify($request->ref)){
+        // if(true){
             // update booking record
             Booking::with('route')->where('bk_ref', $request->ref)->update([
                 'pay_status' => 1

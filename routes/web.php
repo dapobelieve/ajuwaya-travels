@@ -54,9 +54,13 @@ Route::get('/profile/bookings', 'Profile\ProfileController@index')->name('profil
 // Admin  Routes
 
 // load the routes page as the first
-Route::get('admin', 'Admin\RouteController@index')->name('index-routes');
+
 
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
+
+    Route::get('home', 'Admin\RouteController@index')->name('index-routes');
+
+
     Route::delete('/route/mass_delete', 'Admin\RouteController@deleteAll')->name('delete.multiple');
 
     Route::resource('routes', 'Admin\RouteController');
