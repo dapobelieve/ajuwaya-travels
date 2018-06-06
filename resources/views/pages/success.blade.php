@@ -19,6 +19,22 @@
 
 
 @section('content')
+
+    <section class="noprint" id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="inner-box posting">
+                        <div class="alert alert-success alert-lg" role="alert">
+                          <h2 class="postin-title">✔ Congratulations! </h2>
+                          <p>Your payment was successful, a mail containing your booking details will be sent to you.</p>
+                          <p>if you don't receive a mail ensure your email is correct or go to your profile to print your booking details. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
    <section id="content">
       <div class="container">
         <div class="row">
@@ -78,5 +94,6 @@
             </div>        
         </div>
       </div>
-   </section>  
+   </section>
+
 @stop

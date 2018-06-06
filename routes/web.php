@@ -1,9 +1,13 @@
 <?php
 
+// home route
 Route::get('/','HomeController@index' )->name('home');
 Route::get('/all','HomeController@routes' )->name('routes.more');
 
 
+Route::get('/faq', 'HomeController@faq')->name('faq');
+
+// success route
 Route::get('/success/{booking}', 'Booking\BookingController@success');
 
 // Register Page
@@ -54,8 +58,6 @@ Route::get('/profile/bookings', 'Profile\ProfileController@index')->name('profil
 // Admin  Routes
 
 // load the routes page as the first
-
-
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
     Route::get('home', 'Admin\RouteController@index')->name('index-routes');

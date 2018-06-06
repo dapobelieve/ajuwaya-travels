@@ -48,7 +48,8 @@
                                     <!-- <p>Select Seat Number</p> -->
                                     <!-- {{ errors }} -->
                                     <h5 class="smalld">Select Seat Number</h5>
-                                    <small class="smalld" style="color: red">*disabled buttons are seats that have been booked*</small>
+                                    <small class="smalld" style="color: green">*disabled buttons are seats that have been booked*</small>
+                                    <small class="smalld" style="color: green">Multiple can be selected</small>
                                     <span v-if="errors.seat"  class="alata smalld">* {{ errors.seat[0] }} </span>
                                     <div v-if="route.busType === 15" class="calculator">
                                         <input v-model="book.seat" readonly type="text">
@@ -214,7 +215,7 @@
             {
                 axios.get('api/details/'+ref)
                 .then(response => {
-                    // console.log(response.data.route);
+                    console.log(response.data);
                     // load some of the b0ok data of this component
                     this.route.busType = response.data.route.bus_type;
 

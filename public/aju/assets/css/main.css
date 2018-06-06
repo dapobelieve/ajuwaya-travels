@@ -458,8 +458,9 @@ nav#menu span.fa.fa-bars:hover {
   line-height: normal;
   border-radius: 4px;
   padding: 12px 15px;
-  font-size: 13px;
+  font-size: 15px;
   outline: 0;
+  font-weight: bold;
   letter-spacing: 0.3px;
   -moz-transition: color .3s linear;
   -webkit-transition: color .3s linear;
@@ -2538,4 +2539,18 @@ textarea:focus {
   display: inline-block;
   margin-bottom: 0px;
   vertical-align: middle;
+}
+
+.footy {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      /*grid-column-gap: 1.5rem;*/
+}
+
+.a {
+    grid-column: 1 / 4;
+}
+
+.b {
+    grid-column: 5;
 }

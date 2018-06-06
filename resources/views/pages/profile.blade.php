@@ -31,18 +31,27 @@ My Bookings | AjuwayaTravels
 
 
 @section('content')
+<div class="page-header" style="background: url(/aju/assets/img/banner1.jpg);">
+      <div class="container">
+        <div class="row">         
+          <div class="col-md-12">
+            <div class="breadcrumb-wrapper">
+              <h2 class="page-title">My Bookings</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 <section id="categories-homepage">
-    <div class="container-fluid">
+    <div style="margin-bottom: 30px" class="container-fluid">
         <div class="row">
-            <h2>My Bookings</h2>
-
             <div class="container">
               <div class="row">
                 <div class="col-xs-12">
                   <div class="table-responsive">
                         <table summary="This table shows how to create responsive tables using Bootstrap's default functionality" class="table table-bordered table-hover">
-                          <caption class="text-center">All Bookings 
+                          <caption class="text-center">
                           <thead>
                             <tr>
                               <th>S/N</th>
@@ -52,18 +61,24 @@ My Bookings | AjuwayaTravels
                               <th>No. of Seats</th>
                               <th>Status</th>
                               <th>Date</th>
+                              <th>Action</th>
                             </tr>
                           </thead>
                           <tbody>
                             @forelse($bookings as $booking)
                             <tr>
-                              <td>{{ $loop->iteration }}</td>
-                              <td>{{ $booking->email }}</td>
-                              <td>{{ $booking->phone }}</td>
-                              <td>{{ $booking->bk_ref }}</td>
-                              <td>{{ $booking->seat_num }}</td>
-                              <td>{{ $booking->getPay() }}</td>
-                              <td>{{ $booking->created_at->format('l jS \\of F Y') }}</td>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $booking->email }}</td>
+                                <td>{{ $booking->phone }}</td>
+                                <td>{{ $booking->bk_ref }}</td>
+                                <td>{{ $booking->seat_num }}</td>
+                                <td>{{ $booking->getPay() }}</td>
+                                <td>{{ $booking->created_at->format('l jS \\of F Y') }}</td>
+                                <td> 
+                                    @if($booking->pay_status)
+                                        <a style="font-weight: 600; color: #25e85f" href="#">Print</a>
+                                    @endif
+                                </td>
                             </tr>
                             @empty
                             <tr>
@@ -81,11 +96,6 @@ My Bookings | AjuwayaTravels
         </div>
     </div>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 </section>
             
 @stop

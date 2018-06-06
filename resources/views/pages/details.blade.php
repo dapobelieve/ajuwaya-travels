@@ -2,7 +2,7 @@
 
 @section('title')
 
-Welcome to AjuwayaTravels
+Route |
 @stop
 
 @section('styles')
@@ -44,24 +44,25 @@ Welcome to AjuwayaTravels
               <div class="Ads-Details">
                     <h4 class=""><strong>Details</strong></h4>
                     <div class="row">
-                      <div class="ads-details-info col-md-8">
+                      <div style="font-size: 1.5rem" class="ads-details-info col-md-12">
                         {{-- <p>Powerful dual-core and quad-core Intel processors, more advanced graphics, faster PCIe-based flash storage, superfast memory, and Thunderbolt 2, MacBook Pro with Retina display delivers all the performance you want from a notebook.</p> --}}
-                        <ul class="list-circle">
+                        <ul style="line-height: 2" class="list-circle">
+                            <li>Destination: <strong>{{ $route->camp->name }}, <small>{{ $route->camp->details }}</small> </strong></li>
                           <li><i class="fas fa-bus"></i>  Bus Type: <strong> {{ $route->bus_type }} </strong> seater bus.</li>
                           <li><i class="fas fa-map-pin"></i> Take off point: <strong> {{ $route->take_off }} </strong> </li>
                           <li><i class="fas fa-money"></i> Price: <strong> &#x20A6 {{ number_format($route->price) }} </strong> </li>
-                          <li><i class="fas fa-clock"></i> Time: <strong> {{ $route->takeoff->format('l jS \\of F Y h:i:s A') }} </strong> </li>
+                          <li><i class="fas fa-clock"></i> Time: <strong> {{ $route->takeoff->format('l jS \\of F Y h:i A') }} </strong> </li>
                       </ul>
                       </div>
-                      <div class="col-md-4">
+                      {{-- <div class="col-md-4">
                         <div class="ads-action">
                           <ul class="list-border">
                             <li>
-                              <a href="#"> <i class=" fa fa-phone"></i> 022445167532 </a> </li>
+                              <a href="#"> <i class=" fa fa-phone"></i> 07039595285 </a> </li>
                             <li>
                           </ul>
                         </div>
-                      </div>
+                      </div> --}}
                     </div>
               </div>
             <div class="book-btn center">

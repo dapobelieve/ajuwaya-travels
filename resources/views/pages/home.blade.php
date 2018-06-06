@@ -18,7 +18,7 @@ Welcome to AjuwayaTravels
         <div class="container">
           <div class="main-text">
             <h1 class="intro-title">Welcome To <span style="color: #3498DB">Ajuwayatravels</span></h1>
-            <p class="sub-title">Get easy transportation to states you've been posted to for service.</p>
+            <p class="sub-title">Get easy transportation to Orientation Camp you've been posted to for service.</p>
 
             <!-- Start Search box -->
             <div class="row search-bar">
@@ -41,7 +41,7 @@ Welcome to AjuwayaTravels
                     <div class="input-group-addon search-category-container">
                       <label class="styled-select location-select">
                         <select class="dropdown-product selectpicker" name="camp" >
-                          <option value="0">Select Orientation Camp</option>
+                          <option value="0">Select Orientation Camps</option>
                           @foreach($camps as $camp)
                             <option value="{{ $camp->id }}">{{ ucwords($camp->name) }}</option>
                           @endforeach
@@ -72,40 +72,40 @@ Welcome to AjuwayaTravels
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="category-box border-1 wow fadeInUpQuick" data-wow-delay="0.3s">
                 <div class="icon">
-                  <a href="category.html"><i class="lnr lnr-magnifier color-1"></i></a>
+                  <a ><i class="lnr lnr-magnifier color-1"></i></a>
                 </div>
                 <div class="category-header">  
-                  <a href="category.html"><h4>Search</h4></a>
+                  <a ><h4>Search</h4></a>
                 </div>
               </div>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="category-box border-2 wow fadeInUpQuick" data-wow-delay="0.6s">
                 <div class="icon">
-                  <a href="category.html"><i class="lnr lnr-select color-2"></i></a>
+                  <a ><i class="lnr lnr-select color-2"></i></a>
                 </div>
                 <div class="category-header">  
-                  <a href="category.html"><h4>Book</h4></a>
+                  <a ><h4>Book</h4></a>
                 </div>
               </div>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="category-box border-3 wow fadeInUpQuick" data-wow-delay="0.9s">
                 <div class="icon">
-                  <a href="category.html"><i class="lnr lnr-cloud-upload color-3"></i></a>
+                  <a ><i class="lnr lnr-cloud-upload color-3"></i></a>
                 </div>
                 <div class="category-header">  
-                  <a href="category.html"><h4>Pay</h4></a>
+                  <a ><h4>Pay</h4></a>
                 </div>
               </div>
             </div>            
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="category-box border-4 wow fadeInUpQuick" data-wow-delay="1.2s">
                 <div class="icon">
-                  <a href="category.html"><i class="lnr lnr-bus color-4"></i></a>
+                  <a ><i class="lnr lnr-bus color-4"></i></a>
                 </div>
                 <div class="category-header">  
-                  <a href="category.html"><h4>...</h4></a>
+                  <a ><h4>...</h4></a>
                 </div>
                 {{--  --}}
               </div>
@@ -141,7 +141,7 @@ Welcome to AjuwayaTravels
                               <span class="item-location takeoff"><i class="fas fa-map-pin"></i> {{ $route->takeoff()}}</span>
                             </div>
                             <div class="item_desc">
-                              <a href="#">Donec ut quam felis. Cras egestas, quam in plac erat dictum, erat mauris inte rdum est nec.</a>
+                              <a href="#">Destination: {{ $route->camp->details }}</a>
                             </div>
                           </div>
                         </div>

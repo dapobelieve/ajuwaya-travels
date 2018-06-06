@@ -38,28 +38,26 @@
 
         <div class="widget-box">
             <div class="widget-title">
-                <span class="icon with-checkbox">
-                    <input type="checkbox" class="checkbox_all" id="title-checkbox" name="title-checkbox" />
-                </span>
                 <h5>Orientation Camps</h5>
             </div>
             <div class="widget-content nopadding">
                 <table class="table table-bordered table-striped table-hover with-check">
                     <thead>
                         <tr>
-                            <th><i class="fa fa-resize-vertical"></i></th>
+                            {{-- <th><i class="fa fa-resize-vertical"></i></th> --}}
                             {{-- <th>Column name</th> --}}
                             <th>#</th>
                             <th>Camp Name</th>
+                            <th>Details</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         @forelse($camps as $camp)
                         <tr>
-                            <td><input type="checkbox" class="checkbox_delete" name="entries_to_delete[]" value="{{ $camp->id }}" /></td>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $camp->name }}</td>
+                            <td>{{ $camp->details }}</td>
                             <td>
                                 <div class="btn-group">
                                     <button data-toggle="dropdown" class="btn btn-xs btn-red dropdown-toggle">Options <span class="caret"></span></button>

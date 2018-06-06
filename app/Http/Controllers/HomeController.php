@@ -44,5 +44,9 @@ class HomeController extends Controller
         return view('pages.routes')->with('routes', $routes);
     }
 
+    public function faq()
+    {
+        return view('pages.faq');
+    }
 
 }

@@ -8,24 +8,22 @@ use App\Models\Booking\Route;
 use App\Models\Booking\Booking;
 use App\Http\Controllers\Funcs\Hasher;
 
+use App\Http\Controllers\Traits\PrintTrait;
+
 
 use App\Http\Controllers\Controller;
 
 class BookingController extends Controller
 {
-
+    use PrintTrait;
 
     public function __construct()
     {
-        $this->middleware('verified_user', ['only' => [
-            'index',
-        ]]);
-
-    }
-
-    private function setUserId()
-    {
-        $this->userId = Auth::user()->id;
+        $this->middleware('verified_user', 
+            [
+                'only' => ['index']
+            ]
+        );
     }
 
     public function index(Route $route)
@@ -113,7 +111,6 @@ class BookingController extends Controller
 
         return $book->bk_ref;
     }
-
 
     // Update a booking record
     public function update(Request $request)
@@ -211,7 +208,11 @@ class BookingController extends Controller
 
     public function success(Booking $booking)
     {
-        return view('pages.success')->with('book', $booking);
-        dd($booking->with('route')->first());
+        if ($this->Printer($booking)) {
+            return view('pages.success')->with('book', $booking);
+        }else {
+            return redirect()->route('auth.signout');
+        }
+        
     }
 }

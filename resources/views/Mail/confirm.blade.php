@@ -310,7 +310,7 @@
                       <td>
                         <p>Hi there,</p>
                         <p>Glad to have you on board.</p>
-                        <p>Please confirm your account by clicking the button below.</p>
+                        <p>Please confirm your account by clicking the link below.</p>
                         <p>Once confirmed, you'll be able to login to AjuwayaTravels and make your bookings</p>
                         <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
                           <tbody>

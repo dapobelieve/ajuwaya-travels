@@ -2,7 +2,7 @@
 
 @section('title')
 
-All Routes | AjuwayaTravels
+Latest Routes | AjuwayaTravels
 @stop
 
 @section('styles')
