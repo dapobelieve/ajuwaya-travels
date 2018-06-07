@@ -10,7 +10,7 @@ use App\Http\Controllers\Funcs\Hasher;
 
 use App\Http\Controllers\Traits\PrintTrait;
 
-use App\Events\NewBooking;
+// use App\Events\NewBooking;
 use App\Http\Controllers\Controller;
 
 class BookingController extends Controller
@@ -114,7 +114,7 @@ class BookingController extends Controller
         */
 
 
-        event(new NewBooking($book->route));
+        // event(new NewBooking($book->route));
 
 
         return $book->bk_ref;

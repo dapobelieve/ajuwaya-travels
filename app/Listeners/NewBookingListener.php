@@ -37,7 +37,7 @@ class NewBookingListener
                             ])
                             ->first();
         $bookTimes = (int) $sum->times;
-        if ($bookTimes == $event->route->bus_type){
+        if ($bookTimes >= $event->route->bus_type){
             $event->route->update([
                 'active' => 0
             ]);
