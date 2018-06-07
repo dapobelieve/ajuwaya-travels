@@ -117,7 +117,7 @@ class BookingController extends Controller
         event(new NewBooking($book->route));
 
 
-        // return $book->bk_ref;
+        return $book->bk_ref;
     }
 
     // Update a booking record

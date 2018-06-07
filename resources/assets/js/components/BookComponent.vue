@@ -253,7 +253,6 @@
                  axios.post('/api/process', data )
                  .then (response => {
                     var bkId = response.data;
-                    // console.log(response.data)
                     //go to the next route with the booking ref
                     this.$router.push({ name: 'viewbook', params: { bookId: bkId }})
                     
