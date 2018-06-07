@@ -10,6 +10,8 @@ Route::get('/faq', 'HomeController@faq')->name('faq');
 // success route
 Route::get('/success/{booking}', 'Booking\BookingController@success');
 
+Route::get('/print-receipt/{bookRef}', 'HomeController@print')->name('print.receipt');
+
 // Register Page
 Route::get('/register','Auth\AuthController@getRegister')->name('auth.register')->middleware('guest');
 Route::post('/register','Auth\AuthController@postRegister')->name('auth.register');

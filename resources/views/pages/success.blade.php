@@ -21,6 +21,7 @@
 @section('content')
 
     <section class="noprint" id="content">
+        @if(!isset($noprint))
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -34,6 +35,7 @@
                 </div>
             </div>
         </div>
+        @endif
     </section>
    <section id="content">
       <div class="container">

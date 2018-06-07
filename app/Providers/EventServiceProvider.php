@@ -20,6 +20,10 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\UserBooked' => [
             'App\Listeners\Booking\UserBookedListener',
         ],
+
+        'App\Events\NewBooking' => [
+            'App\Listeners\NewBookingListener'
+        ],
     ];
 
     /**

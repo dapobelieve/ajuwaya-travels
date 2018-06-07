@@ -76,7 +76,7 @@ My Bookings | AjuwayaTravels
                                 <td>{{ $booking->created_at->format('l jS \\of F Y') }}</td>
                                 <td> 
                                     @if($booking->pay_status)
-                                        <a style="font-weight: 600; color: #25e85f" href="#">Print</a>
+                                        <a style="font-weight: 600; color: #25e85f" href="{{ route('print.receipt', ['bookRef' => $booking->bk_ref]) }}">Print</a>
                                     @endif
                                 </td>
                             </tr>

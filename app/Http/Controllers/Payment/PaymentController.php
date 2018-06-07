@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Config;
 use App\Models\Booking\Booking;
+
+
+use App\Events\NewBooking;
 use App\Events\UserBooked;
 
 class PaymentController extends Controller
@@ -94,6 +97,13 @@ class PaymentController extends Controller
 
             // fire event to send mail with booking details
             event(new UserBooked($booking));
+
+            /*
+            * fire an event to update
+            * the route this booking 
+            * belongs to based on number of seats thats been booked
+            */
+            event(new NewBooking($book->route));
 
             
             return response()->json($booking, 200);

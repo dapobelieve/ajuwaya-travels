@@ -215,7 +215,7 @@
             {
                 axios.get('api/details/'+ref)
                 .then(response => {
-                    console.log(response.data);
+                    // console.log(response.data);
                     // load some of the b0ok data of this component
                     this.route.busType = response.data.route.bus_type;
 
@@ -260,7 +260,6 @@
                  })
                  .catch(error => {
                     this.errors = error.response.data.errors;
-                    console.log(error.response.data);
                  });
             } 
         },

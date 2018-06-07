@@ -10,7 +10,7 @@ use App\Http\Controllers\Funcs\Hasher;
 
 use App\Http\Controllers\Traits\PrintTrait;
 
-
+use App\Events\NewBooking;
 use App\Http\Controllers\Controller;
 
 class BookingController extends Controller
@@ -107,9 +107,17 @@ class BookingController extends Controller
                     'bk_ref'   => 'bk-'.Hasher::getHashedToken(10),
                 ]);
 
-        // return response()->json($request);
+        /*
+        * fire an event to update
+        * the route this booking 
+        * belongs to based on number of seats thats been booked
+        */
 
-        return $book->bk_ref;
+
+        event(new NewBooking($book->route));
+
+
+        // return $book->bk_ref;
     }
 
     // Update a booking record
@@ -208,11 +216,6 @@ class BookingController extends Controller
 
     public function success(Booking $booking)
     {
-        if ($this->Printer($booking)) {
-            return view('pages.success')->with('book', $booking);
-        }else {
-            return redirect()->route('auth.signout');
-        }
-        
+        return $this->Printer($booking) ? view('pages.success')->with('book', $booking) : redirect()->route('auth.signout');        
     }
 }

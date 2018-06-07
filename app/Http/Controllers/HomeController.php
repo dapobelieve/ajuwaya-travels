@@ -4,14 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-
+use App\Models\Booking\Booking;
 use App\Models\Booking\Route;
 use App\Models\Booking\Location;
 use App\Models\Booking\Camp;
 
+use App\Http\Controllers\Traits\PrintTrait;
+
 
 class HomeController extends Controller
 {
+    use PrintTrait;
+
+
     public function index()
     {
         // get all locations and camps
@@ -42,6 +47,14 @@ class HomeController extends Controller
     {
         $routes = Route::with('camp', 'location')->where('active', 1)->latest()->get();
         return view('pages.routes')->with('routes', $routes);
+    }
+
+    public function print(Booking $bookRef)
+    {
+        // dd($bookRef);
+        return $this->Printer($bookRef) ? view('pages.success')->with('book', $bookRef) 
+                                                                ->with('noprint', true)
+        : redirect()->route('auth.signout');
     }
 
     public function faq()

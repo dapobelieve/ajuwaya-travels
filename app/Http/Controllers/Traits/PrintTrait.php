@@ -10,11 +10,7 @@ trait PrintTrait
 
     public function Printer(Booking $booking)
     {
-        if($booking->pay_status){
-            return true;
-        }else {
-            return false;
-        }
+        return $booking->pay_status ? true : false;
     }
 
 }
