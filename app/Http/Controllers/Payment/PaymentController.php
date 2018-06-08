@@ -80,44 +80,63 @@ class PaymentController extends Controller
           }
     }
 
+    private function updateBooking($ref)
+    {
+        Booking::with('route')->where('bk_ref', $ref)->update([
+            'pay_status' => 1
+        ]);
+
+        $booking = Booking::with('route')->where('bk_ref', $ref)->first();
+
+        // fire event to send mail with booking details
+        event(new UserBooked($booking));
+
+        /*
+        * fire an event to update
+        * the route this booking 
+        * belongs to based on number of seats thats been booked
+        */
+        event(new NewBooking($booking->route));
+
+        return $booking;
+    }
+
 
 
     public function redirecToPayStack(Request $request)
     {
-        // verify transaction
-        if($this->verify($request->ref)){
-        // if(true){
-            // update booking record
-            Booking::with('route')->where('bk_ref', $request->ref)->update([
-                'pay_status' => 1
-            ]);
+        // if admin dont verify
+        if ($request->admin) {
+            $booking = $this->updateBooking($request->ref);
 
-            $booking = Booking::with('route')->where('bk_ref', $request->ref)->first();
-
-            // fire event to send mail with booking details
-            event(new UserBooked($booking));
-
-            /*
-            * fire an event to update
-            * the route this booking 
-            * belongs to based on number of seats thats been booked
-            */
-            event(new NewBooking($booking->route));
-
-            
             return response()->json($booking, 200);
+        }else {
+            // verify transaction
+            if($this->verify($request->ref)){
+                // update booking record
+                $booking = $this->updateBooking($request->ref);
+                
+                return response()->json($booking, 200);
+            }else{
+                return response()->json('Server Error, Please try again later', 500);
+            }
+        }
+    }
 
-        }else{
-            return response()->json('Server Error, Please try again later', 500);
+    public function adminPay(Request $request)
+    {
+        if ($request->admin) {
+            return response()->json($request, 200);
         }
 
+        Booking::with('route')->where('bk_ref', $request->ref)->update([
+            'pay_status' => 1
+        ]);
 
-        
+        $booking = Booking::with('route')->where('bk_ref', $request->ref)->first();
 
-        // send mail
 
-        // redirect to congrats page
-        
-        return response()->json($data, 200);
+
+        dd($request->ref);
     }
 }

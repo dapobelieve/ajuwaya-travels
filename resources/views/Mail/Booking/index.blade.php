@@ -290,11 +290,11 @@ xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xml
                 <tr>
                     <td style="padding: 40px 10px; font-family: sans-serif; font-size: 12px; line-height: 140%; text-align: center; color: #888888;">
                         <webversion style="color: #cccccc; text-decoration: underline; font-weight: bold;">
-                        <a href="#">Ajuwayatravel.com</a></webversion>
+                        <a href="{{ route('home') }}">Ajuwayatravel.com</a></webversion>
                         <br><br>
                             AjuwayaTravel<br>
                             <span class="unstyle-auto-detected-links">
-                                Address<br>(123) 456-7890
+                                {{-- Address<br>(123) 456-7890 --}}
                             </span>
                         <br><br>
                         {{-- <unsubscribe style="color: #888888; text-decoration: underline;">unsubscribe</unsubscribe> --}}

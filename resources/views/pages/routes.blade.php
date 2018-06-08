@@ -46,7 +46,7 @@ Latest Routes | AjuwayaTravels
                               <span class="item-location takeoff"><i class="fas fa-map-pin"></i> {{ $route->takeoff()}}</span>
                             </div>
                             <div class="item_desc">
-                              <a href="#">Donec ut quam felis. Cras egestas, quam in plac erat dictum, erat mauris inte rdum est nec.</a>
+                              <a href="#">{{ $route->camp->details }}</a>
                             </div>
                           </div>
                         </div>

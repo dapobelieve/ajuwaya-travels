@@ -74,7 +74,8 @@
                 
 
                 axios.post('api/payment', {
-                    ref: response
+                    ref: response,
+                    admin: false
                 })
                 .then(response => {
                     window.location = window.url+`success/${this.bookRef}`;

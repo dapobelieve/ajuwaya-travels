@@ -50,6 +50,8 @@
                                 <th>#</th>
                                 <th>Booked By</th>
                                 <th>Email</th>
+                                <th>From</th>
+                                <th>To</th>
                                 <th>Phone</th>
                                 <th>code</th>
                                 <th>Pay Status</th>
@@ -65,6 +67,8 @@
                                 <td>{{ $loop->index + 1 }}</td>
                                 <td>{{ $booking->user->email }}</td>
                                 <td>{{ $booking->email }}</td>
+                                <td>{{ $booking->route->location->state }}</td>
+                                <td>{{ $booking->route->camp->name }}</td>
                                 <td>{{ $booking->phone }}</td>
                                 <td>{{ $booking->bk_ref }}</td>
                                 <td>{{ $booking->getPay() }}</td>

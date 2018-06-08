@@ -142,6 +142,9 @@
                                               <strong><a style="color: #424248">{{ route.from }} → {{ route.to }}</a></strong> 
                                             </li>
                                             <li>
+                                              <a style="color: #424248">Destination: <strong>{{ route.destination }}</strong></a>
+                                            </li>
+                                            <li>
                                               <a style="color: #424248">Price: <strong> &#x20A6 {{ route.price }}</strong></a>
                                             </li>
                                             <li>
@@ -184,6 +187,7 @@
                     time:    null,
                     price:   null,
                     takeoff: null,
+                    destination: null
                 },
                 book: {
                     name:  '',
@@ -215,8 +219,8 @@
             {
                 axios.get('api/details/'+ref)
                 .then(response => {
-                    // console.log(response.data);
                     // load some of the b0ok data of this component
+                    console.log(response.data)
                     this.route.busType = response.data.route.bus_type;
 
                     this.route.seats = response.data.seats;
@@ -226,6 +230,7 @@
                     this.book.price   = parseInt(response.data.route.price, 10);
                     this.route.time   = response.data.route.takeoff;
                     this.route.takeoff   = response.data.route.take_off;
+                    this.route.destination = response.data.route.camp.details
 
                     // set id
                     this.book.rid = response.data.route.id;

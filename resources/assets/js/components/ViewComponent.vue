@@ -11,10 +11,10 @@
             </nav>
             <section id="content">
                 <div class="container">
+                    <span class="center" v-if="admin" style="color: red;">* As and Administrator ensure you've received payment before submitting.</span>
                     <div class="row"> 
+
                         <div class="col-sm-6 col-sm-6 col-xs-12">
-                            <!-- <br>
-                            <br> -->
                             <div class="category-box border-6 wow fadeInUpQuick" data-wow-delay="1.8s">
                                 <div class="icon">
                                   <a ><i class="lnr lnr-pencil color-2"></i></a>
@@ -59,8 +59,12 @@
                                     </div>
                                     <div class="category-content">
                                       <ul>
+
                                         <li>
                                           <strong><a style="color: #424248">{{ route.from }} → {{ route.to }}</a></strong> 
+                                        </li>
+                                        <li>
+                                          <a style="color: #424248">Destination: <strong>{{ route.destination }}</strong></a>
                                         </li>
                                         <li>
                                           <a style="color: #424248">Price: <strong> &#x20A6 {{ route.price }}</strong></a>
@@ -83,8 +87,11 @@
                         <div class="edit items pull-right">
                             <button style="background: #888" type="submit" @click.prevent="editBook()" class=" btn btn-common " >Edit</button>
                         </div>
-                        <div class="pay items">
-                            <button @click.prevent="payNow()" type="submit" class=" btn btn-common" >Pay Now</button>
+                        <div v-if="admin" class="pay">
+                            <button @click.prevent="adminPay()" type="submit" :disabled=button.enable class=" btn btn-common" >Submit</button>
+                        </div>
+                        <div v-else class="pay items">
+                            <button @click.prevent="payNow()" type="submit" :disabled=button.enable class=" btn btn-common" >Pay Now</button>
                         </div>
                     </div>
                 </div>
@@ -101,6 +108,10 @@
             return {
                 activeNav: true,
                 ref: '',
+                button: {
+                    enable: false,
+
+                },
                 route: {
                     busType: '',
                     seats: [],
@@ -109,6 +120,7 @@
                     time:    null,
                     price:   null,
                     takeoff: null,
+                    destination: null
                 },
                 book: {
                     name:  null,
@@ -120,6 +132,7 @@
                     seats: null,
                     bkRef: null
                 },
+                admin: false
             }
         },
         methods: {
@@ -127,7 +140,24 @@
                 this.$router.push({ name: 'confirmBook', params: { bookId: this.book.bkRef }})
             },
             payNow () {
+                this.button.enable = true;
                 this.$router.push({ name: 'payNow', params: { bRef: this.book.bkRef }})
+            },
+            adminPay () {
+                this.button.enable = true;
+                // send ajax request to update payment
+                axios.post('/api/adminpay', {
+                    ref: this.book.bkRef,
+                    admin: true
+                })
+                .then( response => {
+                    // console.log(response.data);
+                    window.location = window.url+`success/${this.book.bkRef}`;
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+                // goto success page
             }
         },
         computed: {
@@ -160,6 +190,7 @@
                     vm.route.price   = response.data.price;
                     vm.route.time   = response.data.route.takeoff;
                     vm.route.takeoff   = response.data.route.take_off;
+                    vm.route.destination = response.data.route.camp.details
                 });
             })
             .catch(function (error) {
@@ -168,6 +199,12 @@
             });
             // next();
         },
+        mounted() {
+            if (window.mail === 'admin@ajuwayatravel.com'){
+                this.admin = true;
+            }      
+
+        }
     }
 </script>
 

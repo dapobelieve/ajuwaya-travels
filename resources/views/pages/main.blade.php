@@ -11,7 +11,8 @@
     <script>
         window.ajt_model = "{{ $route }}";
         window.currUser  = {{ Auth::user()->id }};
-        window.url  = "{{ env('APP_URL') }}";
+        window.mail      = "{{ Auth::user()->email }}";
+        window.url       = "{{ env('APP_URL') }}";
     </script>
 
 
