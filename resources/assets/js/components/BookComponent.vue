@@ -220,7 +220,7 @@
                 axios.get('api/details/'+ref)
                 .then(response => {
                     // load some of the b0ok data of this component
-                    console.log(response.data)
+                    // console.table(response.data)
                     this.route.busType = response.data.route.bus_type;
 
                     this.route.seats = response.data.seats;

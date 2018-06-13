@@ -2,6 +2,8 @@
 
 namespace App\Listeners;
 
+use Mail;
+use App\Mail\RouteAlert;
 use App\Events\NewBooking;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -43,11 +45,35 @@ class NewBookingListener
                             ])
                             ->first();
         $bookTimes = (int) $sum->times;
+
+        $emails = [
+            'dapomichaels@gmail.com',
+            'dredsn@gmail.com',
+            'adeyemi@ajuwayatravel.com'
+        ];
+
+        Mail::to($emails)
+                ->send(new RouteAlert($event->route));
+
+        /**
+         * Update the route concerned
+         */
         if ($bookTimes >= $event->route->bus_type){
             $event->route->update([
                 'active' => 0
             ]);
-            // dd('Route set to Inactive');
+
+            // dd($bookTimes);
+
+            // send a mail here
+            // try {
+            //     Mail::to('dapomichaels@gmail.com')
+            //     ->cc('dredsn@gmail.com')
+            //     ->send(new RouteAlert($event->route));
+            // }catch (Exception $e)
+            // {
+            //     return redirect()->route('home')->with('', 'Couldn\'t send mail, No internet connection');
+            // }
         }       
     }
 }

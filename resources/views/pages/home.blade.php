@@ -87,6 +87,10 @@ Welcome to AjuwayaTravels
                 <div class="category-header">  
                   <a ><h4>Book</h4></a>
                 </div>
+                <p style="text-align: justify;"> 
+                      In order to complete the booking process you have to pay for the seat(s) selected. You can pay with your atm card. If your atm card isn't close by, no worries you can pay by selecting your bank and entering your account number. 
+                        Upon successful payment, a receipt will be generated and sent to the email address you entered during booking. You can also save or print the receipt from the website at anytime by clicking on your profile.
+                  </p>
               </div>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12">

@@ -18,11 +18,12 @@
           <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav navbar-right">
               <li><a href="{{ route('home') }}"> Home</a></li>
-              <li><a href="{{ route('faq') }}"> FAQ</a></li>
-              @if(!Auth::check())
+              
+            @if(!Auth::check())
                 <li><a href="{{ route('auth.login') }}"> Log in</a></li>
             @else
                 <li><a href="{{ route('profile.bookings') }}"><i></i> Bookings</a></li>
+                <li><a href="{{ route('faq') }}"> FAQ</a></li>
                 <li><a href="{{ route('auth.signout') }}"> Log out</a></li>
             @endif
             </ul>

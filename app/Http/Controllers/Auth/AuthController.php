@@ -72,8 +72,11 @@ class AuthController extends Controller
     public function postLogin(Request $request)
     {
         $this->validate($request,[
-            'email' => 'required',
+            'email' => 'required|email',
             'password' => 'required',
+        ],[
+            'email.required' => 'A valid email address is required',
+            'password.required'       =>  'A password is required'
         ]);
 
         if(!Auth::attempt(
