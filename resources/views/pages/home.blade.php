@@ -28,8 +28,8 @@ Welcome to AjuwayaTravels
                     <div class="input-group-addon search-category-container">
                       <label class="styled-select">
                         <select class="dropdown-product selectpicker" name="location" >
-                          <option value="0">Select Location</option>
-                          @foreach($locations as $location)
+                          <option value="0">From?</option>
+                          @foreach($locations->where('id', 25) as $location)
                             <option value="{{ $location->id }}">{{ $location->state }}</option>
                           @endforeach
 
@@ -88,8 +88,7 @@ Welcome to AjuwayaTravels
                   <a ><h4>Book</h4></a>
                 </div>
                 <p style="text-align: justify;"> 
-                      In order to complete the booking process you have to pay for the seat(s) selected. You can pay with your atm card. If your atm card isn't close by, no worries you can pay by selecting your bank and entering your account number. 
-                        Upon successful payment, a receipt will be generated and sent to the email address you entered during booking. You can also save or print the receipt from the website at anytime by clicking on your profile.
+                      Search & select the route to your orientation camp. View details to know more about the route. Note that if at the time you searched, you do not find your route, or find it full, kindly check back later that day. 
                   </p>
               </div>
             </div>

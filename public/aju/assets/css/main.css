@@ -539,7 +539,7 @@ nav#menu span.fa.fa-bars:hover {
     ====================================================*/
 .section-intro {
   background: url("../img/bg/bg-intro.html") center center no-repeat;
-  background: url("../img/bg/bg-intro.jpg") center center no-repeat;
+  /*background: url("../img/bg/bg-intro.jpg") center center no-repeat;*/
   background-size: cover;
   color: #fff;
   text-align: center;

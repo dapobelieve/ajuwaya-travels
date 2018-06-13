@@ -8,7 +8,7 @@
     <title>@yield('title')</title>    
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/aju/assets/img/favicon.html">
+    <link rel="shortcut icon" href="/favicon.ico">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/aju/assets/css/bootstrap.min.css" type="text/css">    
     <link rel="stylesheet" href="/aju/assets/css/bootstrap-social.css" type="text/css">    
