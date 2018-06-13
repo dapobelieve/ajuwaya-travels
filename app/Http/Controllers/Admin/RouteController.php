@@ -56,12 +56,12 @@ class RouteController extends Controller
 
 
         $routes = explode(',', $request->ids);
-        foreach($routes as $route_id){
+        foreach ($routes as $route_id){
             $route = Route::findOrFail($route_id);
             $route->delete();
         }
 
-        return redirect()->route('routes.index')->with('sms', 'Route Deleted Successfully.');
+        return redirect()->route('routes.index')->with('sms', 'Routes Deleted Successfully.');
     }
 
     /**

@@ -29,6 +29,12 @@ class NewBookingListener
      */
     public function handle(NewBooking $event)
     {
+        /**
+         * get the count of all bookings that 
+         * belong to the route
+         * 
+         * @var int
+         */
         $sum = DB::table('bookings')
                             ->select(DB::raw('sum(seat_num) as times'))
                             ->where([
