@@ -47,7 +47,8 @@ class NewBookingListener
         $bookTimes = (int) $sum->times;
 
         $emails = [
-            'dapomichaels@gmail.com',
+            'yemialabipurpose@gmail.com',
+            'tolulopeakinpelu1@gmail.com',
             'dredsn@gmail.com',
             'adeyemi@ajuwayatravel.com'
         ];
